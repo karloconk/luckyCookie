@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="BIG JOHN.otf">
+            <string>BigJohn</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Basic-->
         <scene sceneID="hNz-n2-bh7">
@@ -100,10 +105,39 @@
                                     <constraint firstAttribute="width" constant="123" id="Gle-7M-HJQ"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZ6-99-KvP">
+                                <rect key="frame" x="0.0" y="54" width="414" height="212"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_frame" translatesAutoresizingMaskIntoConstraints="NO" id="6x8-oU-A9j">
+                                        <rect key="frame" x="8" y="0.0" width="398" height="204"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtx-J4-Dve">
+                                        <rect key="frame" x="57" y="90" width="303" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="eEY-Tp-WFv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BigJohn" family="Big John" pointSize="24"/>
+                                        <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6x8-oU-A9j" secondAttribute="bottom" constant="8" id="1so-0X-O9m"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xtx-J4-Dve" secondAttribute="trailing" constant="54" id="2h9-DR-Qbc"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xtx-J4-Dve" secondAttribute="bottom" constant="98" id="Thj-EC-PST"/>
+                                    <constraint firstItem="6x8-oU-A9j" firstAttribute="leading" secondItem="KZ6-99-KvP" secondAttribute="leading" constant="8" id="V9W-D3-eRN"/>
+                                    <constraint firstAttribute="height" constant="212" id="ZKM-pp-yL1"/>
+                                    <constraint firstItem="6x8-oU-A9j" firstAttribute="top" secondItem="KZ6-99-KvP" secondAttribute="top" id="fl6-QI-7v4"/>
+                                    <constraint firstItem="Xtx-J4-Dve" firstAttribute="top" secondItem="KZ6-99-KvP" secondAttribute="top" constant="90" id="hfe-Cu-7VP"/>
+                                    <constraint firstAttribute="trailing" secondItem="6x8-oU-A9j" secondAttribute="trailing" constant="8" id="m0y-NM-hGy"/>
+                                    <constraint firstItem="Xtx-J4-Dve" firstAttribute="leading" secondItem="KZ6-99-KvP" secondAttribute="leading" constant="57" id="qJQ-VP-nzY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ehR-ce-o5D" secondAttribute="trailing" constant="-2" id="3fu-r1-IkR"/>
+                            <constraint firstItem="KZ6-99-KvP" firstAttribute="top" secondItem="mDi-CS-Xc2" secondAttribute="top" constant="10" id="5sT-Mw-vT1"/>
                             <constraint firstItem="DsX-eH-uMQ" firstAttribute="top" secondItem="das-xY-SPE" secondAttribute="bottom" id="A2B-SO-nGd"/>
                             <constraint firstItem="DsX-eH-uMQ" firstAttribute="centerX" secondItem="mDi-CS-Xc2" secondAttribute="centerX" id="AHU-Ox-tWd"/>
                             <constraint firstItem="ehR-ce-o5D" firstAttribute="top" secondItem="mDi-CS-Xc2" secondAttribute="top" id="EQm-lC-uId"/>
@@ -111,7 +145,9 @@
                             <constraint firstItem="yfk-gk-OWi" firstAttribute="top" secondItem="6pu-3p-Ok2" secondAttribute="top" constant="661" id="Hs8-Xo-fyf"/>
                             <constraint firstItem="mDi-CS-Xc2" firstAttribute="trailing" secondItem="yfk-gk-OWi" secondAttribute="trailing" constant="-2" id="Sfc-J7-0yq"/>
                             <constraint firstItem="yfk-gk-OWi" firstAttribute="top" secondItem="DsX-eH-uMQ" secondAttribute="bottom" constant="104" id="Sv9-kC-kdv"/>
+                            <constraint firstItem="KZ6-99-KvP" firstAttribute="leading" secondItem="mDi-CS-Xc2" secondAttribute="leading" id="WOM-x7-xou"/>
                             <constraint firstItem="das-xY-SPE" firstAttribute="centerX" secondItem="mDi-CS-Xc2" secondAttribute="centerX" id="X31-tD-iTH"/>
+                            <constraint firstItem="KZ6-99-KvP" firstAttribute="trailing" secondItem="mDi-CS-Xc2" secondAttribute="trailing" id="Y0P-nS-QyP"/>
                             <constraint firstItem="yfk-gk-OWi" firstAttribute="leading" secondItem="6pu-3p-Ok2" secondAttribute="leading" constant="-2" id="aA0-AT-Ii7"/>
                             <constraint firstItem="ehR-ce-o5D" firstAttribute="leading" secondItem="mDi-CS-Xc2" secondAttribute="leading" constant="-2" id="cYU-4D-m6I"/>
                             <constraint firstItem="mDi-CS-Xc2" firstAttribute="bottom" secondItem="yfk-gk-OWi" secondAttribute="bottom" constant="72" id="fqP-Dz-jj7"/>
@@ -122,8 +158,12 @@
                         <viewLayoutGuide key="safeArea" id="mDi-CS-Xc2"/>
                     </view>
                     <connections>
+                        <outlet property="bottomLabel" destination="x2t-nR-Bbl" id="1B8-CA-rQC"/>
+                        <outlet property="fondo" destination="KZ6-99-KvP" id="90K-9w-XCd"/>
                         <outlet property="fondoView" destination="6pu-3p-Ok2" id="uay-Zo-8yx"/>
                         <outlet property="luckyButton" destination="TEN-Gn-KOu" id="mMs-jd-ags"/>
+                        <outlet property="luckyImage" destination="6x8-oU-A9j" id="sUO-Gy-lsq"/>
+                        <outlet property="luckyLabel" destination="Xtx-J4-Dve" id="3wB-lh-zT4"/>
                         <outlet property="mainImage" destination="DsX-eH-uMQ" id="bcf-cb-56k"/>
                         <outlet property="popImage" destination="das-xY-SPE" id="a1b-jG-dTs"/>
                         <outlet property="topSeparator" destination="ehR-ce-o5D" id="hnC-A2-Fos"/>
@@ -145,6 +185,7 @@
     <resources>
         <image name="basic_boton" width="211" height="211"/>
         <image name="basic_closed" width="268" height="188"/>
+        <image name="basic_frame" width="506.5" height="255"/>
         <image name="basic_pop" width="208" height="84"/>
         <image name="basic_top" width="509" height="61"/>
         <image name="first" width="30" height="30"/>
