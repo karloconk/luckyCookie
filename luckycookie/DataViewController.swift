@@ -47,7 +47,13 @@ class DataViewController: UIViewController {
         self.topSeparator.alpha = 1.0
         if self.index ?? 0 < 1 {
             setBackground(image: UIImage(named: "basic_fondo")!)
+        } else {
+            self.view.backgroundColor = UIColor.random()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        GlobalVars.currentBolita = self.index!
     }
     
     //MARK:- Functions
@@ -87,6 +93,7 @@ class DataViewController: UIViewController {
     func reset() {
         self.fondo.alpha = 0.0
         self.popImage.isHidden = true
+        self.mainImage.image   = UIImage(named: "basic_closed")
         UIView.animate(withDuration: 0.8, delay: 0.0, options: .curveLinear, animations: {
             self.topSeparator.alpha = 1.0
         }, completion: nil)
@@ -94,5 +101,20 @@ class DataViewController: UIViewController {
             self.touched = false
             self.bottomLabel.text = "Get Lucky"
         }
+    }
+}
+
+extension UIColor {
+    static func random() -> UIColor {
+        return UIColor(red:   .random(),
+                       green: .random(),
+                       blue:  .random(),
+                       alpha: 1.0)
+    }
+}
+
+extension CGFloat {
+    static func random() -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }
