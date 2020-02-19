@@ -2,17 +2,15 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "FortuneCookie_fondo-1.png",
+      "filename" : "badBroken.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "FortuneCookie_fondo.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "FortuneCookie_fondo-2.png",
       "scale" : "3x"
     }
   ],

@@ -15,9 +15,13 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var pagecontrol: UIPageControl!
+    
     //MARK:- Vars
        
-       let titles = ["","","", "","",""]
+       let titles = ["Estandar", "Mala Suerte", "Amor", "Mistica", "Mascotas", "Escuela",
+                     "Deportes", "Chelera", "Rosca de reyes", "Feminista", "Primavera",
+                     "Vacaciones", "Pride", "Mexa", "Halloween", "Compras", "Christmas",
+                     "New Year", "Remix"]
     
        var currentViewControllerIndex = 0
     
