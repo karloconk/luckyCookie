@@ -16,6 +16,7 @@ class DataViewController: UIViewController {
     @IBOutlet weak var luckyButton: UIButton!
     @IBOutlet weak var popImage: UIImageView!
     @IBOutlet weak var topSeparator: UIImageView!
+    @IBOutlet weak var bottomSeparataror: UIImageView!
     @IBOutlet weak var luckyLabel: UILabel!
     @IBOutlet weak var luckyImage: UIImageView!
     @IBOutlet weak var fondo: UIView!
@@ -32,7 +33,7 @@ class DataViewController: UIViewController {
     var index: Int?
     let topSeparatorHideSecs = 0.25
     var touched = false
-    let lucks = ["Estandar": ["Revisa pantalones viejos y encontrarás dinero.", "Come frutas y verduras y toma agua", "El tiempo lo arregla todo", "Conseguiras boletos para ese evento que quieres", "Viste de \(UIColor.random()) y tendrás un buen día", "Tus numeros de la suerte: 98,45,67,13,24", "La suerte cambia, manente fuerte", "Tu pasión y empeño serán recompensados pronto", "Revisa y ordena tus prioridades", "Todos tus sueños están al alcance de tus manos"],
+    let lucks = ["Estandar": ["Revisa pantalones viejos y encontrarás dinero.", "Come frutas y verduras y toma agua", "El tiempo lo arregla todo", "Conseguiras boletos para ese evento que quieres", "Viste de \(UIColor.random()) y tendrás un buen día", "Tus numeros de la suerte: 98,45,67,13,24", "La suerte cambia, mantente fuerte", "Tu pasión y empeño serán recompensados pronto", "Revisa y ordena tus prioridades", "Todos tus sueños están al alcance de tus manos"],
     "Mala Suerte": ["Pisarás popó de perro", "Traes comida entre los dientes", "Se te está olvidando algo", "¿Apagaste la estufa?", "Ten cuidado con las escaleras", "Tendrás un grano en la nariz", "Tu ex te buscará", "Gastarás todos tus datos por error", "No habrá papel en el baño", "Cuidado con la popó de pájaro hoy"],
     "Amor": ["Alguien te besará", "Recibirás muchos abrazos", "El amor te encontrará", "Verás algo muy adorable", "Usa ropa rosa y algo bello te pasará", "Hay mucho amor propio en tu futuro", "Los chocolates con forma de corazón no engordan", "Tu crush te correspondrá", "Evita declaraciones públicas hoy", "El verdadero amor está en tus amistades"],
     "Mistica": ["Usa cristales y conquistaras", "La luna te favorece hoy", "El sol no es tu amigo hoy", "cuidado con las criaturas misticas", "No todo lo que tiene cuernos es malo", "No toques oro hoy", "La noche te traera sorpresas", "Hoy es un buen dia para una pocion de amor", "Manana te visitara un espiritu viejo", "La dama de negro a veces es amiga"],
@@ -101,10 +102,8 @@ class DataViewController: UIViewController {
         UIView.animate(withDuration: 0.8, delay: 0.25, options: .curveLinear, animations: {
             self.fondo.alpha = 1.0
         }, completion: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8 + 0.25) {
-            self.touched = true
-            self.bottomLabel.text = "Tap the cookie to Retry"
-        }
+        self.touched = true
+        self.bottomLabel.text = "Tap the cookie to Retry"
     }
     
     func chooseMessage() {
@@ -119,10 +118,8 @@ class DataViewController: UIViewController {
         UIView.animate(withDuration: 0.8, delay: 0.0, options: .curveLinear, animations: {
             self.topSeparator.alpha = 1.0
         }, completion: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-            self.touched = false
-            self.bottomLabel.text = "Tap the cookie"
-        }
+        self.touched = false
+        self.bottomLabel.text = "Tap the cookie"
     }
     
     func setColours() {
@@ -174,10 +171,11 @@ class DataViewController: UIViewController {
             self.luckbgImage         = Imagenes.basicLuck!
         }
 
-        self.mainImage.image    = self.galletaImagecerrada
-        self.popImage.image     = self.popgalletaImage
-        self.topSeparator.image = self.separadorTopImage
-        self.luckyImage.image   = self.luckbgImage
+        self.mainImage.image         = self.galletaImagecerrada
+        self.popImage.image          = self.popgalletaImage
+        self.topSeparator.image      = self.separadorTopImage
+        self.bottomSeparataror.image = self.separadorTopImage
+        self.luckyImage.image        = self.luckbgImage
     }
 }
 

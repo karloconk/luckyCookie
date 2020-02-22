@@ -76,35 +76,25 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfk-gk-OWi" userLabel="button">
                                 <rect key="frame" x="-2" y="661" width="418" height="129"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEN-Gn-KOu">
-                                        <rect key="frame" x="159" y="-11" width="100" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="75v-Yg-nt5"/>
-                                            <constraint firstAttribute="width" constant="100" id="TRB-lv-7BE"/>
-                                        </constraints>
-                                        <state key="normal" image="basic_boton"/>
-                                        <connections>
-                                            <action selector="buttonTapped:" destination="2vp-ou-vth" eventType="touchUpInside" id="JO5-Ee-2n3"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Lucky" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2t-nR-Bbl">
-                                        <rect key="frame" x="154.5" y="91" width="109.5" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="uvp-kn-2mY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the cookie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2t-nR-Bbl">
+                                        <rect key="frame" x="131" y="10" width="156.5" height="28"/>
+                                        <fontDescription key="fontDescription" name="BigJohn" family="Big John" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_top" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-gO-8t6">
+                                        <rect key="frame" x="0.0" y="55" width="418" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="S1q-2g-uwI"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="TEN-Gn-KOu" secondAttribute="trailing" constant="159" id="32H-ks-BfN"/>
-                                    <constraint firstItem="x2t-nR-Bbl" firstAttribute="top" secondItem="TEN-Gn-KOu" secondAttribute="bottom" constant="2" id="Ej6-CQ-Uvv"/>
-                                    <constraint firstItem="TEN-Gn-KOu" firstAttribute="leading" secondItem="yfk-gk-OWi" secondAttribute="leading" constant="159" id="FRz-yr-mkX"/>
-                                    <constraint firstAttribute="bottom" secondItem="TEN-Gn-KOu" secondAttribute="bottom" constant="40" id="Ot6-Cr-1Gn"/>
-                                    <constraint firstItem="x2t-nR-Bbl" firstAttribute="centerX" secondItem="yfk-gk-OWi" secondAttribute="centerX" id="UQf-fO-3kA"/>
-                                    <constraint firstItem="TEN-Gn-KOu" firstAttribute="top" secondItem="yfk-gk-OWi" secondAttribute="top" constant="-11" id="ePQ-P2-9tc"/>
-                                    <constraint firstAttribute="bottom" secondItem="x2t-nR-Bbl" secondAttribute="bottom" constant="8" id="wls-o0-vxu"/>
+                                    <constraint firstItem="kdo-gO-8t6" firstAttribute="leading" secondItem="yfk-gk-OWi" secondAttribute="leading" id="DaK-vl-Sth"/>
+                                    <constraint firstItem="kdo-gO-8t6" firstAttribute="top" secondItem="x2t-nR-Bbl" secondAttribute="bottom" constant="17" id="RZc-7x-pvW"/>
+                                    <constraint firstItem="x2t-nR-Bbl" firstAttribute="centerX" secondItem="kdo-gO-8t6" secondAttribute="centerX" id="dlr-0S-bQm"/>
+                                    <constraint firstAttribute="bottom" secondItem="kdo-gO-8t6" secondAttribute="bottom" constant="-6" id="iOc-G1-aHO"/>
+                                    <constraint firstAttribute="trailing" secondItem="kdo-gO-8t6" secondAttribute="trailing" id="naZ-v1-8OY"/>
                                 </constraints>
                             </view>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_pop" translatesAutoresizingMaskIntoConstraints="NO" id="das-xY-SPE">
@@ -139,6 +129,15 @@
                                     <constraint firstItem="Xtx-J4-Dve" firstAttribute="top" secondItem="KZ6-99-KvP" secondAttribute="top" constant="56" id="rs1-9Z-sMi"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pj3-ud-e5W">
+                                <rect key="frame" x="-2" y="291" width="418" height="303"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="303" id="5tH-72-GI8"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="2vp-ou-vth" eventType="touchUpInside" id="y6t-vd-tUc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -149,6 +148,7 @@
                             <constraint firstItem="ehR-ce-o5D" firstAttribute="top" secondItem="mDi-CS-Xc2" secondAttribute="top" id="EQm-lC-uId"/>
                             <constraint firstItem="mDi-CS-Xc2" firstAttribute="trailing" secondItem="yfk-gk-OWi" secondAttribute="trailing" constant="-2" id="Fu3-wc-JJd"/>
                             <constraint firstItem="yfk-gk-OWi" firstAttribute="top" secondItem="6pu-3p-Ok2" secondAttribute="top" constant="661" id="Hs8-Xo-fyf"/>
+                            <constraint firstItem="yfk-gk-OWi" firstAttribute="top" secondItem="pj3-ud-e5W" secondAttribute="bottom" constant="67" id="MkG-Ag-rYx"/>
                             <constraint firstItem="mDi-CS-Xc2" firstAttribute="trailing" secondItem="yfk-gk-OWi" secondAttribute="trailing" constant="-2" id="Sfc-J7-0yq"/>
                             <constraint firstItem="yfk-gk-OWi" firstAttribute="top" secondItem="DsX-eH-uMQ" secondAttribute="bottom" constant="104" id="Sv9-kC-kdv"/>
                             <constraint firstItem="KZ6-99-KvP" firstAttribute="leading" secondItem="mDi-CS-Xc2" secondAttribute="leading" id="WOM-x7-xou"/>
@@ -160,14 +160,17 @@
                             <constraint firstAttribute="trailing" secondItem="ehR-ce-o5D" secondAttribute="trailing" constant="-2" id="hJF-ZN-h6H"/>
                             <constraint firstItem="yfk-gk-OWi" firstAttribute="leading" secondItem="6pu-3p-Ok2" secondAttribute="leading" constant="-2" id="mtN-CA-fg9"/>
                             <constraint firstItem="ehR-ce-o5D" firstAttribute="leading" secondItem="mDi-CS-Xc2" secondAttribute="leading" constant="-2" id="sjT-K9-aDC"/>
+                            <constraint firstAttribute="trailing" secondItem="pj3-ud-e5W" secondAttribute="trailing" constant="-2" id="yRw-WP-umc"/>
+                            <constraint firstItem="pj3-ud-e5W" firstAttribute="leading" secondItem="6pu-3p-Ok2" secondAttribute="leading" constant="-2" id="zVI-na-JRF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mDi-CS-Xc2"/>
                     </view>
                     <connections>
                         <outlet property="bottomLabel" destination="x2t-nR-Bbl" id="1B8-CA-rQC"/>
+                        <outlet property="bottomSeparataror" destination="kdo-gO-8t6" id="UbU-ow-Qil"/>
                         <outlet property="fondo" destination="KZ6-99-KvP" id="90K-9w-XCd"/>
                         <outlet property="fondoView" destination="6pu-3p-Ok2" id="uay-Zo-8yx"/>
-                        <outlet property="luckyButton" destination="TEN-Gn-KOu" id="mMs-jd-ags"/>
+                        <outlet property="luckyButton" destination="pj3-ud-e5W" id="k7P-rE-VgN"/>
                         <outlet property="luckyImage" destination="6x8-oU-A9j" id="sUO-Gy-lsq"/>
                         <outlet property="luckyLabel" destination="Xtx-J4-Dve" id="3wB-lh-zT4"/>
                         <outlet property="mainImage" destination="DsX-eH-uMQ" id="bcf-cb-56k"/>
@@ -189,7 +192,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="basic_boton" width="211" height="211"/>
         <image name="basic_closed" width="268" height="188"/>
         <image name="basic_frame" width="506.5" height="255"/>
         <image name="basic_pop" width="208" height="84"/>
