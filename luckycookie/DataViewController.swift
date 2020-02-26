@@ -40,18 +40,7 @@ class DataViewController: UIViewController {
     "Mascotas": ["¿Que trae tu mascota en la boca?", "Tu mascota te usará como almohada hoy", "Hoy es buen dia para selfie con amiguitos peludos", "Tu mascota dejara una sorpresita en tu casa", "No hay mascota mas preciosa que la tuya ", "Probablemente tendras otra mascota pronto", "cuida a tu amiguito peludo puede estar muy triste"],
     "Escuela": ["El tema que estudiaste no vendrá en el examen", "Saldras bien en los exmenes", "La chavita de adelante te hablara ", "No hagas caso a las ninias de atras, son malas", "deberias comprar esa mochila que viste online", "tus lapices de colores estan preciosos", "Es momento de preparase pra la batalla"],
     "Deportes": ["Tu equipo favorito será campeón", "no compres muchos dips para el partido de hoy", "No te lastimaras hoy"],
-    "Chelera":  [],
-    "Rosca de reyes":  [],
-    "Feminista":  [],
-    "Primavera":  [],
-    "Vacaciones":  [],
-    "Pride":  [],
-    "Mexa":  [],
-    "Halloween":  [],
-    "Compras":  [],
-    "Christmas":  [],
-    "New Year":  [],
-    "Remix":  []]
+    "Dinero":  []]
 
     //MARK:- Actions
     
@@ -73,6 +62,7 @@ class DataViewController: UIViewController {
         setImages()
         self.fondo.alpha        = 0.0
         self.topSeparator.alpha = 1.0
+        setProximamente()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -120,6 +110,20 @@ class DataViewController: UIViewController {
         }, completion: nil)
         self.touched = false
         self.bottomLabel.text = "Tap the cookie"
+    }
+    
+    func setProximamente() {
+        if self.currentTitle == "Proximamente" {
+            fondoView.backgroundColor = Colours.badLuck
+            // mainImage.image = darkimage
+            luckyButton.isEnabled      = false
+            popImage.isHidden          = true
+            topSeparator.isHidden      = true
+            bottomSeparataror.isHidden = true
+            luckyLabel.isHidden        = true
+            luckyImage.isHidden        = true
+            bottomLabel.text = "Espera más próximamente..."
+        }
     }
     
     func setColours() {

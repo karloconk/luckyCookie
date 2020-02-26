@@ -18,10 +18,7 @@ class FirstViewController: UIViewController {
     
     //MARK:- Vars
        
-       let titles = ["Estandar", "Mala Suerte", "Amor", "Mistica", "Mascotas", "Escuela",
-                     "Deportes", "Chelera", "Rosca de reyes", "Feminista", "Primavera",
-                     "Vacaciones", "Pride", "Mexa", "Halloween", "Compras", "Christmas",
-                     "New Year", "Remix"]
+       let titles = ["Estandar", "Mala Suerte", "Amor", "Dinero", "Proximamente"]
     
        var currentViewControllerIndex = 0
     
@@ -30,7 +27,6 @@ class FirstViewController: UIViewController {
        override func viewDidLoad() {
            super.viewDidLoad()
            setup()
-           // Do any additional setup after loading the view.
        }
 
        func setup() {
