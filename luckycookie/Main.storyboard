@@ -67,7 +67,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_top" translatesAutoresizingMaskIntoConstraints="NO" id="ehR-ce-o5D">
-                                <rect key="frame" x="-2" y="44" width="418.00000000000011" height="80"/>
+                                <rect key="frame" x="-2" y="44" width="418" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="nBz-1O-Ka9"/>
                                 </constraints>
@@ -76,13 +76,13 @@
                                 <rect key="frame" x="-2" y="661" width="418" height="129"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toca la galleta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2t-nR-Bbl">
-                                        <rect key="frame" x="112.5" y="14" width="193" height="24"/>
+                                        <rect key="frame" x="132.5" y="10" width="153" height="28"/>
                                         <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_top" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-gO-8t6">
-                                        <rect key="frame" x="0.0" y="55" width="418.00000000000011" height="80"/>
+                                        <rect key="frame" x="0.0" y="55" width="418" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="S1q-2g-uwI"/>
                                         </constraints>
