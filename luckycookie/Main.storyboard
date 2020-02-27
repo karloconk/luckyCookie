@@ -7,8 +7,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="BIG JOHN.otf">
-            <string>BigJohn</string>
+        <array key="theboldfont.ttf">
+            <string>TheBoldFont</string>
         </array>
     </customFonts>
     <scenes>
@@ -22,7 +22,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80D-md-Gqn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="976"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="nKH-mX-Xsr">
                                 <rect key="frame" x="187.5" y="820" width="39" height="37"/>
@@ -31,7 +30,7 @@
                                 </constraints>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nKH-mX-Xsr" firstAttribute="centerX" secondItem="80D-md-Gqn" secondAttribute="centerX" id="76m-ZG-8WS"/>
                             <constraint firstItem="80D-md-Gqn" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="bsa-Vc-orj"/>
@@ -68,7 +67,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_top" translatesAutoresizingMaskIntoConstraints="NO" id="ehR-ce-o5D">
-                                <rect key="frame" x="-2" y="44" width="418" height="80"/>
+                                <rect key="frame" x="-2" y="44" width="418.00000000000011" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="nBz-1O-Ka9"/>
                                 </constraints>
@@ -76,14 +75,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfk-gk-OWi" userLabel="button">
                                 <rect key="frame" x="-2" y="661" width="418" height="129"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the cookie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2t-nR-Bbl">
-                                        <rect key="frame" x="131" y="10" width="156.5" height="28"/>
-                                        <fontDescription key="fontDescription" name="BigJohn" family="Big John" pointSize="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toca la galleta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2t-nR-Bbl">
+                                        <rect key="frame" x="112.5" y="14" width="193" height="24"/>
+                                        <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_top" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-gO-8t6">
-                                        <rect key="frame" x="0.0" y="55" width="418" height="80"/>
+                                        <rect key="frame" x="0.0" y="55" width="418.00000000000011" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="S1q-2g-uwI"/>
                                         </constraints>
@@ -112,7 +111,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtx-J4-Dve">
                                         <rect key="frame" x="57" y="56" width="303" height="102"/>
-                                        <fontDescription key="fontDescription" name="BigJohn" family="Big John" pointSize="24"/>
+                                        <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="24"/>
                                         <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -138,11 +137,21 @@
                                     <action selector="buttonTapped:" destination="2vp-ou-vth" eventType="touchUpInside" id="y6t-vd-tUc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GALLETA DE LA FORTUNA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAN-q9-K86">
+                                <rect key="frame" x="33" y="130" width="347" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="FBf-oo-jgt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ehR-ce-o5D" secondAttribute="trailing" constant="-2" id="3fu-r1-IkR"/>
                             <constraint firstItem="KZ6-99-KvP" firstAttribute="top" secondItem="mDi-CS-Xc2" secondAttribute="top" constant="10" id="5sT-Mw-vT1"/>
+                            <constraint firstItem="mDi-CS-Xc2" firstAttribute="trailing" secondItem="PAN-q9-K86" secondAttribute="trailing" constant="34" id="9wo-sU-W16"/>
                             <constraint firstItem="DsX-eH-uMQ" firstAttribute="top" secondItem="das-xY-SPE" secondAttribute="bottom" id="A2B-SO-nGd"/>
                             <constraint firstItem="DsX-eH-uMQ" firstAttribute="centerX" secondItem="mDi-CS-Xc2" secondAttribute="centerX" id="AHU-Ox-tWd"/>
                             <constraint firstItem="ehR-ce-o5D" firstAttribute="top" secondItem="mDi-CS-Xc2" secondAttribute="top" id="EQm-lC-uId"/>
@@ -160,6 +169,10 @@
                             <constraint firstAttribute="trailing" secondItem="ehR-ce-o5D" secondAttribute="trailing" constant="-2" id="hJF-ZN-h6H"/>
                             <constraint firstItem="yfk-gk-OWi" firstAttribute="leading" secondItem="6pu-3p-Ok2" secondAttribute="leading" constant="-2" id="mtN-CA-fg9"/>
                             <constraint firstItem="ehR-ce-o5D" firstAttribute="leading" secondItem="mDi-CS-Xc2" secondAttribute="leading" constant="-2" id="sjT-K9-aDC"/>
+                            <constraint firstItem="PAN-q9-K86" firstAttribute="leading" secondItem="mDi-CS-Xc2" secondAttribute="leading" constant="33" id="tFP-oO-Fld"/>
+                            <constraint firstItem="PAN-q9-K86" firstAttribute="leading" secondItem="mDi-CS-Xc2" secondAttribute="leading" constant="33" id="wE0-5w-Ck8"/>
+                            <constraint firstItem="PAN-q9-K86" firstAttribute="top" secondItem="ehR-ce-o5D" secondAttribute="bottom" constant="6" id="y8Z-ne-qdM"/>
+                            <constraint firstItem="mDi-CS-Xc2" firstAttribute="trailing" secondItem="PAN-q9-K86" secondAttribute="trailing" constant="34" id="yAn-bw-UZo"/>
                             <constraint firstAttribute="trailing" secondItem="pj3-ud-e5W" secondAttribute="trailing" constant="-2" id="yRw-WP-umc"/>
                             <constraint firstItem="pj3-ud-e5W" firstAttribute="leading" secondItem="6pu-3p-Ok2" secondAttribute="leading" constant="-2" id="zVI-na-JRF"/>
                         </constraints>
@@ -175,6 +188,7 @@
                         <outlet property="luckyLabel" destination="Xtx-J4-Dve" id="3wB-lh-zT4"/>
                         <outlet property="mainImage" destination="DsX-eH-uMQ" id="bcf-cb-56k"/>
                         <outlet property="popImage" destination="das-xY-SPE" id="a1b-jG-dTs"/>
+                        <outlet property="suerteTitle" destination="PAN-q9-K86" id="pT9-rq-Uen"/>
                         <outlet property="topSeparator" destination="ehR-ce-o5D" id="hnC-A2-Fos"/>
                     </connections>
                 </viewController>
@@ -193,7 +207,7 @@
     </scenes>
     <resources>
         <image name="basic_closed" width="268" height="188"/>
-        <image name="basic_frame" width="506.5" height="255"/>
+        <image name="basic_frame" width="446.5" height="195.5"/>
         <image name="basic_pop" width="208" height="84"/>
         <image name="basic_top" width="509" height="61"/>
         <image name="first" width="30" height="30"/>

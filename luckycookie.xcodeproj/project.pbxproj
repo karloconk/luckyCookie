@@ -15,10 +15,9 @@
 		B00818A323EA610C006A809F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00818A223EA610C006A809F /* Main.storyboard */; };
 		B00818A523EA61BC006A809F /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00818A423EA61BC006A809F /* DataViewController.swift */; };
 		B00818A723EA6301006A809F /* themesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00818A623EA6301006A809F /* themesViewController.swift */; };
+		B01605D12407647D0073C365 /* theboldfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B01605D02407647D0073C365 /* theboldfont.ttf */; };
 		B041F3A023FCC3E400230D61 /* CookieImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B041F39F23FCC3E400230D61 /* CookieImages.swift */; };
 		B05A7FD623FB7B66006B2235 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A7FD523FB7B66006B2235 /* GlobalVars.swift */; };
-		B070013B23F4FC3B00D4D4B8 /* BIG JOHN.otf in Resources */ = {isa = PBXBuildFile; fileRef = B070013923F4FC3B00D4D4B8 /* BIG JOHN.otf */; };
-		B070013C23F4FC3B00D4D4B8 /* Slim Joe.otf in Resources */ = {isa = PBXBuildFile; fileRef = B070013A23F4FC3B00D4D4B8 /* Slim Joe.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +31,9 @@
 		B00818A223EA610C006A809F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B00818A423EA61BC006A809F /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		B00818A623EA6301006A809F /* themesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = themesViewController.swift; sourceTree = "<group>"; };
+		B01605D02407647D0073C365 /* theboldfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = theboldfont.ttf; sourceTree = "<group>"; };
 		B041F39F23FCC3E400230D61 /* CookieImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieImages.swift; sourceTree = "<group>"; };
 		B05A7FD523FB7B66006B2235 /* GlobalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
-		B070013923F4FC3B00D4D4B8 /* BIG JOHN.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BIG JOHN.otf"; sourceTree = "<group>"; };
-		B070013A23F4FC3B00D4D4B8 /* Slim Joe.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Slim Joe.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +85,7 @@
 		B070013123F4F99B00D4D4B8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				B070013923F4FC3B00D4D4B8 /* BIG JOHN.otf */,
-				B070013A23F4FC3B00D4D4B8 /* Slim Joe.otf */,
+				B01605D02407647D0073C365 /* theboldfont.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -151,8 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B070013B23F4FC3B00D4D4B8 /* BIG JOHN.otf in Resources */,
-				B070013C23F4FC3B00D4D4B8 /* Slim Joe.otf in Resources */,
+				B01605D12407647D0073C365 /* theboldfont.ttf in Resources */,
 				B00818A323EA610C006A809F /* Main.storyboard in Resources */,
 				B008189B23EA5569006A809F /* LaunchScreen.storyboard in Resources */,
 				B008189823EA5569006A809F /* Assets.xcassets in Resources */,

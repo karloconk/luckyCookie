@@ -22,8 +22,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>BIG JOHN.otf</string>
-		<string>Slim Joe.otf</string>
+		<string>theboldfont.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

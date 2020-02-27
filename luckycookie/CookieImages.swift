@@ -27,6 +27,12 @@ enum Imagenes {
     public static let badPop    = UIImage(named: "badPop")
     public static let badTop    = UIImage(named: "topBad")
     public static let badLuck   = UIImage(named: "badFrame")
+    
+    public static let moneyClosed = UIImage(named: "moneyCookie")
+    public static let moneyOpen   = UIImage(named: "moneyBroken")
+    public static let moneyPop    = UIImage(named: "moneyPop")
+    public static let moneyTop    = UIImage(named: "topMoney")
+    public static let moneyLuck   = UIImage(named: "moneyFrame")
 }
 
 enum Colours {
@@ -41,4 +47,8 @@ enum Colours {
     public static let loveBackground = UIColor(red:0.92, green:0.38, blue:0.52, alpha:1.0)
     public static let loveTap        = UIColor(red:0.57, green:0.18, blue:0.31, alpha:1.0)
     public static let loveLuck       = UIColor(red:0.57, green:0.18, blue:0.31, alpha:1.0)
+    
+    public static let moneyBackground = UIColor(red:0.00, green:0.40, blue:0.20, alpha:1.0)
+    public static let moneyTap        = UIColor(red:0.40, green:0.70, blue:0.28, alpha:1.0)
+    public static let moneyLuck       = UIColor(red:0.00, green:0.24, blue:0.13, alpha:1.0)
 }
