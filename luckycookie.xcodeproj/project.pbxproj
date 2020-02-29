@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B008188923EA5565006A809F /* luckycookie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = luckycookie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B008188923EA5565006A809F /* Galleta de la fortuna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Galleta de la fortuna.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B008188C23EA5565006A809F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B008188E23EA5565006A809F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B008189023EA5565006A809F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 		B008188A23EA5565006A809F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B008188923EA5565006A809F /* luckycookie.app */,
+				B008188923EA5565006A809F /* Galleta de la fortuna.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,7 +107,7 @@
 			);
 			name = luckycookie;
 			productName = luckycookie;
-			productReference = B008188923EA5565006A809F /* luckycookie.app */;
+			productReference = B008188923EA5565006A809F /* Galleta de la fortuna.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -307,14 +307,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXV532C2KY;
 				INFOPLIST_FILE = luckycookie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mx.kacham.luckycookie;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Galleta de la fortuna";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -325,14 +326,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXV532C2KY;
 				INFOPLIST_FILE = luckycookie/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mx.kacham.luckycookie;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Galleta de la fortuna";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
