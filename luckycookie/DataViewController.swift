@@ -34,11 +34,14 @@ class DataViewController: UIViewController {
     var index: Int?
     let topSeparatorHideSecs = 0.25
     var touched = false
+    var modelName = UIDevice.modelName
+
     let lucks =
         ["Estandar":["Tus numeros de la suerte son:","Viste de \( GlobalVars.colores.randomElement()!.description) y tendrás un buen día","Come frutas y verduras","El tiempo lo arregla todo","Conseguiras boletos para ese evento que quieres","La suerte cambia, mantente fuerte","Tu pasión y empeño serán recompensados pronto","Revisa y ordena tus prioridades","Todos tus sueños están al alcance de tus manos","La venganza es un platillo frio","Quizas llegue un nuevo iphone a tu vida","Hoy tu suerte con los animales es buena","Para gustos, colores","No sé si apostar sea la mejor idea","La comida te va a saber genial","Conocerás gente interesante","El dinero es importante pero no lo es todo","Si tu sientes que te pica la colita...","Busca la felicidad en las cosas cotidianas","Relajate un momento, te lo mereces","Te mereces ese aumento","Tu puedes con todo","Huir de tu pasado lo acerca más","Es momento de comenzar ese proyecto que te asusta","Sigue aprendiendo y seguirás creciendo","Procupa tomar un respiro antes de continuar","Toma agua","Sé y deja ser","Que ninguno de tus gustos sea \"culposo\""],
          "Mala Suerte":["Evita estos numeros hoy:","Si vistes de \( GlobalVars.colores.randomElement()!.description) puede que no te vaya bien hoy","Pisarás popó de perro","Traes comida entre los dientes","Se te está olvidando algo","¿Apagaste la estufa?","Ten cuidado con las escaleras","Te saldra un grano en la nariz","Tu ex te buscará","Gastarás todos tus datos por error","No habrá papel en el baño","Cuidado con la popó de pájaro hoy","El trafico estara feo","Cuidado con las alergias","Se te olvidara tu celular en algun lado","No te olvides de revisar ambos lados de la calle","Alguien no te quiere","Hoy sera duro","Eres un farzante","Hueles feo","Te saldra un grano en la nariz. Toma tus precausiones.","Uno de tus audífonos dejará de funcionar.","Tienes menos dinero del que crees en la cartera","Estrellarás la pantalla de tu celular","Tu pantalón favorito de romperá pronto","A tu crush le gusta otrx","Un calcetín rojo se esconde entre la ropa blanca","Carga banditas adhesivas contigo hoy","Tu alarma no sonará hoy"],
          "Amor":["Estos numeros son senal de un amor proximo:","Si ves el color \( GlobalVars.colores.randomElement()!.description) es una senal","Alguien te besará","Recibirás muchos abrazos","El amor te encontrará","Verás algo muy adorable","Usa ropa rosa y algo bello te pasará","Hay mucho amor en tu futuro","Los chocolates con forma de corazón no engordan","Tu crush te correspondrá","Evita declaraciones públicas hoy","El verdadero amor está en tus amistades","Alguien te quiere","Hay muchos peces en el mar","Eres bellx, no lo olvides","Algunos amores son pasajeros","Algunos amores son para siempre","No estoy diciendo que nadie te dara un anillo...","Hoy conoceras a alguien","Recuerda que los amarres afectan a ambas partes","No le des agua de calzón, por favor","Aprecia a los que están mientras siguen contigo","Un amor sano es mejor que uno de película","Deja ir a quien no te hace feliz","Mejora tu comunicación y mejorará tu relación","No te enamores de un músico","Escribe con pluma rosa y tu suerte cambiará","Ámate como amas a otros","Recuerda que toda relación es recíproca"],
          "Dinero":["Estos numeros son senal de dinero:","Si ves el color \( GlobalVars.colores.randomElement()!.description) es una senal","Revisa pantalones viejos y encontrarás dinero.","Quizas es buen momento para invertir","Esas compras en linea no se van a hacer solas","Compra la opcion mas cara, durara mas","a veces es mejor guardartelo que gastarlo","No necesitas ese par de zapatos nuevo","Necesitas ese par de zapatos nuevo","Viene fortuna a ti","Cuida tus gastos","Vienen tiempos dificiles","se te cayo ese billete de 20?","Eso que quieres va a bajar de precio","Ese vuelo esta a punto de despegar","El dinero no lo es todo","Si ves una oportunidad tomala","Necesitas esperar","Tu fortuna te espera en un pantalón viejo","Los secretos se guardan, el dinero no","Gasta sin mal gastar","La verdadera riqueza no es monetaria","Invierte inteligente, pero sin miedo","Trabaja con pasión y el dinero llegará solo","El verdadero valor no se ve en el precio","Deja ir el dinero que no necesitas","Las pérdidas de hoy serán recompensadas mañana","El dinero huye de aquellos que lo persiguen","Será un buen día para destruir el capitalismo opresor"]]
+    
     
     //MARK:- Actions
     
@@ -62,6 +65,7 @@ class DataViewController: UIViewController {
         self.fondo.alpha        = 0.0
         self.topSeparator.alpha = 1.0
         setProximamente()
+        setLittleIphone()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,6 +79,27 @@ class DataViewController: UIViewController {
     }
     
     //MARK:- Functions
+    
+    func setLittleIphone() {
+        self.modelName = self.modelName.replacingOccurrences(of: "Simulator ", with: "")
+        print(modelName)
+
+        if  modelName == "iPhone 4"
+         || modelName == "iPhone 4s"
+         || modelName == "iPhone 5"
+         || modelName == "iPhone 5c"
+         || modelName == "iPhone 5s"
+         || modelName == "iPhone 6"
+         //|| modelName == "iPhone 6 Plus"
+         || modelName == "iPhone 6s"
+        // || modelName == "iPhone 6s Plus"
+         || modelName == "iPhone 7"
+         //|| modelName == "iPhone 7 Plus"
+         || modelName == "iPhone SE"
+         || modelName == "iPhone 8"  {
+            self.bottomSeparataror.isHidden = true
+        }
+    }
     
     func setBackground(image: UIImage) {
         let backgroundColor = UIColor(patternImage: image)
