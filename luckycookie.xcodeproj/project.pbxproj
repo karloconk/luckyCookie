@@ -16,8 +16,18 @@
 		B00818A523EA61BC006A809F /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00818A423EA61BC006A809F /* DataViewController.swift */; };
 		B00818A723EA6301006A809F /* themesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00818A623EA6301006A809F /* themesViewController.swift */; };
 		B01605D12407647D0073C365 /* theboldfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B01605D02407647D0073C365 /* theboldfont.ttf */; };
+		B02F33992449FEA2001349C5 /* TwinHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F33982449FEA2001349C5 /* TwinHeaders.swift */; };
+		B02F339B244A08AD001349C5 /* DashboardImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F339A244A08AD001349C5 /* DashboardImages.swift */; };
 		B041F3A023FCC3E400230D61 /* CookieImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B041F39F23FCC3E400230D61 /* CookieImages.swift */; };
 		B05A7FD623FB7B66006B2235 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A7FD523FB7B66006B2235 /* GlobalVars.swift */; };
+		B078347A24489B75006ECC43 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078347924489B75006ECC43 /* IntroViewController.swift */; };
+		B078347C24489BAC006ECC43 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078347B24489BAC006ECC43 /* DashboardTableViewController.swift */; };
+		B078347F244913CE006ECC43 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078347E244913CE006ECC43 /* Tools.swift */; };
+		B07834832449278A006ECC43 /* Typo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07834812449278A006ECC43 /* Typo.swift */; };
+		B07834842449278A006ECC43 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07834822449278A006ECC43 /* Font.swift */; };
+		B078348724492C9A006ECC43 /* DashboardCompound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078348624492C9A006ECC43 /* DashboardCompound.swift */; };
+		B078348924493490006ECC43 /* CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078348824493490006ECC43 /* CenterCell.swift */; };
+		B078348B24494460006ECC43 /* TwinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078348A24494460006ECC43 /* TwinCell.swift */; };
 		B0D58F1D243C17FD0004ADDC /* karloExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D58F1C243C17FD0004ADDC /* karloExtensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,8 +43,18 @@
 		B00818A423EA61BC006A809F /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		B00818A623EA6301006A809F /* themesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = themesViewController.swift; sourceTree = "<group>"; };
 		B01605D02407647D0073C365 /* theboldfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = theboldfont.ttf; sourceTree = "<group>"; };
+		B02F33982449FEA2001349C5 /* TwinHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinHeaders.swift; sourceTree = "<group>"; };
+		B02F339A244A08AD001349C5 /* DashboardImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardImages.swift; sourceTree = "<group>"; };
 		B041F39F23FCC3E400230D61 /* CookieImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieImages.swift; sourceTree = "<group>"; };
 		B05A7FD523FB7B66006B2235 /* GlobalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
+		B078347924489B75006ECC43 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		B078347B24489BAC006ECC43 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
+		B078347E244913CE006ECC43 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		B07834812449278A006ECC43 /* Typo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typo.swift; sourceTree = "<group>"; };
+		B07834822449278A006ECC43 /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		B078348624492C9A006ECC43 /* DashboardCompound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCompound.swift; sourceTree = "<group>"; };
+		B078348824493490006ECC43 /* CenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCell.swift; sourceTree = "<group>"; };
+		B078348A24494460006ECC43 /* TwinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinCell.swift; sourceTree = "<group>"; };
 		B0D58F1C243C17FD0004ADDC /* karloExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = karloExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +72,7 @@
 		B008188023EA5565006A809F = {
 			isa = PBXGroup;
 			children = (
+				B078348524492C66006ECC43 /* components */,
 				B070013123F4F99B00D4D4B8 /* Fonts */,
 				B008188B23EA5565006A809F /* luckycookie */,
 				B008188A23EA5565006A809F /* Products */,
@@ -69,18 +90,20 @@
 		B008188B23EA5565006A809F /* luckycookie */ = {
 			isa = PBXGroup;
 			children = (
+				B07834802449278A006ECC43 /* Fonts */,
+				B078347D244912E6006ECC43 /* luckyCookie */,
+				B078347824489B41006ECC43 /* Dashboard */,
+				B078347724489B39006ECC43 /* Main */,
 				B008188C23EA5565006A809F /* AppDelegate.swift */,
 				B008188E23EA5565006A809F /* SceneDelegate.swift */,
-				B008189023EA5565006A809F /* FirstViewController.swift */,
 				B00818A223EA610C006A809F /* Main.storyboard */,
 				B008189723EA5569006A809F /* Assets.xcassets */,
 				B008189923EA5569006A809F /* LaunchScreen.storyboard */,
 				B008189C23EA5569006A809F /* Info.plist */,
-				B00818A423EA61BC006A809F /* DataViewController.swift */,
-				B00818A623EA6301006A809F /* themesViewController.swift */,
 				B05A7FD523FB7B66006B2235 /* GlobalVars.swift */,
 				B041F39F23FCC3E400230D61 /* CookieImages.swift */,
 				B0D58F1C243C17FD0004ADDC /* karloExtensions.swift */,
+				B078347E244913CE006ECC43 /* Tools.swift */,
 			);
 			path = luckycookie;
 			sourceTree = "<group>";
@@ -91,6 +114,53 @@
 				B01605D02407647D0073C365 /* theboldfont.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B078347724489B39006ECC43 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B078347924489B75006ECC43 /* IntroViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B078347824489B41006ECC43 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				B078347B24489BAC006ECC43 /* DashboardTableViewController.swift */,
+				B02F339A244A08AD001349C5 /* DashboardImages.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		B078347D244912E6006ECC43 /* luckyCookie */ = {
+			isa = PBXGroup;
+			children = (
+				B008189023EA5565006A809F /* FirstViewController.swift */,
+				B00818A423EA61BC006A809F /* DataViewController.swift */,
+				B00818A623EA6301006A809F /* themesViewController.swift */,
+			);
+			path = luckyCookie;
+			sourceTree = "<group>";
+		};
+		B07834802449278A006ECC43 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B07834812449278A006ECC43 /* Typo.swift */,
+				B07834822449278A006ECC43 /* Font.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B078348524492C66006ECC43 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				B078348624492C9A006ECC43 /* DashboardCompound.swift */,
+				B078348A24494460006ECC43 /* TwinCell.swift */,
+				B078348824493490006ECC43 /* CenterCell.swift */,
+				B02F33982449FEA2001349C5 /* TwinHeaders.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,12 +235,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B078347C24489BAC006ECC43 /* DashboardTableViewController.swift in Sources */,
+				B078347A24489B75006ECC43 /* IntroViewController.swift in Sources */,
 				B00818A723EA6301006A809F /* themesViewController.swift in Sources */,
 				B0D58F1D243C17FD0004ADDC /* karloExtensions.swift in Sources */,
 				B041F3A023FCC3E400230D61 /* CookieImages.swift in Sources */,
+				B07834832449278A006ECC43 /* Typo.swift in Sources */,
 				B00818A523EA61BC006A809F /* DataViewController.swift in Sources */,
+				B07834842449278A006ECC43 /* Font.swift in Sources */,
+				B078348924493490006ECC43 /* CenterCell.swift in Sources */,
 				B008189123EA5565006A809F /* FirstViewController.swift in Sources */,
+				B078347F244913CE006ECC43 /* Tools.swift in Sources */,
+				B078348B24494460006ECC43 /* TwinCell.swift in Sources */,
+				B02F33992449FEA2001349C5 /* TwinHeaders.swift in Sources */,
 				B008188D23EA5565006A809F /* AppDelegate.swift in Sources */,
+				B02F339B244A08AD001349C5 /* DashboardImages.swift in Sources */,
+				B078348724492C9A006ECC43 /* DashboardCompound.swift in Sources */,
 				B05A7FD623FB7B66006B2235 /* GlobalVars.swift in Sources */,
 				B008188F23EA5565006A809F /* SceneDelegate.swift in Sources */,
 			);
@@ -309,6 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_TEAM = HXV532C2KY;
 				INFOPLIST_FILE = luckycookie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -328,6 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_TEAM = HXV532C2KY;
 				INFOPLIST_FILE = luckycookie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

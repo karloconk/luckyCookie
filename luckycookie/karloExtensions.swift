@@ -9,6 +9,31 @@
 import SystemConfiguration
 import UIKit
 
+extension UIImage {
+    func circularImage() -> UIImage? {
+        let theImage = Tools.cropToBounds(image: self,
+                                          width: Double(self.size.width),
+                                          height: Double(self.size.height))
+        let imageView = UIImageView(image: theImage)
+        var layer: CALayer = CALayer()
+        
+        layer = imageView.layer
+        layer.masksToBounds = true
+        layer.cornerRadius = theImage.size.width / 2
+        UIGraphicsBeginImageContext(imageView.bounds.size)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
+        let roundedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return roundedImage
+    }
+    
+    func resize(targetSize: CGSize) -> UIImage {
+        return UIGraphicsImageRenderer(size:targetSize).image { _ in
+            self.draw(in: CGRect(origin: .zero, size: targetSize))
+        }
+    }
+}
+
 public extension UIDevice {
   static let modelName: String = {
     var systemInfo = utsname()
