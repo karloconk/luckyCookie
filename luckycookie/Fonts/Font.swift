@@ -11,7 +11,7 @@ import UIKit
 public class Font {
     
     public class func getFont(size: CGFloat, isBold: Bool) -> UIFont {
-        let font = isBold ? UIFont.systemFont(ofSize: size, weight: UIFont.Weight.bold) : UIFont.systemFont(ofSize: size)
+        let font = UIFont(name: "theboldfont", size: size)!
         return font
     }
     

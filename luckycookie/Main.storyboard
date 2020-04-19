@@ -174,7 +174,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CL5-nf-M0B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="702.89855072463774" y="-303.34821428571428"/>
+            <point key="canvasLocation" x="712" y="463"/>
+        </scene>
+        <!--Numbers View Controller-->
+        <scene sceneID="NLT-5T-T0J">
+            <objects>
+                <viewController storyboardIdentifier="numeros" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OWU-Wp-gzf" customClass="NumbersViewController" customModule="Galleta_de_la_fortuna" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e16-AY-s5p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="7dL-tA-wOf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aa-wR-W8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1581" y="461"/>
+        </scene>
+        <!--Moons View Controller-->
+        <scene sceneID="XdV-PU-l8U">
+            <objects>
+                <viewController storyboardIdentifier="lunas" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lAV-5J-U3W" customClass="MoonsViewController" customModule="Galleta_de_la_fortuna" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oQg-co-DFr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="g2W-e2-jtK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKM-ef-svi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="712" y="-300"/>
         </scene>
         <!--Bola Ocho View Controller-->
         <scene sceneID="4qy-BH-uWn">
@@ -199,7 +229,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Haz una pregunta a la bola mágica" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g0N-ka-9qe">
-                                <rect key="frame" x="34" y="196" width="346" height="81"/>
+                                <rect key="frame" x="34" y="206" width="346" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="346" id="Uf3-BL-MVD"/>
                                     <constraint firstAttribute="height" constant="81" id="i1V-AD-sKh"/>
@@ -208,7 +238,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agita el celular para obtener una resuesta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jE-eA-TYa">
-                                <rect key="frame" x="45.5" y="641" width="323" height="98"/>
+                                <rect key="frame" x="45.5" y="619" width="323" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="323" id="e6f-RO-iKX"/>
                                     <constraint firstAttribute="height" constant="98" id="n83-TW-DPd"/>
@@ -272,11 +302,11 @@
                             <constraint firstItem="g0N-ka-9qe" firstAttribute="centerX" secondItem="skE-Xl-pGn" secondAttribute="centerX" id="Kx8-7y-yk8"/>
                             <constraint firstItem="hYe-Ek-7sc" firstAttribute="centerX" secondItem="skE-Xl-pGn" secondAttribute="centerX" id="Mfv-1C-76a"/>
                             <constraint firstItem="hYe-Ek-7sc" firstAttribute="centerY" secondItem="skE-Xl-pGn" secondAttribute="centerY" id="PT7-e7-aDk"/>
-                            <constraint firstItem="hYe-Ek-7sc" firstAttribute="top" secondItem="g0N-ka-9qe" secondAttribute="bottom" constant="26" id="SGf-Fa-k2F"/>
+                            <constraint firstItem="hYe-Ek-7sc" firstAttribute="top" secondItem="g0N-ka-9qe" secondAttribute="bottom" constant="16" id="SGf-Fa-k2F"/>
                             <constraint firstItem="FmD-ev-qqF" firstAttribute="centerX" secondItem="skE-Xl-pGn" secondAttribute="centerX" id="Vma-QK-RHH"/>
                             <constraint firstItem="FmD-ev-qqF" firstAttribute="centerY" secondItem="skE-Xl-pGn" secondAttribute="centerY" id="WPM-Ti-nf4"/>
                             <constraint firstItem="o1a-ob-7XO" firstAttribute="centerX" secondItem="skE-Xl-pGn" secondAttribute="centerX" id="bqf-GS-ZoP"/>
-                            <constraint firstItem="0jE-eA-TYa" firstAttribute="top" secondItem="hYe-Ek-7sc" secondAttribute="bottom" constant="38" id="eP4-Fx-OL4"/>
+                            <constraint firstItem="0jE-eA-TYa" firstAttribute="top" secondItem="hYe-Ek-7sc" secondAttribute="bottom" constant="16" id="eP4-Fx-OL4"/>
                             <constraint firstItem="FW2-6u-hBa" firstAttribute="top" secondItem="o1a-ob-7XO" secondAttribute="bottom" constant="-94" id="fzs-92-yoW"/>
                             <constraint firstItem="T5Y-1V-wnK" firstAttribute="top" secondItem="skE-Xl-pGn" secondAttribute="top" id="m4v-fI-e0d"/>
                             <constraint firstItem="N6l-u4-RBb" firstAttribute="centerX" secondItem="skE-Xl-pGn" secondAttribute="centerX" id="oNu-tH-dOq"/>
@@ -472,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGg-1D-RZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1390" y="-1063"/>
+            <point key="canvasLocation" x="1567" y="-1061"/>
         </scene>
         <!--Themes View Controller-->
         <scene sceneID="GaI-nk-zhy">
@@ -480,7 +510,7 @@
                 <pageViewController storyboardIdentifier="themesViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Svo-QC-8B2" customClass="themesViewController" customModule="Galleta_de_la_fortuna" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGx-tE-Vqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2083" y="-1061"/>
+            <point key="canvasLocation" x="2425" y="-1061"/>
         </scene>
     </scenes>
     <resources>

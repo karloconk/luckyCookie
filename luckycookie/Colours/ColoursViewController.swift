@@ -21,8 +21,10 @@ class ColoursViewController: UIViewController {
     @IBOutlet weak var bottomKacham: UIImageView!
     //MARK:- Variables
 
-    let colours = ["rojo","rosa",  "naranja","amarillo","verde",
-                   "azul","marron","morado", "negro",   "blanco"]
+    let colours  = ["rojo","rosa",  "naranja","amarillo","verde",
+                    "azul","marron","morado", "negro",   "blanco"]
+    let defaults = UserDefaults.standard
+
     //MARK:- Lifecycle
 
     override func viewDidLoad() {
@@ -33,6 +35,14 @@ class ColoursViewController: UIViewController {
     }
     
     //MARK:- Functions
+    
+    func saveDate() {
+        let date             = Date()
+        let formatter        = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        let todaysdate       = formatter.string(from: date)
+        defaults.set(todaysdate, forKey: "colordate")
+    }
     
     func chooseColour() {
         let randomNum = Int.random(in: 0...(colours.count - 1))
@@ -114,6 +124,7 @@ class ColoursViewController: UIViewController {
         colourButton.isHidden      = true
         colourImage.isHidden       = true
         chooseColour()
+        saveDate()
     }
     
 }

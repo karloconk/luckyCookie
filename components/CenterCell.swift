@@ -37,7 +37,7 @@ public class CenterCell: UIView {
         self.imgwidthHeight  = imagesize
         addComponents()
         layoutComponents()
-        avatarImageView.image = image.resize(targetSize: CGSize(width:  imgwidthHeight + 20,
+        avatarImageView.image = image.resize(targetSize: CGSize(width:  imgwidthHeight + 45,
                                                                 height: imgwidthHeight))
         avatarImageView.backgroundColor = selfbackground
 

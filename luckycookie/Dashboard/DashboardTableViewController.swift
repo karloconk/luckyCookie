@@ -12,18 +12,23 @@ class DashboardTableViewController: UITableViewController {
     
     var buttonBack: UIButton = UIButton(type: UIButton.ButtonType.custom)
     var spinner              = UIActivityIndicatorView()
-    
-    var numberOfRows = 3
+    let numberOfRows         = 4
+    let defaults             = UserDefaults.standard
+    var colorsAvailable      = false
+    var numbersAvailable     = false
+    var todaysdate           = ""
     
     // MARK:- View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getTodaysDate()
         setUpView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.tabBarController?.tabBar.isHidden = true
+        getTodaysDate()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,6 +48,38 @@ class DashboardTableViewController: UITableViewController {
         let imageV = UIImageView(image: logo)
         self.navigationItem.titleView = imageV
     }
+    
+    func getTodaysDate() {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        todaysdate = formatter.string(from: date)
+        if let oldDate = defaults.string(forKey: "colordate") {
+            colorsAvailable = todaysdate == oldDate ? false : true
+        } else {
+            colorsAvailable = true
+        }
+        if let oldDate = defaults.string(forKey: "numbersdate") {
+            numbersAvailable = todaysdate == oldDate ? false : true
+        } else {
+            numbersAvailable = true
+        }
+    }
+    
+    func showAlertColor() {
+        let alertController = UIAlertController(title: "Color de hoy usado", message:
+            "Ya viste el color hoy, espera hasta mañana para obtener otro.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Bueno 😔", style: .default))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showAlertNumbers() {
+        let alertController = UIAlertController(title: "Numeros de hoy usado", message:
+            "Ya viste números hoy, espera hasta mañana para obtener otros.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Bueno 😔", style: .default))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     // MARK:- Routing
 
     func routeToGalleta() {
@@ -63,6 +100,18 @@ class DashboardTableViewController: UITableViewController {
         self.navigationController?.present(goToBolaOcho, animated: true, completion: {})
     }
     
+    func routeToMoons() {
+        let goToMoons = UIStoryboard.goToMoons()
+        goToMoons.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(goToMoons, animated: true, completion: {})
+    }
+    
+    func routeToNumbers() {
+        let goToNumbers = UIStoryboard.goToNumbers()
+        goToNumbers.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(goToNumbers, animated: true, completion: {})
+    }
+    
     //MARK:- @objc Functions
     
     @objc func luckyClick() {
@@ -70,10 +119,26 @@ class DashboardTableViewController: UITableViewController {
     }
     
     @objc func leftLV1() {
-        routeToColours()
+        if colorsAvailable {
+            routeToColours()
+        } else {
+            showAlertColor()
+        }
     }
     
     @objc func rightLV1() {
+        routeToBolaOcho()
+    }
+    
+    @objc func leftLV2() {
+        if colorsAvailable {
+            routeToColours()
+        } else {
+            showAlertColor()
+        }
+    }
+    
+    @objc func rightLV2() {
         routeToBolaOcho()
     }
     
@@ -106,6 +171,12 @@ class DashboardTableViewController: UITableViewController {
             action: #selector(luckyClick)))
             
         } else if indexPath.section == DashboardSections.level1 {
+            cell.addSubview(TwinCell(viewController: self,
+                                     left:  Imagenes.badClosed!,
+                                     right: Imagenes.loveClosed!,
+                                     leftAction:  #selector(leftLV1),
+                                     rightAction: #selector(rightLV1)))
+        } else if indexPath.section == DashboardSections.level2 {
             cell.addSubview(TwinCell(viewController: self,
                                      left:  Imagenes.badClosed!,
                                      right: Imagenes.loveClosed!,
@@ -153,7 +224,9 @@ class DashboardTableViewController: UITableViewController {
             headerlabel.text             = DashboardSections.luckycookietitle
             smallview.addSubview(headerlabel)
         } else if section == DashboardSections.level1 {
-            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Colores", right: "Bola 8"))
+            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Color de hoy", right: "Bola mágica"))
+        } else if section == DashboardSections.level2 {
+                   smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Lunas", right: "Numeros"))
         }
         return smallview
     }
@@ -181,6 +254,9 @@ enum DashboardSections {
     
     public static let level1       = 2
     public static let level1height = CGFloat(140)
+    
+    public static let level2       = 3
+    public static let level2height = CGFloat(140)
     
     public static let headerheight  = 30
 

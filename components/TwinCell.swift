@@ -45,12 +45,14 @@ public class TwinCell: UIView {
             
             var bgcolorL = Colours.basicBackground
             if left == Imagenes.badClosed {
-                bgcolorL = Colours.badBackground
+                bgcolorL = Colors.blanco
+                self.lButton.layer.borderWidth = 1
+                self.lButton.layer.borderColor = Colors.neutral.cgColor
             }
             
             var bgcolorR = Colours.basicBackground
             if right == Imagenes.loveClosed {
-                bgcolorR = Colours.loveBackground
+                bgcolorR = Colors.violet
             }
             
             self.lButton.backgroundColor = bgcolorL

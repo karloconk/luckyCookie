@@ -34,5 +34,13 @@ extension UIStoryboard {
     class func goToBolaocho() -> bolaOchoViewController {
         return load(identifier: "bolaocho") as! bolaOchoViewController
     }
+    
+    class func goToNumbers() -> NumbersViewController {
+        return load(identifier: "numeros") as! NumbersViewController
+    }
+    
+    class func goToMoons() -> MoonsViewController {
+        return load(identifier: "lunas") as! MoonsViewController
+    }
 }
 

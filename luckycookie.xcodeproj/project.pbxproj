@@ -25,6 +25,8 @@
 		B02F33A9244BB87E001349C5 /* bolaOchoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F33A8244BB87E001349C5 /* bolaOchoViewController.swift */; };
 		B02F33AB244BBFDB001349C5 /* BolaOchoDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F33AA244BBFDB001349C5 /* BolaOchoDefaults.swift */; };
 		B02F33AD244BC00E001349C5 /* BolaOcho.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02F33AC244BC00E001349C5 /* BolaOcho.xcassets */; };
+		B02F33B0244BE53F001349C5 /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F33AF244BE53F001349C5 /* NumbersViewController.swift */; };
+		B02F33B3244BE55F001349C5 /* MoonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F33B2244BE55F001349C5 /* MoonsViewController.swift */; };
 		B041F3A023FCC3E400230D61 /* CookieImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B041F39F23FCC3E400230D61 /* CookieImages.swift */; };
 		B05A7FD623FB7B66006B2235 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A7FD523FB7B66006B2235 /* GlobalVars.swift */; };
 		B078347A24489B75006ECC43 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078347924489B75006ECC43 /* IntroViewController.swift */; };
@@ -59,6 +61,8 @@
 		B02F33A8244BB87E001349C5 /* bolaOchoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bolaOchoViewController.swift; sourceTree = "<group>"; };
 		B02F33AA244BBFDB001349C5 /* BolaOchoDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BolaOchoDefaults.swift; sourceTree = "<group>"; };
 		B02F33AC244BC00E001349C5 /* BolaOcho.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BolaOcho.xcassets; sourceTree = "<group>"; };
+		B02F33AF244BE53F001349C5 /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
+		B02F33B2244BE55F001349C5 /* MoonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonsViewController.swift; sourceTree = "<group>"; };
 		B041F39F23FCC3E400230D61 /* CookieImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieImages.swift; sourceTree = "<group>"; };
 		B05A7FD523FB7B66006B2235 /* GlobalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
 		B078347924489B75006ECC43 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 		B008188B23EA5565006A809F /* luckycookie */ = {
 			isa = PBXGroup;
 			children = (
+				B02F33B1244BE54D001349C5 /* Moons */,
+				B02F33AE244BE528001349C5 /* Numbers */,
 				B02F33A7244BB85F001349C5 /* bola8 */,
 				B02F33A2244B8FCA001349C5 /* Colours */,
 				B02F339F244B8C88001349C5 /* Assets */,
@@ -158,6 +164,22 @@
 				B02F33AA244BBFDB001349C5 /* BolaOchoDefaults.swift */,
 			);
 			path = bola8;
+			sourceTree = "<group>";
+		};
+		B02F33AE244BE528001349C5 /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				B02F33AF244BE53F001349C5 /* NumbersViewController.swift */,
+			);
+			path = Numbers;
+			sourceTree = "<group>";
+		};
+		B02F33B1244BE54D001349C5 /* Moons */ = {
+			isa = PBXGroup;
+			children = (
+				B02F33B2244BE55F001349C5 /* MoonsViewController.swift */,
+			);
+			path = Moons;
 			sourceTree = "<group>";
 		};
 		B070013123F4F99B00D4D4B8 /* Fonts */ = {
@@ -291,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B078347C24489BAC006ECC43 /* DashboardTableViewController.swift in Sources */,
+				B02F33B3244BE55F001349C5 /* MoonsViewController.swift in Sources */,
 				B078347A24489B75006ECC43 /* IntroViewController.swift in Sources */,
 				B00818A723EA6301006A809F /* themesViewController.swift in Sources */,
 				B0D58F1D243C17FD0004ADDC /* karloExtensions.swift in Sources */,
@@ -299,6 +322,7 @@
 				B02F33AB244BBFDB001349C5 /* BolaOchoDefaults.swift in Sources */,
 				B00818A523EA61BC006A809F /* DataViewController.swift in Sources */,
 				B07834842449278A006ECC43 /* Font.swift in Sources */,
+				B02F33B0244BE53F001349C5 /* NumbersViewController.swift in Sources */,
 				B078348924493490006ECC43 /* CenterCell.swift in Sources */,
 				B02F33A9244BB87E001349C5 /* bolaOchoViewController.swift in Sources */,
 				B008189123EA5565006A809F /* FirstViewController.swift in Sources */,
