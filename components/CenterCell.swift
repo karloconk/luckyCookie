@@ -12,7 +12,7 @@ import Foundation
 public class CenterCell: UIView {
     
     var selfbackground = Colours.basicBackground
-    var imgwidthHeight = 100.0
+    var imgwidthHeight = 180.0
     
     private lazy var rootStackView: UIStackView = {
         let stackView = UIStackView()
@@ -37,7 +37,7 @@ public class CenterCell: UIView {
         self.imgwidthHeight  = imagesize
         addComponents()
         layoutComponents()
-        avatarImageView.image = image.resize(targetSize: CGSize(width:  imgwidthHeight,
+        avatarImageView.image = image.resize(targetSize: CGSize(width:  imgwidthHeight + 20,
                                                                 height: imgwidthHeight))
         avatarImageView.backgroundColor = selfbackground
 

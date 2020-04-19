@@ -15,6 +15,11 @@ public class Font {
         return font
     }
     
+    public class func getbigFont(size: CGFloat) -> UIFont {
+        let font = UIFont(name: "theboldfont", size: size)!
+        return font
+    }
+    
     public class func getAttributes(lineSpacing: Double, fontColour: UIColor, typo: UIFont, isUnderlined: Bool) -> [NSAttributedString.Key : NSObject] {
         let pstyle = NSMutableParagraphStyle()
         pstyle.lineSpacing = CGFloat(lineSpacing)

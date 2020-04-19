@@ -10,7 +10,7 @@
 		B008188D23EA5565006A809F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008188C23EA5565006A809F /* AppDelegate.swift */; };
 		B008188F23EA5565006A809F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008188E23EA5565006A809F /* SceneDelegate.swift */; };
 		B008189123EA5565006A809F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008189023EA5565006A809F /* FirstViewController.swift */; };
-		B008189823EA5569006A809F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B008189723EA5569006A809F /* Assets.xcassets */; };
+		B008189823EA5569006A809F /* LuckyCokkie.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B008189723EA5569006A809F /* LuckyCokkie.xcassets */; };
 		B008189B23EA5569006A809F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B008189923EA5569006A809F /* LaunchScreen.storyboard */; };
 		B00818A323EA610C006A809F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00818A223EA610C006A809F /* Main.storyboard */; };
 		B00818A523EA61BC006A809F /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00818A423EA61BC006A809F /* DataViewController.swift */; };
@@ -18,6 +18,13 @@
 		B01605D12407647D0073C365 /* theboldfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B01605D02407647D0073C365 /* theboldfont.ttf */; };
 		B02F33992449FEA2001349C5 /* TwinHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F33982449FEA2001349C5 /* TwinHeaders.swift */; };
 		B02F339B244A08AD001349C5 /* DashboardImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F339A244A08AD001349C5 /* DashboardImages.swift */; };
+		B02F339E244B7F92001349C5 /* StoryBoardsBasics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F339D244B7F92001349C5 /* StoryBoardsBasics.swift */; };
+		B02F33A1244B8CA9001349C5 /* Colours.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02F33A0244B8CA9001349C5 /* Colours.xcassets */; };
+		B02F33A4244B8FEB001349C5 /* ColoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F33A3244B8FEB001349C5 /* ColoursViewController.swift */; };
+		B02F33A6244B9979001349C5 /* GenericTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F33A5244B9979001349C5 /* GenericTextView.swift */; };
+		B02F33A9244BB87E001349C5 /* bolaOchoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F33A8244BB87E001349C5 /* bolaOchoViewController.swift */; };
+		B02F33AB244BBFDB001349C5 /* BolaOchoDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F33AA244BBFDB001349C5 /* BolaOchoDefaults.swift */; };
+		B02F33AD244BC00E001349C5 /* BolaOcho.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02F33AC244BC00E001349C5 /* BolaOcho.xcassets */; };
 		B041F3A023FCC3E400230D61 /* CookieImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B041F39F23FCC3E400230D61 /* CookieImages.swift */; };
 		B05A7FD623FB7B66006B2235 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A7FD523FB7B66006B2235 /* GlobalVars.swift */; };
 		B078347A24489B75006ECC43 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078347924489B75006ECC43 /* IntroViewController.swift */; };
@@ -36,7 +43,7 @@
 		B008188C23EA5565006A809F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B008188E23EA5565006A809F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B008189023EA5565006A809F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		B008189723EA5569006A809F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B008189723EA5569006A809F /* LuckyCokkie.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LuckyCokkie.xcassets; sourceTree = "<group>"; };
 		B008189A23EA5569006A809F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B008189C23EA5569006A809F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B00818A223EA610C006A809F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +52,13 @@
 		B01605D02407647D0073C365 /* theboldfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = theboldfont.ttf; sourceTree = "<group>"; };
 		B02F33982449FEA2001349C5 /* TwinHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinHeaders.swift; sourceTree = "<group>"; };
 		B02F339A244A08AD001349C5 /* DashboardImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardImages.swift; sourceTree = "<group>"; };
+		B02F339D244B7F92001349C5 /* StoryBoardsBasics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardsBasics.swift; sourceTree = "<group>"; };
+		B02F33A0244B8CA9001349C5 /* Colours.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colours.xcassets; sourceTree = "<group>"; };
+		B02F33A3244B8FEB001349C5 /* ColoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoursViewController.swift; sourceTree = "<group>"; };
+		B02F33A5244B9979001349C5 /* GenericTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTextView.swift; sourceTree = "<group>"; };
+		B02F33A8244BB87E001349C5 /* bolaOchoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bolaOchoViewController.swift; sourceTree = "<group>"; };
+		B02F33AA244BBFDB001349C5 /* BolaOchoDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BolaOchoDefaults.swift; sourceTree = "<group>"; };
+		B02F33AC244BC00E001349C5 /* BolaOcho.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BolaOcho.xcassets; sourceTree = "<group>"; };
 		B041F39F23FCC3E400230D61 /* CookieImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieImages.swift; sourceTree = "<group>"; };
 		B05A7FD523FB7B66006B2235 /* GlobalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
 		B078347924489B75006ECC43 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +86,7 @@
 		B008188023EA5565006A809F = {
 			isa = PBXGroup;
 			children = (
+				B02F339C244B7F6A001349C5 /* Storyboards */,
 				B078348524492C66006ECC43 /* components */,
 				B070013123F4F99B00D4D4B8 /* Fonts */,
 				B008188B23EA5565006A809F /* luckycookie */,
@@ -90,6 +105,9 @@
 		B008188B23EA5565006A809F /* luckycookie */ = {
 			isa = PBXGroup;
 			children = (
+				B02F33A7244BB85F001349C5 /* bola8 */,
+				B02F33A2244B8FCA001349C5 /* Colours */,
+				B02F339F244B8C88001349C5 /* Assets */,
 				B07834802449278A006ECC43 /* Fonts */,
 				B078347D244912E6006ECC43 /* luckyCookie */,
 				B078347824489B41006ECC43 /* Dashboard */,
@@ -97,7 +115,6 @@
 				B008188C23EA5565006A809F /* AppDelegate.swift */,
 				B008188E23EA5565006A809F /* SceneDelegate.swift */,
 				B00818A223EA610C006A809F /* Main.storyboard */,
-				B008189723EA5569006A809F /* Assets.xcassets */,
 				B008189923EA5569006A809F /* LaunchScreen.storyboard */,
 				B008189C23EA5569006A809F /* Info.plist */,
 				B05A7FD523FB7B66006B2235 /* GlobalVars.swift */,
@@ -106,6 +123,41 @@
 				B078347E244913CE006ECC43 /* Tools.swift */,
 			);
 			path = luckycookie;
+			sourceTree = "<group>";
+		};
+		B02F339C244B7F6A001349C5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B02F339D244B7F92001349C5 /* StoryBoardsBasics.swift */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B02F339F244B8C88001349C5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B008189723EA5569006A809F /* LuckyCokkie.xcassets */,
+				B02F33A0244B8CA9001349C5 /* Colours.xcassets */,
+				B02F33AC244BC00E001349C5 /* BolaOcho.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B02F33A2244B8FCA001349C5 /* Colours */ = {
+			isa = PBXGroup;
+			children = (
+				B02F33A3244B8FEB001349C5 /* ColoursViewController.swift */,
+			);
+			path = Colours;
+			sourceTree = "<group>";
+		};
+		B02F33A7244BB85F001349C5 /* bola8 */ = {
+			isa = PBXGroup;
+			children = (
+				B02F33A8244BB87E001349C5 /* bolaOchoViewController.swift */,
+				B02F33AA244BBFDB001349C5 /* BolaOchoDefaults.swift */,
+			);
+			path = bola8;
 			sourceTree = "<group>";
 		};
 		B070013123F4F99B00D4D4B8 /* Fonts */ = {
@@ -159,6 +211,7 @@
 				B078348A24494460006ECC43 /* TwinCell.swift */,
 				B078348824493490006ECC43 /* CenterCell.swift */,
 				B02F33982449FEA2001349C5 /* TwinHeaders.swift */,
+				B02F33A5244B9979001349C5 /* GenericTextView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -222,9 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B01605D12407647D0073C365 /* theboldfont.ttf in Resources */,
+				B02F33A1244B8CA9001349C5 /* Colours.xcassets in Resources */,
+				B02F33AD244BC00E001349C5 /* BolaOcho.xcassets in Resources */,
 				B00818A323EA610C006A809F /* Main.storyboard in Resources */,
 				B008189B23EA5569006A809F /* LaunchScreen.storyboard in Resources */,
-				B008189823EA5569006A809F /* Assets.xcassets in Resources */,
+				B008189823EA5569006A809F /* LuckyCokkie.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,16 +296,21 @@
 				B0D58F1D243C17FD0004ADDC /* karloExtensions.swift in Sources */,
 				B041F3A023FCC3E400230D61 /* CookieImages.swift in Sources */,
 				B07834832449278A006ECC43 /* Typo.swift in Sources */,
+				B02F33AB244BBFDB001349C5 /* BolaOchoDefaults.swift in Sources */,
 				B00818A523EA61BC006A809F /* DataViewController.swift in Sources */,
 				B07834842449278A006ECC43 /* Font.swift in Sources */,
 				B078348924493490006ECC43 /* CenterCell.swift in Sources */,
+				B02F33A9244BB87E001349C5 /* bolaOchoViewController.swift in Sources */,
 				B008189123EA5565006A809F /* FirstViewController.swift in Sources */,
 				B078347F244913CE006ECC43 /* Tools.swift in Sources */,
 				B078348B24494460006ECC43 /* TwinCell.swift in Sources */,
+				B02F33A4244B8FEB001349C5 /* ColoursViewController.swift in Sources */,
 				B02F33992449FEA2001349C5 /* TwinHeaders.swift in Sources */,
+				B02F339E244B7F92001349C5 /* StoryBoardsBasics.swift in Sources */,
 				B008188D23EA5565006A809F /* AppDelegate.swift in Sources */,
 				B02F339B244A08AD001349C5 /* DashboardImages.swift in Sources */,
 				B078348724492C9A006ECC43 /* DashboardCompound.swift in Sources */,
+				B02F33A6244B9979001349C5 /* GenericTextView.swift in Sources */,
 				B05A7FD623FB7B66006B2235 /* GlobalVars.swift in Sources */,
 				B008188F23EA5565006A809F /* SceneDelegate.swift in Sources */,
 			);

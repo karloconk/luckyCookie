@@ -15,9 +15,9 @@ struct GlobalVars {
 }
 
 public enum Colors {
-    public static let charcoal = UIColor(red:0.24, green:0.24, blue:0.26, alpha:1.0)
+    public static let charcoal = UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
     public static let blanco   = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
-    public static let neutral  = UIColor(red:0.59, green:0.61, blue:0.63, alpha:1.0)
+    public static let neutral  = UIColor(red: 0.50, green: 0.50, blue: 0.50, alpha: 1.00)
     public static let manatee  = UIColor(red:0.93, green:0.94, blue:0.96, alpha:1.0)
 }
 
@@ -36,5 +36,43 @@ public enum SpaceUnits {
 enum DashBoardValues {
     public static let bGCookie = Colours.basicBackground
     public static let iHCookie = 100.0
+}
+
+
+enum TextusAttributes {
+    public static let bigBlack = Font.getAttributes(lineSpacing:        6.0,
+                                                    fontColour:         Colors.charcoal,
+                                                         typo:          Font.getbigFont(size: 20),
+                                                         isUnderlined:  false)
+    public static let bigWhite = Font.getAttributes(lineSpacing:        6.0,
+                                                    fontColour:         Colors.blanco,
+                                                         typo:          Font.getbigFont(size: 20),
+                                                         isUnderlined:  false)
+}
+
+enum ColoursStrings {
+    public static let rojo     = NSAttributedString(string: "Pasión, fuerza, peligro y atracción" , attributes: TextusAttributes.bigWhite)
+    public static let rosa     = NSAttributedString(string: "Amabilidad, ternura, romance y dulzura" , attributes: TextusAttributes.bigWhite)
+    public static let naranja  = NSAttributedString(string: "Diversión, sabor, sensualidad y exaltación" , attributes: TextusAttributes.bigWhite)
+    public static let amarillo = NSAttributedString(string: "Optimismo, creatividad, energía y amistad" , attributes: TextusAttributes.bigWhite)
+    public static let verde    = NSAttributedString(string: "Juventud, esperanza, frescura y naturaleza" , attributes: TextusAttributes.bigWhite)
+    public static let azul     = NSAttributedString(string: "Tranquilidad, nobleza, inteligencia y seguridad" , attributes: TextusAttributes.bigWhite)
+    public static let marron   = NSAttributedString(string: "Fuerza, seriedad, dignidad y comodidad" , attributes: TextusAttributes.bigWhite)
+    public static let morado   = NSAttributedString(string: "Elegancia, poder, nobleza y magia" , attributes: TextusAttributes.bigWhite)
+    public static let negro    = NSAttributedString(string: "Misterio, sobriedad, formalidad y objetividad" , attributes: TextusAttributes.bigWhite)
+    public static let blanco   = NSAttributedString(string: "Pureza, inocencia, paz y limpieza", attributes: TextusAttributes.bigBlack)
+}
+
+public enum ColoursColors {
+    public static let rojo     = UIColor(red: 1.00, green: 0.00, blue: 0.00, alpha: 1.00)
+    public static let rosa     = UIColor(red: 0.92, green: 0.38, blue: 0.52, alpha: 1.00)
+    public static let naranja  = UIColor(red: 1.00, green: 0.40, blue: 0.00, alpha: 1.00)
+    public static let amarillo = UIColor(red: 1.00, green: 0.80, blue: 0.00, alpha: 1.00)
+    public static let verde    = UIColor(red: 0.00, green: 0.60, blue: 0.20, alpha: 1.00)
+    public static let azul     = UIColor(red: 0.00, green: 0.60, blue: 0.80, alpha: 1.00)
+    public static let marron   = UIColor(red: 0.40, green: 0.20, blue: 0.00, alpha: 1.00)
+    public static let morado   = UIColor(red: 0.40, green: 0.00, blue: 0.60, alpha: 1.00)
+    public static let negro    = UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
+    public static let blanco   = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
 }
 

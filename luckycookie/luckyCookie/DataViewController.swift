@@ -12,6 +12,7 @@ class DataViewController: UIViewController {
     
     //MARK:- Outlets
     @IBOutlet weak var fondoView: UIView!
+    @IBOutlet weak var backbutton: UIButton!
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var luckyButton: UIButton!
     @IBOutlet weak var popImage: UIImageView!
@@ -56,6 +57,9 @@ class DataViewController: UIViewController {
         }
     }
     
+    @IBAction func backbuttonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: {})
+    }
     //MARK:- Lifecycle
     
     override func viewDidLoad() {

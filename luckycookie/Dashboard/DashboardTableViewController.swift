@@ -43,19 +43,38 @@ class DashboardTableViewController: UITableViewController {
         let imageV = UIImageView(image: logo)
         self.navigationItem.titleView = imageV
     }
+    // MARK:- Routing
+
+    func routeToGalleta() {
+        let goToGalleta = UIStoryboard.goToGalleta()
+        goToGalleta.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(goToGalleta, animated: true, completion: {})
+    }
+    
+    func routeToColours() {
+        let goToColours = UIStoryboard.goToColours()
+        goToColours.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(goToColours, animated: true, completion: {})
+    }
+    
+    func routeToBolaOcho() {
+        let goToBolaOcho = UIStoryboard.goToBolaocho()
+        goToBolaOcho.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(goToBolaOcho, animated: true, completion: {})
+    }
     
     //MARK:- @objc Functions
     
     @objc func luckyClick() {
-        print("luckyCookie")
+        routeToGalleta()
     }
     
     @objc func leftLV1() {
-        print("L1")
+        routeToColours()
     }
     
     @objc func rightLV1() {
-        print("R1")
+        routeToBolaOcho()
     }
     
     // MARK: - Table view data source
@@ -86,7 +105,7 @@ class DashboardTableViewController: UITableViewController {
             vc:     self,
             action: #selector(luckyClick)))
             
-        } else {
+        } else if indexPath.section == DashboardSections.level1 {
             cell.addSubview(TwinCell(viewController: self,
                                      left:  Imagenes.badClosed!,
                                      right: Imagenes.loveClosed!,
@@ -102,32 +121,47 @@ class DashboardTableViewController: UITableViewController {
             return DashboardSections.dbheaderheight
         } else if indexPath.section == DashboardSections.luckycookie {
             return DashboardSections.luckycookieheight
+        } else if indexPath.section == DashboardSections.level1 {
+            return DashboardSections.level1height
         } else {
             return DashboardSections.level1height
         }
     }
     
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let tablewidth = tableView.frame.width
+        let smallview  = UIView(frame: CGRect(x:      0,   y: 0,
+                                              width:  Int(tablewidth),
+                                              height: DashboardSections.headerheight))
+        smallview.backgroundColor = Colors.blanco
+        
         if section == DashboardSections.dbheader {
-            let header = view as! UITableViewHeaderFooterView
-            header.textLabel?.text = ""
-            header.contentView.backgroundColor = Colors.blanco
-
+            let littlestview  = UIView(frame: CGRect(x:      0,   y: 0,
+                                                  width:  Int(tablewidth),
+                                                  height: DashboardSections.headerheight - 16))
+            littlestview.backgroundColor = Colors.blanco
+            return littlestview
         } else if section == DashboardSections.luckycookie {
-            let header = view as! UITableViewHeaderFooterView
-            header.textLabel?.font             = Typo.h3
-            header.textLabel?.textColor        = Colors.charcoal
-            header.textLabel?.textAlignment    = .center
-            header.contentView.backgroundColor = Colors.blanco
-            header.contentView.contentMode     = .scaleAspectFit
-            header.textLabel?.text = DashboardSections.luckycookietitle
-        } else {
-            let header = view as! UITableViewHeaderFooterView
-            header.addSubview(TwinHeaders(view: header, left: "LeftGame", right: "RightGame"))
+            let headerlabel = UILabel(frame: CGRect(x: 0,   y: 0,
+                                                    width:  Int(tablewidth),
+                                                    height: DashboardSections.headerheight))
+            headerlabel.font             = Typo.h3
+            headerlabel.textColor        = Colors.charcoal
+            headerlabel.textAlignment    = .center
+            headerlabel.backgroundColor  = Colors.blanco
+            headerlabel.contentMode      = .scaleAspectFit
+            headerlabel.text             = DashboardSections.luckycookietitle
+            smallview.addSubview(headerlabel)
+        } else if section == DashboardSections.level1 {
+            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Colores", right: "Bola 8"))
         }
+        return smallview
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == DashboardSections.dbheader {
+            return CGFloat(DashboardSections.headerheight - 16)
+        }
         return CGFloat(DashboardSections.headerheight)
     }
     
@@ -139,7 +173,7 @@ class DashboardTableViewController: UITableViewController {
 
 enum DashboardSections {
     public static let dbheader       = 0
-    public static let dbheaderheight = CGFloat(10)
+    public static let dbheaderheight = CGFloat(0)
     
     public static let luckycookie       = 1
     public static let luckycookieheight = CGFloat(240)

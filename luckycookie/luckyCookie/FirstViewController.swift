@@ -17,22 +17,22 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var pagecontrol: UIPageControl!
     
     //MARK:- Vars
-       
-       let titles = ["Estandar", "Mala Suerte", "Amor", "Dinero", "Proximamente"]
     
-       var currentViewControllerIndex = 0
+    let titles = ["Estandar", "Mala Suerte", "Amor", "Dinero", "Proximamente"]
     
-       //MARK:- Lifecycle
-       
-       override func viewDidLoad() {
-           super.viewDidLoad()
-           setup()
-       }
-
-       func setup() {
-           guard let pageViewController = storyboard?.instantiateViewController(identifier: String(describing: themesViewController.self)) as? themesViewController else {
-               return
-           }
+    var currentViewControllerIndex = 0
+    
+    //MARK:- Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+    
+    func setup() {
+        guard let pageViewController = storyboard?.instantiateViewController(identifier: String(describing: themesViewController.self)) as? themesViewController else {
+            return
+        }
         pageViewController.delegate   = self as UIPageViewControllerDelegate
         pageViewController.dataSource = self as UIPageViewControllerDataSource
         
@@ -41,7 +41,7 @@ class FirstViewController: UIViewController {
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(pageViewController.view)
-          let views: [String: Any] = ["pageView": pageViewController.view!]
+        let views: [String: Any] = ["pageView": pageViewController.view!]
         
         contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[pageView]-0-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
         contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[pageView]-0-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
@@ -83,7 +83,7 @@ extension FirstViewController: UIPageViewControllerDelegate, UIPageViewControlle
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-    
+        
         let dataViewController = viewController as? DataViewController
         
         guard var currentIndex = dataViewController?.index else { return nil }
@@ -100,7 +100,7 @@ extension FirstViewController: UIPageViewControllerDelegate, UIPageViewControlle
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-    
+        
         let dataViewController = viewController as? DataViewController
         
         guard var currentIndex = dataViewController?.index else { return nil }
