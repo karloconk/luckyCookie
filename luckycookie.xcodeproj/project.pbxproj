@@ -38,10 +38,12 @@
 		B078348924493490006ECC43 /* CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078348824493490006ECC43 /* CenterCell.swift */; };
 		B078348B24494460006ECC43 /* TwinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078348A24494460006ECC43 /* TwinCell.swift */; };
 		B0D58F1D243C17FD0004ADDC /* karloExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D58F1C243C17FD0004ADDC /* karloExtensions.swift */; };
+		D8CC943EE6E8503AEE28F42F /* libPods-luckycookie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D390FF98453BB2843846892F /* libPods-luckycookie.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B008188923EA5565006A809F /* Galleta de la fortuna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Galleta de la fortuna.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A426A1129AB2BA53ED6E74 /* Pods-luckycookie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-luckycookie.debug.xcconfig"; path = "Target Support Files/Pods-luckycookie/Pods-luckycookie.debug.xcconfig"; sourceTree = "<group>"; };
+		B008188923EA5565006A809F /* Fortunas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fortunas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B008188C23EA5565006A809F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B008188E23EA5565006A809F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B008189023EA5565006A809F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,8 @@
 		B078348824493490006ECC43 /* CenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCell.swift; sourceTree = "<group>"; };
 		B078348A24494460006ECC43 /* TwinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinCell.swift; sourceTree = "<group>"; };
 		B0D58F1C243C17FD0004ADDC /* karloExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = karloExtensions.swift; sourceTree = "<group>"; };
+		B8466B2CA743D6919CAFF335 /* Pods-luckycookie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-luckycookie.release.xcconfig"; path = "Target Support Files/Pods-luckycookie/Pods-luckycookie.release.xcconfig"; sourceTree = "<group>"; };
+		D390FF98453BB2843846892F /* libPods-luckycookie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-luckycookie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +85,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CC943EE6E8503AEE28F42F /* libPods-luckycookie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		577F6ABB30A6DD5AC1DD5E96 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76A426A1129AB2BA53ED6E74 /* Pods-luckycookie.debug.xcconfig */,
+				B8466B2CA743D6919CAFF335 /* Pods-luckycookie.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5785B2600100DF3899A632A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D390FF98453BB2843846892F /* libPods-luckycookie.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B008188023EA5565006A809F = {
 			isa = PBXGroup;
 			children = (
@@ -95,13 +117,15 @@
 				B070013123F4F99B00D4D4B8 /* Fonts */,
 				B008188B23EA5565006A809F /* luckycookie */,
 				B008188A23EA5565006A809F /* Products */,
+				577F6ABB30A6DD5AC1DD5E96 /* Pods */,
+				5785B2600100DF3899A632A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		B008188A23EA5565006A809F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B008188923EA5565006A809F /* Galleta de la fortuna.app */,
+				B008188923EA5565006A809F /* Fortunas.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,6 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B008189F23EA5569006A809F /* Build configuration list for PBXNativeTarget "luckycookie" */;
 			buildPhases = (
+				CD37E3C4E1A82905E1CB0869 /* [CP] Check Pods Manifest.lock */,
 				B008188523EA5565006A809F /* Sources */,
 				B008188623EA5565006A809F /* Frameworks */,
 				B008188723EA5565006A809F /* Resources */,
@@ -255,7 +280,7 @@
 			);
 			name = luckycookie;
 			productName = luckycookie;
-			productReference = B008188923EA5565006A809F /* Galleta de la fortuna.app */;
+			productReference = B008188923EA5565006A809F /* Fortunas.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -306,6 +331,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CD37E3C4E1A82905E1CB0869 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-luckycookie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B008188523EA5565006A809F /* Sources */ = {
@@ -470,6 +520,7 @@
 		};
 		B00818A023EA5569006A809F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76A426A1129AB2BA53ED6E74 /* Pods-luckycookie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -482,7 +533,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mx.kacham.luckycookie;
-				PRODUCT_NAME = "Galleta de la fortuna";
+				PRODUCT_NAME = Fortunas;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -490,6 +541,7 @@
 		};
 		B00818A123EA5569006A809F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8466B2CA743D6919CAFF335 /* Pods-luckycookie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -502,7 +554,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mx.kacham.luckycookie;
-				PRODUCT_NAME = "Galleta de la fortuna";
+				PRODUCT_NAME = Fortunas;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

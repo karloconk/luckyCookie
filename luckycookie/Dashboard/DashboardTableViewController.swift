@@ -127,7 +127,7 @@ class DashboardTableViewController: UITableViewController {
     }
     
     @objc func rightLV1() {
-        routeToBolaOcho()
+        routeToMoons()
     }
     
     @objc func leftLV2() {

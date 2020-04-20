@@ -7,24 +7,99 @@
 //
 
 import UIKit
+import SwiftySuncalc
+import CoreLocation
 
 class MoonsViewController: UIViewController {
-
+    
+    // MARK:- Outlets
+    
+    // MARK:- Variables
+    let moonPhaser      = SwiftySuncalc()
+    var locationManager = CLLocationManager()
+    
+    let phases     = ["Luna nueva","Luna creciente",  "Primer cuarto","Luna menguante",
+                      "Luna llena","Gibosa menguante","Último cuarto","Creciente menguante"]
+    
+    var sunrise =  ""
+    var sunset  =  ""
+    
+    // MARK:- Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        locationManager.requestWhenInUseAuthorization()
+        let currentLoc: CLLocation!
+        if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse) {
+            currentLoc = locationManager.location
+            let aJson = moonPhaser.getTimes(date: Date(), lat: currentLoc.coordinate.latitude, lng:  currentLoc.coordinate.longitude)
+            if let sunriseDate = aJson["sunrise"] {
+                sunrise = castDate(date: sunriseDate)
+            }
+            if let sunsetDate = aJson["sunset"] {
+                sunset  = castDate(date: sunsetDate)
+            }
+            print(sunrise)
+            print(sunset)
+            locationManager.stopUpdatingLocation()
+        }
+        print("\(getMoonPhase())")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK:-Functions
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch(CLLocationManager.authorizationStatus()) {
+        case .authorizedAlways, .authorizedWhenInUse:
+            let currentLoc: CLLocation!
+            locationManager.startUpdatingLocation()
+            currentLoc = locationManager.location
+            let aJson = moonPhaser.getTimes(date: Date(), lat: currentLoc.coordinate.latitude, lng:  currentLoc.coordinate.longitude)
+            if let sunriseDate = aJson["sunrise"] {
+                sunrise = castDate(date: sunriseDate)
+            }
+            if let sunsetDate = aJson["sunset"] {
+                sunset  = castDate(date: sunsetDate)
+            }
+            print(sunrise)
+            print(sunset)
+            locationManager.stopUpdatingLocation()
+        case .denied, .notDetermined, .restricted:
+            locationManager.stopUpdatingLocation()
+        @unknown default:
+            locationManager.stopUpdatingLocation()
+        }
     }
-    */
-
+    
+    func getMoonPhase() -> String {
+        let phasemeta = moonPhaser.getMoonIllumination(date: Date())["angle"]! * 100
+        let phase     = Int( phasemeta )
+        switch phase {
+        case 0:
+            return phases[0]
+        case 1 ..< 25:
+            return phases[1]
+        case 25:
+            return phases[2]
+        case 26 ..< 50:
+            return phases[3]
+        case 50:
+            return phases[4]
+        case 51 ..< 75:
+            return phases[5]
+        case 75:
+            return phases[6]
+        default:
+            return phases[7]
+        }
+    }
+    
+    
+    func castDate(date: Date) -> String {
+        let format = DateFormatter()
+        format.timeZone = .current
+        format.dateFormat = "'El 'dd' a las 'HH:mm' horas'"
+        let dateString = format.string(from: date)
+        return dateString
+    }
 }
