@@ -16,6 +16,8 @@
 		B00818A523EA61BC006A809F /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00818A423EA61BC006A809F /* DataViewController.swift */; };
 		B00818A723EA6301006A809F /* themesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00818A623EA6301006A809F /* themesViewController.swift */; };
 		B01605D12407647D0073C365 /* theboldfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B01605D02407647D0073C365 /* theboldfont.ttf */; };
+		B0229E7E244E5E6800261874 /* Dashboard.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0229E7D244E5E6800261874 /* Dashboard.xcassets */; };
+		B0229E80244E65FC00261874 /* Luna.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0229E7F244E65FC00261874 /* Luna.xcassets */; };
 		B02F33992449FEA2001349C5 /* TwinHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F33982449FEA2001349C5 /* TwinHeaders.swift */; };
 		B02F339B244A08AD001349C5 /* DashboardImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F339A244A08AD001349C5 /* DashboardImages.swift */; };
 		B02F339E244B7F92001349C5 /* StoryBoardsBasics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02F339D244B7F92001349C5 /* StoryBoardsBasics.swift */; };
@@ -54,6 +56,8 @@
 		B00818A423EA61BC006A809F /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		B00818A623EA6301006A809F /* themesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = themesViewController.swift; sourceTree = "<group>"; };
 		B01605D02407647D0073C365 /* theboldfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = theboldfont.ttf; sourceTree = "<group>"; };
+		B0229E7D244E5E6800261874 /* Dashboard.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Dashboard.xcassets; sourceTree = "<group>"; };
+		B0229E7F244E65FC00261874 /* Luna.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Luna.xcassets; sourceTree = "<group>"; };
 		B02F33982449FEA2001349C5 /* TwinHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinHeaders.swift; sourceTree = "<group>"; };
 		B02F339A244A08AD001349C5 /* DashboardImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardImages.swift; sourceTree = "<group>"; };
 		B02F339D244B7F92001349C5 /* StoryBoardsBasics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoardsBasics.swift; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				B008189723EA5569006A809F /* LuckyCokkie.xcassets */,
 				B02F33A0244B8CA9001349C5 /* Colours.xcassets */,
 				B02F33AC244BC00E001349C5 /* BolaOcho.xcassets */,
+				B0229E7D244E5E6800261874 /* Dashboard.xcassets */,
+				B0229E7F244E65FC00261874 /* Luna.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -322,11 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B01605D12407647D0073C365 /* theboldfont.ttf in Resources */,
+				B0229E80244E65FC00261874 /* Luna.xcassets in Resources */,
 				B02F33A1244B8CA9001349C5 /* Colours.xcassets in Resources */,
 				B02F33AD244BC00E001349C5 /* BolaOcho.xcassets in Resources */,
 				B00818A323EA610C006A809F /* Main.storyboard in Resources */,
 				B008189B23EA5569006A809F /* LaunchScreen.storyboard in Resources */,
 				B008189823EA5569006A809F /* LuckyCokkie.xcassets in Resources */,
+				B0229E7E244E5E6800261874 /* Dashboard.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

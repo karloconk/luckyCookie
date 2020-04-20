@@ -15,7 +15,7 @@
         <!--Basic-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController storyboardIdentifier="GalletaDeLaFortuna" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Galleta_de_la_fortuna" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GalletaDeLaFortuna" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Fortunas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
         <!--Fortunas-->
         <scene sceneID="bnN-x3-tZg">
             <objects>
-                <tableViewController id="kXh-dG-F1g" customClass="DashboardTableViewController" customModule="Galleta_de_la_fortuna" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="kXh-dG-F1g" customClass="DashboardTableViewController" customModule="Fortunas" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hIl-AH-lu7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,7 @@
         <!--Colours View Controller-->
         <scene sceneID="WhP-03-3zL">
             <objects>
-                <viewController storyboardIdentifier="coloresmn" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ywp-I8-ewo" customClass="ColoursViewController" customModule="Galleta_de_la_fortuna" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="coloresmn" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ywp-I8-ewo" customClass="ColoursViewController" customModule="Fortunas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dyh-Ov-efj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,7 +179,7 @@
         <!--Numbers View Controller-->
         <scene sceneID="NLT-5T-T0J">
             <objects>
-                <viewController storyboardIdentifier="numeros" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OWU-Wp-gzf" customClass="NumbersViewController" customModule="Galleta_de_la_fortuna" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="numeros" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OWU-Wp-gzf" customClass="NumbersViewController" customModule="Fortunas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e16-AY-s5p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,27 +189,125 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4aa-wR-W8d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1581" y="461"/>
+            <point key="canvasLocation" x="1567" y="463"/>
         </scene>
         <!--Moons View Controller-->
         <scene sceneID="XdV-PU-l8U">
             <objects>
-                <viewController storyboardIdentifier="lunas" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lAV-5J-U3W" customClass="MoonsViewController" customModule="Galleta_de_la_fortuna" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lunas" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lAV-5J-U3W" customClass="MoonsViewController" customModule="Fortunas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oQg-co-DFr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqu-lm-hRR">
+                                <rect key="frame" x="32" y="344" width="350" height="218"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="9cw-We-T0U"/>
+                                    <constraint firstAttribute="height" constant="218" id="Pz1-U3-lxU"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Luna_Llena" translatesAutoresizingMaskIntoConstraints="NO" id="dUm-pN-UHj">
+                                <rect key="frame" x="133" y="145" width="148" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="4NE-Sw-3EL"/>
+                                    <constraint firstAttribute="height" constant="148" id="b3i-fL-amR"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Estrellas" translatesAutoresizingMaskIntoConstraints="NO" id="0Y7-im-qLY">
+                                <rect key="frame" x="87" y="102" width="240" height="234"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="T36-nK-gCg"/>
+                                    <constraint firstAttribute="height" constant="234" id="yxw-mm-mdp"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="z1K-JG-mhQ">
+                                <rect key="frame" x="87" y="570" width="74" height="114"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icono_Sube" translatesAutoresizingMaskIntoConstraints="NO" id="cQF-Cq-V9I">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="74" id="4xR-np-70v"/>
+                                            <constraint firstAttribute="height" constant="74" id="pDy-C6-vhm"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifi-CJ-DXA">
+                                        <rect key="frame" x="0.0" y="90" width="74" height="24"/>
+                                        <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="1tv-td-Isi"/>
+                                    <constraint firstAttribute="width" constant="74" id="EGE-Aa-tPg"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WI6-1H-vxQ">
+                                <rect key="frame" x="253" y="570" width="74" height="114"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icono_Baja" translatesAutoresizingMaskIntoConstraints="NO" id="FQG-DD-8xk">
+                                        <rect key="frame" x="0.0" y="0.0" width="74" height="74"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="74" id="Uif-aL-Jit"/>
+                                            <constraint firstAttribute="width" constant="74" id="jZZ-P0-eWi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLU-DC-xVc">
+                                        <rect key="frame" x="0.0" y="90" width="74" height="24"/>
+                                        <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="114" id="EB2-Dn-T01"/>
+                                    <constraint firstAttribute="width" constant="74" id="Nub-kz-EEJ"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXp-jn-Wmh">
+                                <rect key="frame" x="8" y="44" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Cpf-t9-W9V"/>
+                                    <constraint firstAttribute="width" constant="30" id="puP-LJ-ZAF"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="tapBack:" destination="lAV-5J-U3W" eventType="touchUpInside" id="Dam-qr-TTx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16300114736757754" green="0.0" blue="0.4301435596446701" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kqu-lm-hRR" firstAttribute="top" secondItem="dUm-pN-UHj" secondAttribute="bottom" constant="51" id="8Vy-E2-3fQ"/>
+                            <constraint firstItem="dUm-pN-UHj" firstAttribute="centerX" secondItem="g2W-e2-jtK" secondAttribute="centerX" id="Bsk-50-i86"/>
+                            <constraint firstItem="kqu-lm-hRR" firstAttribute="top" secondItem="0Y7-im-qLY" secondAttribute="bottom" constant="8" id="HUG-8d-Ccf"/>
+                            <constraint firstItem="z1K-JG-mhQ" firstAttribute="top" secondItem="kqu-lm-hRR" secondAttribute="bottom" constant="8" id="HbX-VZ-s4l"/>
+                            <constraint firstItem="GXp-jn-Wmh" firstAttribute="leading" secondItem="g2W-e2-jtK" secondAttribute="leading" constant="8" id="ImE-8L-uRT"/>
+                            <constraint firstItem="0Y7-im-qLY" firstAttribute="centerX" secondItem="g2W-e2-jtK" secondAttribute="centerX" id="ZPk-ZE-j0a"/>
+                            <constraint firstItem="g2W-e2-jtK" firstAttribute="trailing" secondItem="FQG-DD-8xk" secondAttribute="trailing" constant="87" id="aOD-uM-Vu4"/>
+                            <constraint firstItem="kqu-lm-hRR" firstAttribute="centerY" secondItem="g2W-e2-jtK" secondAttribute="centerY" id="cdN-A7-o8u"/>
+                            <constraint firstItem="WI6-1H-vxQ" firstAttribute="top" secondItem="kqu-lm-hRR" secondAttribute="bottom" constant="8" id="jVE-bH-7gO"/>
+                            <constraint firstItem="GXp-jn-Wmh" firstAttribute="top" secondItem="g2W-e2-jtK" secondAttribute="top" id="toH-Oo-7un"/>
+                            <constraint firstItem="kqu-lm-hRR" firstAttribute="centerX" secondItem="g2W-e2-jtK" secondAttribute="centerX" id="uAZ-7I-2VR"/>
+                            <constraint firstItem="cQF-Cq-V9I" firstAttribute="leading" secondItem="g2W-e2-jtK" secondAttribute="leading" constant="87" id="vSw-bL-daC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="g2W-e2-jtK"/>
                     </view>
+                    <connections>
+                        <outlet property="moonriseLbl" destination="ifi-CJ-DXA" id="PDH-WK-csV"/>
+                        <outlet property="sunriseLbl" destination="HLU-DC-xVc" id="Th4-AP-BDq"/>
+                        <outlet property="textView" destination="kqu-lm-hRR" id="XaG-Xt-hZr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKM-ef-svi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="712" y="-300"/>
+            <point key="canvasLocation" x="1566.6666666666667" y="-297.32142857142856"/>
         </scene>
         <!--Bola Ocho View Controller-->
         <scene sceneID="4qy-BH-uWn">
             <objects>
-                <viewController storyboardIdentifier="bolaocho" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XVh-yc-a6K" customClass="bolaOchoViewController" customModule="Galleta_de_la_fortuna" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="bolaocho" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XVh-yc-a6K" customClass="bolaOchoViewController" customModule="Fortunas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WOX-qj-kpm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -326,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oL0-Ng-W9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1566.6666666666667" y="-299.33035714285711"/>
+            <point key="canvasLocation" x="719" y="-297"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RjG-mC-lxS">
@@ -347,7 +445,7 @@
         <!--Data View Controller-->
         <scene sceneID="iGC-3p-oHd">
             <objects>
-                <viewController storyboardIdentifier="DataViewController" id="2vp-ou-vth" customClass="DataViewController" customModule="Galleta_de_la_fortuna" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DataViewController" id="2vp-ou-vth" customClass="DataViewController" customModule="Fortunas" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6pu-3p-Ok2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -360,7 +458,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_top" translatesAutoresizingMaskIntoConstraints="NO" id="ehR-ce-o5D">
-                                <rect key="frame" x="-2" y="60" width="418" height="80"/>
+                                <rect key="frame" x="-2" y="60" width="418.00000000000011" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="nBz-1O-Ka9"/>
                                 </constraints>
@@ -369,13 +467,13 @@
                                 <rect key="frame" x="-2" y="661" width="418" height="129"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toca la galleta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2t-nR-Bbl">
-                                        <rect key="frame" x="132.5" y="10" width="153" height="28"/>
+                                        <rect key="frame" x="112.5" y="14" width="193" height="24"/>
                                         <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_top" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-gO-8t6">
-                                        <rect key="frame" x="0.0" y="55" width="418" height="80"/>
+                                        <rect key="frame" x="0.0" y="55" width="418.00000000000011" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="S1q-2g-uwI"/>
                                         </constraints>
@@ -507,7 +605,7 @@
         <!--Themes View Controller-->
         <scene sceneID="GaI-nk-zhy">
             <objects>
-                <pageViewController storyboardIdentifier="themesViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Svo-QC-8B2" customClass="themesViewController" customModule="Galleta_de_la_fortuna" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="themesViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Svo-QC-8B2" customClass="themesViewController" customModule="Fortunas" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGx-tE-Vqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2425" y="-1061"/>
@@ -518,7 +616,11 @@
         <image name="Bola8_Circulo" width="330" height="329.5"/>
         <image name="Bola8_Triangulo" width="284" height="272.5"/>
         <image name="Boton_Colores" width="555" height="555"/>
+        <image name="Estrellas" width="1356" height="1347"/>
+        <image name="Icono_Baja" width="307" height="245"/>
+        <image name="Icono_Sube" width="307" height="245"/>
         <image name="KachamLogo_Blanco" width="896" height="1129"/>
+        <image name="Luna_Llena" width="938" height="939"/>
         <image name="basic_closed" width="268" height="188"/>
         <image name="basic_frame" width="446.5" height="195.5"/>
         <image name="basic_pop" width="208" height="84"/>

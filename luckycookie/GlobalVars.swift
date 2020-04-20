@@ -15,11 +15,12 @@ struct GlobalVars {
 }
 
 public enum Colors {
-    public static let charcoal = UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
-    public static let blanco   = UIColor(red:1.00,  green:1.00,  blue:1.00,  alpha:1.0)
-    public static let neutral  = UIColor(red: 0.50, green: 0.50, blue: 0.50, alpha: 1.00)
-    public static let manatee  = UIColor(red:0.93,  green:0.94,  blue:0.96,  alpha:1.0)
-    public static let violet   = UIColor(red: 0.73, green: 0.58, blue: 0.87, alpha: 1.00)
+    public static let charcoal  = UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
+    public static let blanco    = UIColor(red:1.00,  green:1.00,  blue:1.00,  alpha:1.0)
+    public static let neutral   = UIColor(red: 0.50, green: 0.50, blue: 0.50, alpha: 1.00)
+    public static let manatee   = UIColor(red:0.93,  green:0.94,  blue:0.96,  alpha:1.0)
+    public static let violet    = UIColor(red: 0.73, green: 0.58, blue: 0.87, alpha: 1.00)
+    public static let moonshine = UIColor(red: 0.00, green: 0.00, blue: 0.20, alpha: 1.00)
 }
 
 public enum SpaceUnits {

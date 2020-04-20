@@ -119,11 +119,7 @@ class DashboardTableViewController: UITableViewController {
     }
     
     @objc func leftLV1() {
-        if colorsAvailable {
-            routeToColours()
-        } else {
-            showAlertColor()
-        }
+        routeToBolaOcho()
     }
     
     @objc func rightLV1() {
@@ -139,7 +135,7 @@ class DashboardTableViewController: UITableViewController {
     }
     
     @objc func rightLV2() {
-        routeToBolaOcho()
+       routeToNumbers()
     }
     
     // MARK: - Table view data source
@@ -172,14 +168,14 @@ class DashboardTableViewController: UITableViewController {
             
         } else if indexPath.section == DashboardSections.level1 {
             cell.addSubview(TwinCell(viewController: self,
-                                     left:  Imagenes.badClosed!,
-                                     right: Imagenes.loveClosed!,
+                                     left:  DashboardImages.dashBoardBola!,
+                                     right: DashboardImages.dashBoardLuna!,
                                      leftAction:  #selector(leftLV1),
                                      rightAction: #selector(rightLV1)))
         } else if indexPath.section == DashboardSections.level2 {
             cell.addSubview(TwinCell(viewController: self,
-                                     left:  Imagenes.badClosed!,
-                                     right: Imagenes.loveClosed!,
+                                     left:  DashboardImages.dashBoardColores!,
+                                     right: DashboardImages.dashBoardNumeros!,
                                      leftAction:  #selector(leftLV1),
                                      rightAction: #selector(rightLV1)))
         }
@@ -224,9 +220,9 @@ class DashboardTableViewController: UITableViewController {
             headerlabel.text             = DashboardSections.luckycookietitle
             smallview.addSubview(headerlabel)
         } else if section == DashboardSections.level1 {
-            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Color de hoy", right: "Bola mágica"))
+            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Bola mágica", right: "Luna"))
         } else if section == DashboardSections.level2 {
-                   smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Lunas", right: "Numeros"))
+                   smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Color de hoy", right: "Números de hoy"))
         }
         return smallview
     }

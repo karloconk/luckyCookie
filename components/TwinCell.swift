@@ -44,15 +44,23 @@ public class TwinCell: UIView {
         DispatchQueue.main.async {
             
             var bgcolorL = Colours.basicBackground
-            if left == Imagenes.badClosed {
+            if left == DashboardImages.dashBoardColores {
                 bgcolorL = Colors.blanco
                 self.lButton.layer.borderWidth = 1
                 self.lButton.layer.borderColor = Colors.neutral.cgColor
             }
             
+            if left == DashboardImages.dashBoardBola {
+                bgcolorL = Colors.violet
+            }
+            
             var bgcolorR = Colours.basicBackground
-            if right == Imagenes.loveClosed {
-                bgcolorR = Colors.violet
+            if right == DashboardImages.dashBoardLuna {
+                bgcolorR = Colors.moonshine
+            }
+            
+            if right == DashboardImages.dashBoardNumeros {
+                bgcolorR = Colors.moonshine
             }
             
             self.lButton.backgroundColor = bgcolorL

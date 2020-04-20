@@ -14,6 +14,10 @@ class MoonsViewController: UIViewController {
     
     // MARK:- Outlets
     
+    @IBOutlet weak var moonriseLbl: UILabel!
+    @IBOutlet weak var sunriseLbl: UILabel!
+    @IBOutlet weak var textView: UIView!
+    
     // MARK:- Variables
     let moonPhaser      = SwiftySuncalc()
     var locationManager = CLLocationManager()
@@ -101,5 +105,11 @@ class MoonsViewController: UIViewController {
         format.dateFormat = "'El 'dd' a las 'HH:mm' horas'"
         let dateString = format.string(from: date)
         return dateString
+    }
+    
+    //MARK:-Actions
+    
+    @IBAction func tapBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: {})
     }
 }
