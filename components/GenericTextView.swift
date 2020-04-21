@@ -37,7 +37,7 @@ public class GenericTextView: UIView {
         self.frameHeight = CGFloat(height)
         self.frameWidth  = view.frame.width
 
-        let theFrame = CGRect(x:     view.frame.minX,  y: CGFloat(0),
+        let theFrame = CGRect(x:     CGFloat(0),  y: CGFloat(0),
                               width: view.frame.width, height: frameHeight)
         super.init(frame: theFrame)
         backgroundColor = nil

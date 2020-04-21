@@ -54,58 +54,59 @@ class ColoursViewController: UIViewController {
         textView.isHidden = false
         obtentucolorlabel.text = colour
         obtentucolorlabel.textColor = Colors.blanco
+        let thehait   = textView.frame.height
 
         switch colour {
         case "rojo"     :
             self.view.backgroundColor = ColoursColors.rojo
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.rojo,
-                                                height: 100))
+                                                height: Double(thehait)))
         case "rosa"     :
             self.view.backgroundColor = ColoursColors.rosa
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.rosa,
-                                                height: 100))
+                                                height: Double(thehait)))
         case "naranja"  :
             self.view.backgroundColor = ColoursColors.naranja
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.naranja,
-                                                height: 100))
+                                                height: Double(thehait)))
         case "amarillo" :
             self.view.backgroundColor = ColoursColors.amarillo
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.amarillo,
-                                                height: 100))
+                                                height: Double(thehait)))
         case "verde"    :
             self.view.backgroundColor = ColoursColors.verde
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.verde,
-                                                height: 100))
+                                                height: Double(thehait)))
         case "azul"     :
             self.view.backgroundColor = ColoursColors.azul
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.azul,
-                                                height: 100))
+                                                height: Double(thehait)))
         case "marron"   :
             self.view.backgroundColor = ColoursColors.marron
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.marron,
-                                                height: 100))
+                                                height: Double(thehait)))
         case "morado"   :
             self.view.backgroundColor = ColoursColors.morado
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.morado,
-                                                height: 100))
+                                                height: Double(thehait)))
         case "negro"    :
             self.view.backgroundColor = ColoursColors.negro
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.negro,
-                                                height: 100))
+                                                height: Double(thehait)))
         case "blanco"   :
             self.view.backgroundColor = ColoursColors.blanco
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.blanco,
-                                                height: 100))
+                                                height: Double(thehait)))
             obtentucolorlabel.textColor = Colors.charcoal
             bottomKacham.image = UIImage(named: "KachamLogo_Black")
         default:

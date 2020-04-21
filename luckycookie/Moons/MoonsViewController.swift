@@ -24,6 +24,15 @@ class MoonsViewController: UIViewController {
     
     let phases     = ["Luna nueva","Luna creciente",  "Primer cuarto","Luna menguante",
                       "Luna llena","Gibosa menguante","Último cuarto","Creciente menguante"]
+    let phasesmssg =
+    ["LunaNueva":        "Momento de nuevos comienzos y desintoxicación",
+     "LunaCreciente":    "Momento de sembrar proyectos nuevos y desarrollarse",
+     "CuartoCreciente":  "Momento de superar dificultades y ser productivo",
+     "GibosaCreciente":  "Momento de relacionarse e inspirarse",
+     "Lunallena":        "Momento de creatividad, romance y resultados",
+     "GibosaMenguante":  "Momento de resistir y mantener la calma",
+     "CuartoMenguante":  "Momento de introspección",
+     "LunaMenguante":    "Momento de conclusiones y nuevas preparaciones"]
     
     var sunrise =  ""
     var sunset  =  ""
@@ -38,16 +47,28 @@ class MoonsViewController: UIViewController {
             currentLoc = locationManager.location
             let aJson = moonPhaser.getTimes(date: Date(), lat: currentLoc.coordinate.latitude, lng:  currentLoc.coordinate.longitude)
             if let sunriseDate = aJson["sunrise"] {
+                print(sunriseDate)
                 sunrise = castDate(date: sunriseDate)
             }
             if let sunsetDate = aJson["sunset"] {
+                print(sunsetDate)
                 sunset  = castDate(date: sunsetDate)
             }
-            print(sunrise)
-            print(sunset)
+            sunriseLbl.text  = sunrise
+            moonriseLbl.text = sunset
             locationManager.stopUpdatingLocation()
         }
-        print("\(getMoonPhase())")
+        let theMoonPhase = getMoonPhase()
+        print(theMoonPhase)
+        let theHeader = NSAttributedString(string:     (theMoonPhase + "\n\n"),
+                                           attributes: TextusAttributes.bigHeader)
+        let theText   = NSAttributedString(string:     phasesmssg["LunaNueva"]!,
+                                           attributes: TextusAttributes.bigWhite)
+        let thehait   = textView.frame.height
+        textView.addSubview(GenericTextView(view: textView,
+                                            text:   Tools.sumAttributedStrings(theHeader,
+                                                                               theText),
+                                            height: Double(thehait)))
     }
     
     // MARK:-Functions
@@ -60,13 +81,15 @@ class MoonsViewController: UIViewController {
             currentLoc = locationManager.location
             let aJson = moonPhaser.getTimes(date: Date(), lat: currentLoc.coordinate.latitude, lng:  currentLoc.coordinate.longitude)
             if let sunriseDate = aJson["sunrise"] {
+                print(sunriseDate)
                 sunrise = castDate(date: sunriseDate)
             }
             if let sunsetDate = aJson["sunset"] {
+                print(sunsetDate)
                 sunset  = castDate(date: sunsetDate)
             }
-            print(sunrise)
-            print(sunset)
+            sunriseLbl.text  = sunrise
+            moonriseLbl.text = sunset
             locationManager.stopUpdatingLocation()
         case .denied, .notDetermined, .restricted:
             locationManager.stopUpdatingLocation()
@@ -102,7 +125,7 @@ class MoonsViewController: UIViewController {
     func castDate(date: Date) -> String {
         let format = DateFormatter()
         format.timeZone = .current
-        format.dateFormat = "'El 'dd' a las 'HH:mm' horas'"
+        format.dateFormat = "HH:mm"
         let dateString = format.string(from: date)
         return dateString
     }

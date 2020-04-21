@@ -130,7 +130,8 @@ class DashboardTableViewController: UITableViewController {
         if colorsAvailable {
             routeToColours()
         } else {
-            showAlertColor()
+            routeToColours()
+            //showAlertColor()
         }
     }
     
@@ -176,8 +177,8 @@ class DashboardTableViewController: UITableViewController {
             cell.addSubview(TwinCell(viewController: self,
                                      left:  DashboardImages.dashBoardColores!,
                                      right: DashboardImages.dashBoardNumeros!,
-                                     leftAction:  #selector(leftLV1),
-                                     rightAction: #selector(rightLV1)))
+                                     leftAction:  #selector(leftLV2),
+                                     rightAction: #selector(rightLV2)))
         }
         
         return cell

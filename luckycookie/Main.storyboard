@@ -129,8 +129,9 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dzy-xs-Pgb">
-                                <rect key="frame" x="16" y="369" width="350" height="218"/>
+                                <rect key="frame" x="72.5" y="369" width="269" height="218"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="269" id="3Qd-D1-xai"/>
                                     <constraint firstAttribute="height" constant="218" id="ap7-N4-MRC"/>
                                 </constraints>
                             </view>
@@ -147,10 +148,9 @@
                             <constraint firstItem="9s9-Qh-vbu" firstAttribute="centerX" secondItem="hUF-zh-9YO" secondAttribute="centerX" id="395-Bu-6IT"/>
                             <constraint firstItem="UIs-VP-xi0" firstAttribute="top" secondItem="9s9-Qh-vbu" secondAttribute="bottom" constant="46" id="4eH-4e-Drz"/>
                             <constraint firstItem="3LR-Ae-Ugq" firstAttribute="top" secondItem="UIs-VP-xi0" secondAttribute="bottom" constant="38" id="5yT-Ev-2ov"/>
-                            <constraint firstItem="hUF-zh-9YO" firstAttribute="trailing" secondItem="Dzy-xs-Pgb" secondAttribute="trailing" constant="48" id="Emg-pc-CUE"/>
+                            <constraint firstItem="Dzy-xs-Pgb" firstAttribute="centerX" secondItem="hUF-zh-9YO" secondAttribute="centerX" id="FTa-jK-pHT"/>
                             <constraint firstItem="UIs-VP-xi0" firstAttribute="centerX" secondItem="hUF-zh-9YO" secondAttribute="centerX" id="Hv9-nY-DxF"/>
                             <constraint firstItem="j98-vj-xr9" firstAttribute="centerX" secondItem="hUF-zh-9YO" secondAttribute="centerX" id="Kq6-n7-Tz0"/>
-                            <constraint firstItem="Dzy-xs-Pgb" firstAttribute="leading" secondItem="hUF-zh-9YO" secondAttribute="leading" constant="16" id="UmD-JR-Scr"/>
                             <constraint firstItem="UIs-VP-xi0" firstAttribute="centerY" secondItem="hUF-zh-9YO" secondAttribute="centerY" id="VK4-N6-3W1"/>
                             <constraint firstItem="y99-E4-EFe" firstAttribute="centerX" secondItem="hUF-zh-9YO" secondAttribute="centerX" id="VVp-r3-W93"/>
                             <constraint firstItem="3LR-Ae-Ugq" firstAttribute="centerX" secondItem="hUF-zh-9YO" secondAttribute="centerX" id="gk5-bw-phC"/>
@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CL5-nf-M0B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="712" y="463"/>
+            <point key="canvasLocation" x="711.59420289855075" y="462.72321428571428"/>
         </scene>
         <!--Numbers View Controller-->
         <scene sceneID="NLT-5T-T0J">
@@ -200,9 +200,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqu-lm-hRR">
-                                <rect key="frame" x="32" y="344" width="350" height="218"/>
+                                <rect key="frame" x="57" y="344" width="300" height="218"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="9cw-We-T0U"/>
+                                    <constraint firstAttribute="width" constant="300" id="9cw-We-T0U"/>
                                     <constraint firstAttribute="height" constant="218" id="Pz1-U3-lxU"/>
                                 </constraints>
                             </view>
@@ -458,7 +458,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_top" translatesAutoresizingMaskIntoConstraints="NO" id="ehR-ce-o5D">
-                                <rect key="frame" x="-2" y="60" width="418.00000000000011" height="80"/>
+                                <rect key="frame" x="-2" y="60" width="418" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="nBz-1O-Ka9"/>
                                 </constraints>
@@ -467,13 +467,13 @@
                                 <rect key="frame" x="-2" y="661" width="418" height="129"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toca la galleta" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2t-nR-Bbl">
-                                        <rect key="frame" x="112.5" y="14" width="193" height="24"/>
+                                        <rect key="frame" x="132.5" y="10" width="153" height="28"/>
                                         <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basic_top" translatesAutoresizingMaskIntoConstraints="NO" id="kdo-gO-8t6">
-                                        <rect key="frame" x="0.0" y="55" width="418.00000000000011" height="80"/>
+                                        <rect key="frame" x="0.0" y="55" width="418" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="S1q-2g-uwI"/>
                                         </constraints>

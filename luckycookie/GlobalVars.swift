@@ -42,14 +42,18 @@ enum DashBoardValues {
 
 
 enum TextusAttributes {
-    public static let bigBlack = Font.getAttributes(lineSpacing:        6.0,
-                                                    fontColour:         Colors.charcoal,
-                                                         typo:          Font.getbigFont(size: 20),
-                                                         isUnderlined:  false)
-    public static let bigWhite = Font.getAttributes(lineSpacing:        6.0,
-                                                    fontColour:         Colors.blanco,
-                                                         typo:          Font.getbigFont(size: 20),
-                                                         isUnderlined:  false)
+    public static let bigBlack = Font.getAttributes(lineSpacing:   6.0,
+                                                    fontColour:    Colors.charcoal,
+                                                    typo:          Font.getbigFont(size: 20),
+                                                    isUnderlined:  false)
+    public static let bigWhite = Font.getAttributes(lineSpacing:   6.0,
+                                                    fontColour:    Colors.blanco,
+                                                    typo:          Font.getbigFont(size: 20),
+                                                    isUnderlined:  false)
+    public static let bigHeader = Font.getAttributes(lineSpacing:  6.0,
+                                                     fontColour:   Colors.blanco,
+                                                     typo:         Font.getbigFont(size: 22),
+                                                     isUnderlined: false)
 }
 
 enum ColoursStrings {
