@@ -6,7 +6,6 @@
 //  Copyright © 2020 Karlo Hurtado. All rights reserved.
 //
 
-
 import Foundation
 import UIKit
 

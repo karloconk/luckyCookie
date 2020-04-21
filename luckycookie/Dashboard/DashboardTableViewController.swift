@@ -67,15 +67,15 @@ class DashboardTableViewController: UITableViewController {
     }
     
     func showAlertColor() {
-        let alertController = UIAlertController(title: "Color de hoy usado", message:
-            "Ya viste el color hoy, espera hasta mañana para obtener otro.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Color de hoy visto", message:
+            "Ya viste el color hoy, espera hasta mañana para ver otro.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Bueno 😔", style: .default))
         self.present(alertController, animated: true, completion: nil)
     }
     
     func showAlertNumbers() {
-        let alertController = UIAlertController(title: "Numeros de hoy usado", message:
-            "Ya viste números hoy, espera hasta mañana para obtener otros.", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Numeros de hoy vistos", message:
+            "Ya viste números hoy, espera hasta mañana para ver otros.", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Bueno 😔", style: .default))
         self.present(alertController, animated: true, completion: nil)
     }
@@ -130,13 +130,16 @@ class DashboardTableViewController: UITableViewController {
         if colorsAvailable {
             routeToColours()
         } else {
-            routeToColours()
-            //showAlertColor()
+            showAlertColor()
         }
     }
     
     @objc func rightLV2() {
-       routeToNumbers()
+        if numbersAvailable {
+            routeToNumbers()
+        } else {
+            showAlertNumbers()
+        }
     }
     
     // MARK: - Table view data source

@@ -10,20 +10,28 @@ import UIKit
 import SwiftySuncalc
 import CoreLocation
 
-class MoonsViewController: UIViewController {
+class MoonsViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK:- Outlets
     
     @IBOutlet weak var moonriseLbl: UILabel!
-    @IBOutlet weak var sunriseLbl: UILabel!
-    @IBOutlet weak var textView: UIView!
+    @IBOutlet weak var sunriseLbl:  UILabel!
+    @IBOutlet weak var textView:    UIView!
+    @IBOutlet weak var moonImage:   UIImageView!
     
+    @IBOutlet weak var actualMoon: UIImageView!
     // MARK:- Variables
     let moonPhaser      = SwiftySuncalc()
     var locationManager = CLLocationManager()
     
-    let phases     = ["Luna nueva","Luna creciente",  "Primer cuarto","Luna menguante",
-                      "Luna llena","Gibosa menguante","Último cuarto","Creciente menguante"]
+    let phases     = [  "LunaNueva",
+                        "LunaCreciente",
+                        "CuartoCreciente",
+                        "GibosaCreciente",
+                        "Lunallena",
+                        "GibosaMenguante",
+                        "CuartoMenguante",
+                        "LunaMenguante"]
     let phasesmssg =
     ["LunaNueva":        "Momento de nuevos comienzos y desintoxicación",
      "LunaCreciente":    "Momento de sembrar proyectos nuevos y desarrollarse",
@@ -34,6 +42,26 @@ class MoonsViewController: UIViewController {
      "CuartoMenguante":  "Momento de introspección",
      "LunaMenguante":    "Momento de conclusiones y nuevas preparaciones"]
     
+    let phasesImg =
+        ["LunaNueva":        MoonImages.LunaNueva,
+         "LunaCreciente":    MoonImages.LunaCreciente,
+         "CuartoCreciente":  MoonImages.CuartoCreciente,
+         "GibosaCreciente":  MoonImages.GibosaCreciente,
+         "Lunallena":        MoonImages.Lunallena,
+         "GibosaMenguante":  MoonImages.GibosaMenguante,
+         "CuartoMenguante":  MoonImages.CuartoMenguante,
+         "LunaMenguante":    MoonImages.LunaMenguante]
+    
+    let phasesTitle =
+        ["LunaNueva":        "Luna nueva",
+         "LunaCreciente":    "Creciente",
+         "CuartoCreciente":  "Cuarto creciente",
+         "GibosaCreciente":  "Gibosa creciente",
+         "Lunallena":        "Luna llena",
+         "GibosaMenguante":  "Gibosa menguante",
+         "CuartoMenguante":  "Cuarto menguante",
+         "LunaMenguante":    "Menguante"]
+    
     var sunrise =  ""
     var sunset  =  ""
     
@@ -41,9 +69,16 @@ class MoonsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.requestWhenInUseAuthorization()
+        
+        self.locationManager.delegate = self
+        
+        if     CLLocationManager.authorizationStatus() == .denied
+            || CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
         let currentLoc: CLLocation!
         if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse) {
+            locationManager.startUpdatingLocation()
             currentLoc = locationManager.location
             let aJson = moonPhaser.getTimes(date: Date(), lat: currentLoc.coordinate.latitude, lng:  currentLoc.coordinate.longitude)
             if let sunriseDate = aJson["sunrise"] {
@@ -60,9 +95,11 @@ class MoonsViewController: UIViewController {
         }
         let theMoonPhase = getMoonPhase()
         print(theMoonPhase)
-        let theHeader = NSAttributedString(string:     (theMoonPhase + "\n\n"),
+        self.actualMoon.image = phasesImg[theMoonPhase]!
+        let theTaitle = phasesTitle[theMoonPhase]!
+        let theHeader = NSAttributedString(string:     (theTaitle + "\n\n"),
                                            attributes: TextusAttributes.bigHeader)
-        let theText   = NSAttributedString(string:     phasesmssg["LunaNueva"]!,
+        let theText   = NSAttributedString(string:     phasesmssg[theMoonPhase]!,
                                            attributes: TextusAttributes.bigWhite)
         let thehait   = textView.frame.height
         textView.addSubview(GenericTextView(view: textView,

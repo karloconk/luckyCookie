@@ -39,6 +39,7 @@
 		B078348724492C9A006ECC43 /* DashboardCompound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078348624492C9A006ECC43 /* DashboardCompound.swift */; };
 		B078348924493490006ECC43 /* CenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078348824493490006ECC43 /* CenterCell.swift */; };
 		B078348B24494460006ECC43 /* TwinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B078348A24494460006ECC43 /* TwinCell.swift */; };
+		B0CBF4F3244F4B7B00ECD7D9 /* MoonsImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CBF4F2244F4B7B00ECD7D9 /* MoonsImages.swift */; };
 		B0D58F1D243C17FD0004ADDC /* karloExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D58F1C243C17FD0004ADDC /* karloExtensions.swift */; };
 		D8CC943EE6E8503AEE28F42F /* libPods-luckycookie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D390FF98453BB2843846892F /* libPods-luckycookie.a */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		B078348624492C9A006ECC43 /* DashboardCompound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCompound.swift; sourceTree = "<group>"; };
 		B078348824493490006ECC43 /* CenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterCell.swift; sourceTree = "<group>"; };
 		B078348A24494460006ECC43 /* TwinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinCell.swift; sourceTree = "<group>"; };
+		B0CBF4F2244F4B7B00ECD7D9 /* MoonsImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonsImages.swift; sourceTree = "<group>"; };
 		B0D58F1C243C17FD0004ADDC /* karloExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = karloExtensions.swift; sourceTree = "<group>"; };
 		B8466B2CA743D6919CAFF335 /* Pods-luckycookie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-luckycookie.release.xcconfig"; path = "Target Support Files/Pods-luckycookie/Pods-luckycookie.release.xcconfig"; sourceTree = "<group>"; };
 		D390FF98453BB2843846892F /* libPods-luckycookie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-luckycookie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				B02F33B2244BE55F001349C5 /* MoonsViewController.swift */,
+				B0CBF4F2244F4B7B00ECD7D9 /* MoonsImages.swift */,
 			);
 			path = Moons;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				B008189123EA5565006A809F /* FirstViewController.swift in Sources */,
 				B078347F244913CE006ECC43 /* Tools.swift in Sources */,
 				B078348B24494460006ECC43 /* TwinCell.swift in Sources */,
+				B0CBF4F3244F4B7B00ECD7D9 /* MoonsImages.swift in Sources */,
 				B02F33A4244B8FEB001349C5 /* ColoursViewController.swift in Sources */,
 				B02F33992449FEA2001349C5 /* TwinHeaders.swift in Sources */,
 				B02F339E244B7F92001349C5 /* StoryBoardsBasics.swift in Sources */,
