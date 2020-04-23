@@ -72,8 +72,7 @@ class MoonsViewController: UIViewController, CLLocationManagerDelegate {
         
         self.locationManager.delegate = self
         
-        if     CLLocationManager.authorizationStatus() == .denied
-            || CLLocationManager.authorizationStatus() == .notDetermined {
+        if  CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
             locationManager.requestWhenInUseAuthorization()
         }
         let currentLoc: CLLocation!

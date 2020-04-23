@@ -11,13 +11,22 @@ import UIKit
 class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
     
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var toptext: UILabel!
+    @IBOutlet weak var bottomText: UILabel!
+    @IBOutlet weak var buttonNumbers: UIImageView!
+    @IBOutlet weak var kalogo: UIImageView!
     
     let theRows     = 200
     let defaults    = UserDefaults.standard
     var pickerData: [[Int]] = []
+    var shown = false
+    var clicked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        toptext.textColor    = Colors.upperNum
+        bottomText.textColor = Colors.lowerNum
+        kalogo.alpha = 0.0
         setupPicker()
     }
     
@@ -27,6 +36,7 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         pickerData = [makeArr(theRows),makeArr(theRows),makeArr(theRows)]
         self.pickerView.isUserInteractionEnabled = false
         for nu in 0..<3 {
+            pickerData[nu][3] = 0
             self.pickerView.selectRow(3, inComponent: nu, animated: true)
         }
     }
@@ -83,24 +93,37 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     @IBAction func selectNumbers(_ sender: Any) {
-        var toRow = 28
-        self.pickerView.selectRow(toRow, inComponent: 0, animated: true)
-        self.pickerView.selectRow(toRow, inComponent: 1, animated: true)
-        self.pickerView.selectRow(toRow, inComponent: 2, animated: true)
-        var seconds = 0.2
-        for _ in 0...10 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                toRow += 20
-                if toRow < 80 {
-                    self.pickerView.selectRow(toRow,  inComponent: 0, animated: true)
+        if !clicked {
+            clicked = true
+            self.bottomText.isHidden    = true
+            self.buttonNumbers.isHidden = true
+            self.toptext.isHidden       = true
+            self.toptext.text = "Tus números de hoy son:"
+            
+            var toRow = 28
+            self.pickerView.selectRow(toRow, inComponent: 0, animated: true)
+            self.pickerView.selectRow(toRow, inComponent: 1, animated: true)
+            self.pickerView.selectRow(toRow, inComponent: 2, animated: true)
+            var seconds = 0.2
+            for _ in 0...10 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                    toRow += 20
+                    if toRow < 80 {
+                        self.pickerView.selectRow(toRow,  inComponent: 0, animated: true)
+                    }
+                    if toRow < 140 {
+                        self.pickerView.selectRow(toRow,  inComponent: 1, animated: true)
+                    } else if !self.shown {
+                        UIView.animate(withDuration: 0.6, delay: 0.0, options: .curveLinear, animations: {
+                            self.kalogo.alpha = 1.0
+                        }, completion: { (Bool) -> Void in self.toptext.isHidden = false } )
+                        self.shown = true
+                    }
+                    self.pickerView.selectRow(toRow,  inComponent: 2, animated: true)
                 }
-                if toRow < 140 {
-                    self.pickerView.selectRow(toRow,  inComponent: 1, animated: true)
-                }
-                self.pickerView.selectRow(toRow,  inComponent: 2, animated: true)
+                seconds += 0.2
             }
-            seconds += 0.2
+            saveDate()
         }
-        saveDate()
     }
 }

@@ -35,9 +35,6 @@ class bolaOchoViewController: UIViewController {
             chooseAnswer()
             topText.text    = BolaOchoTexts.titleOn
             bottomText.text = BolaOchoTexts.bottomOn
-            //UIView.animate(withDuration: 0.8, delay: 0.3, options: .curveLinear, animations: {
-            //    self.bottomKacham.alpha = 1.0
-            //}, completion: nil )
             UIView.animate(withDuration: 1.0, delay: 0.3, options: .curveLinear, animations: {
                 self.responseText.alpha = 1.0
                 self.responseBG.alpha = 1.0

@@ -81,7 +81,7 @@ class DashboardTableViewController: UITableViewController {
     }
     
     // MARK:- Routing
-
+    
     func routeToGalleta() {
         let goToGalleta = UIStoryboard.goToGalleta()
         goToGalleta.modalPresentationStyle = .fullScreen
@@ -165,10 +165,10 @@ class DashboardTableViewController: UITableViewController {
             
         } else if indexPath.section == DashboardSections.luckycookie {
             cell.addSubview(DashboardCompound(frame:  CGRect(x: 0, y: 0, width: Int(tablewidth),
-            height: Int(DashboardSections.luckycookieheight)),
-            image:  Imagenes.basicClosed!,
-            vc:     self,
-            action: #selector(luckyClick)))
+                                                             height: Int(DashboardSections.luckycookieheight)),
+                                              image:  Imagenes.basicClosed!,
+                                              vc:     self,
+                                              action: #selector(luckyClick)))
             
         } else if indexPath.section == DashboardSections.level1 {
             cell.addSubview(TwinCell(viewController: self,
@@ -208,8 +208,8 @@ class DashboardTableViewController: UITableViewController {
         
         if section == DashboardSections.dbheader {
             let littlestview  = UIView(frame: CGRect(x:      0,   y: 0,
-                                                  width:  Int(tablewidth),
-                                                  height: DashboardSections.headerheight - 16))
+                                                     width:  Int(tablewidth),
+                                                     height: DashboardSections.headerheight - 16))
             littlestview.backgroundColor = Colors.blanco
             return littlestview
         } else if section == DashboardSections.luckycookie {
@@ -226,7 +226,7 @@ class DashboardTableViewController: UITableViewController {
         } else if section == DashboardSections.level1 {
             smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Bola mágica", right: "Luna"))
         } else if section == DashboardSections.level2 {
-                   smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Color de hoy", right: "Números de hoy"))
+            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Color de hoy", right: "Números de hoy"))
         }
         return smallview
     }
@@ -259,5 +259,5 @@ enum DashboardSections {
     public static let level2height = CGFloat(140)
     
     public static let headerheight  = 30
-
+    
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class ColoursViewController: UIViewController {
-
+    
     //MARK:- Outlets
     @IBOutlet weak var obtentucolorlabel: UILabel!
     @IBOutlet weak var tocabotonlbl: UILabel!
@@ -20,13 +20,13 @@ class ColoursViewController: UIViewController {
     
     @IBOutlet weak var bottomKacham: UIImageView!
     //MARK:- Variables
-
+    
     let colours  = ["rojo","rosa",  "naranja","amarillo","verde",
                     "azul","marron","morado", "negro",   "blanco"]
     let defaults = UserDefaults.standard
-
+    
     //MARK:- Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         obtentucolorlabel.textColor = Colors.charcoal
@@ -55,55 +55,76 @@ class ColoursViewController: UIViewController {
         obtentucolorlabel.text = colour
         obtentucolorlabel.textColor = Colors.blanco
         let thehait   = textView.frame.height
-
+        
         switch colour {
         case "rojo"     :
-            self.view.backgroundColor = ColoursColors.rojo
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[.repeat, .autoreverse], animations: {
+                self.view.backgroundColor = ColoursColors.rojo
+            }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.rojo,
                                                 height: Double(thehait)))
         case "rosa"     :
-            self.view.backgroundColor = ColoursColors.rosa
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[], animations: {
+                self.view.backgroundColor = ColoursColors.rosa
+            }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.rosa,
                                                 height: Double(thehait)))
         case "naranja"  :
-            self.view.backgroundColor = ColoursColors.naranja
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[], animations: {
+                self.view.backgroundColor = ColoursColors.naranja
+            }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.naranja,
                                                 height: Double(thehait)))
         case "amarillo" :
-            self.view.backgroundColor = ColoursColors.amarillo
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[], animations: {
+                self.view.backgroundColor = ColoursColors.amarillo
+            }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.amarillo,
                                                 height: Double(thehait)))
         case "verde"    :
-            self.view.backgroundColor = ColoursColors.verde
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[], animations: {
+                self.view.backgroundColor = ColoursColors.verde
+            }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.verde,
                                                 height: Double(thehait)))
         case "azul"     :
-            self.view.backgroundColor = ColoursColors.azul
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[], animations: {
+                self.view.backgroundColor = ColoursColors.azul
+            }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.azul,
                                                 height: Double(thehait)))
         case "marron"   :
-            self.view.backgroundColor = ColoursColors.marron
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[], animations: {
+                self.view.backgroundColor = ColoursColors.marron
+            }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.marron,
                                                 height: Double(thehait)))
         case "morado"   :
-            self.view.backgroundColor = ColoursColors.morado
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[], animations: {
+                self.view.backgroundColor = ColoursColors.morado
+            }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.morado,
                                                 height: Double(thehait)))
         case "negro"    :
-            self.view.backgroundColor = ColoursColors.negro
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[], animations: {
+                self.view.backgroundColor = ColoursColors.negro
+            }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.negro,
                                                 height: Double(thehait)))
         case "blanco"   :
-            self.view.backgroundColor = ColoursColors.blanco
+            self.view.backgroundColor = ColoursColors.negro
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[], animations: {
+                self.view.backgroundColor = ColoursColors.blanco
+            }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
                                                 text: ColoursStrings.blanco,
                                                 height: Double(thehait)))
@@ -113,7 +134,7 @@ class ColoursViewController: UIViewController {
             break
         }
     }
-
+    
     //MARK:- Actions
     
     @IBAction func backbuttonTapped(_ sender: Any) {
