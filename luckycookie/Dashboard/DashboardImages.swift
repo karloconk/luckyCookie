@@ -14,5 +14,5 @@ enum DashboardImages {
     public static let dashBoardBola    = UIImage(named: "Dashboard_Bola8")
     public static let dashBoardLuna    = UIImage(named: "Dashboard_Luna")
     public static let dashBoardColores = UIImage(named: "Dashboard_Colores")
-    public static let dashBoardNumeros = UIImage(named: "Dashboard_Bola8")
+    public static let dashBoardNumeros = UIImage(named: "Dashboard_Numeros")
 }

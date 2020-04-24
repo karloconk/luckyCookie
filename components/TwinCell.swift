@@ -60,7 +60,9 @@ public class TwinCell: UIView {
             }
             
             if right == DashboardImages.dashBoardNumeros {
-                bgcolorR = Colors.moonshine
+                bgcolorR = Colors.blanco
+                self.rButton.layer.borderWidth = 1
+                self.rButton.layer.borderColor = Colors.upperNum.cgColor
             }
             
             self.lButton.backgroundColor = bgcolorL

@@ -135,10 +135,11 @@ class MoonsViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getMoonPhase() -> String {
-        let phasemeta = moonPhaser.getMoonIllumination(date: Date())["angle"]! * 100
+        let badbunny  = moonPhaser.getMoonIllumination(date: Date())
+        let phasemeta = badbunny["phase"]! * 100
         let phase     = Int( phasemeta )
         switch phase {
-        case 0:
+        case -100...0:
             return phases[0]
         case 1 ..< 25:
             return phases[1]

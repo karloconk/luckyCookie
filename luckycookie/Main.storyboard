@@ -198,15 +198,15 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGU-EM-RIO">
-                                <rect key="frame" x="24" y="241" width="366" height="180"/>
+                                <rect key="frame" x="30" y="261" width="354" height="160"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="c1n-IC-Ujb"/>
+                                    <constraint firstAttribute="height" constant="160" id="c1n-IC-Ujb"/>
                                 </constraints>
                             </pickerView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Numeros_Marco" translatesAutoresizingMaskIntoConstraints="NO" id="gH6-Xl-V3O">
-                                <rect key="frame" x="24" y="241" width="366" height="180"/>
+                                <rect key="frame" x="30" y="257" width="354" height="164"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="F13-bw-Lnl"/>
+                                    <constraint firstAttribute="height" constant="164" id="F13-bw-Lnl"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFm-0s-eLF">
@@ -233,7 +233,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obten tus números de hoy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHr-PA-0L8">
-                                <rect key="frame" x="64.5" y="197" width="285.5" height="28"/>
+                                <rect key="frame" x="64.5" y="213" width="285.5" height="28"/>
                                 <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
@@ -256,12 +256,12 @@
                             <constraint firstItem="DRC-Uc-gGs" firstAttribute="bottom" secondItem="7dL-tA-wOf" secondAttribute="bottom" constant="-16" id="1FF-Ci-Md1"/>
                             <constraint firstItem="4Sz-wM-GUY" firstAttribute="top" secondItem="EzX-0A-KQQ" secondAttribute="bottom" constant="21" id="3pU-5n-kyl"/>
                             <constraint firstItem="kRq-1q-PhZ" firstAttribute="leading" secondItem="7dL-tA-wOf" secondAttribute="leading" constant="8" id="473-ay-vI9"/>
-                            <constraint firstItem="gH6-Xl-V3O" firstAttribute="trailing" secondItem="7dL-tA-wOf" secondAttribute="trailing" constant="-24" id="4aT-pf-uLK"/>
+                            <constraint firstItem="gH6-Xl-V3O" firstAttribute="trailing" secondItem="7dL-tA-wOf" secondAttribute="trailing" constant="-30" id="4aT-pf-uLK"/>
                             <constraint firstItem="4Sz-wM-GUY" firstAttribute="centerX" secondItem="7dL-tA-wOf" secondAttribute="centerX" id="5qm-lh-pUn"/>
                             <constraint firstItem="gH6-Xl-V3O" firstAttribute="top" secondItem="RHr-PA-0L8" secondAttribute="bottom" constant="16" id="8av-Z1-E8I"/>
                             <constraint firstItem="nFm-0s-eLF" firstAttribute="centerX" secondItem="7dL-tA-wOf" secondAttribute="centerX" id="BOy-Tu-Pqb"/>
                             <constraint firstItem="EzX-0A-KQQ" firstAttribute="centerY" secondItem="7dL-tA-wOf" secondAttribute="centerY" id="Hkt-Tv-gFf"/>
-                            <constraint firstItem="gH6-Xl-V3O" firstAttribute="leading" secondItem="7dL-tA-wOf" secondAttribute="leading" constant="24" id="IFp-5D-aZo"/>
+                            <constraint firstItem="gH6-Xl-V3O" firstAttribute="leading" secondItem="7dL-tA-wOf" secondAttribute="leading" constant="30" id="IFp-5D-aZo"/>
                             <constraint firstItem="JWf-3N-hnS" firstAttribute="top" secondItem="4Sz-wM-GUY" secondAttribute="bottom" constant="38" id="Rll-ul-Ybr"/>
                             <constraint firstItem="JWf-3N-hnS" firstAttribute="centerX" secondItem="7dL-tA-wOf" secondAttribute="centerX" id="S4T-D3-ut8"/>
                             <constraint firstItem="kRq-1q-PhZ" firstAttribute="top" secondItem="7dL-tA-wOf" secondAttribute="top" id="SHh-Jl-8rc"/>
@@ -270,11 +270,11 @@
                             <constraint firstItem="RHr-PA-0L8" firstAttribute="centerX" secondItem="7dL-tA-wOf" secondAttribute="centerX" id="efv-eZ-Fug"/>
                             <constraint firstItem="EzX-0A-KQQ" firstAttribute="top" secondItem="gH6-Xl-V3O" secondAttribute="bottom" constant="28" id="evt-fc-8qX"/>
                             <constraint firstItem="7dL-tA-wOf" firstAttribute="trailing" secondItem="EzX-0A-KQQ" secondAttribute="trailing" constant="24" id="mz9-bC-0QP"/>
-                            <constraint firstItem="IGU-EM-RIO" firstAttribute="leading" secondItem="7dL-tA-wOf" secondAttribute="leading" constant="24" id="rlr-wf-x7f"/>
+                            <constraint firstItem="IGU-EM-RIO" firstAttribute="leading" secondItem="7dL-tA-wOf" secondAttribute="leading" constant="30" id="rlr-wf-x7f"/>
                             <constraint firstItem="nFm-0s-eLF" firstAttribute="top" secondItem="EzX-0A-KQQ" secondAttribute="bottom" constant="21" id="sXG-bF-Mny"/>
                             <constraint firstItem="EzX-0A-KQQ" firstAttribute="top" secondItem="IGU-EM-RIO" secondAttribute="bottom" constant="28" id="sZH-TD-06x"/>
                             <constraint firstItem="EzX-0A-KQQ" firstAttribute="centerX" secondItem="7dL-tA-wOf" secondAttribute="centerX" id="sls-Sa-QQx"/>
-                            <constraint firstItem="IGU-EM-RIO" firstAttribute="trailing" secondItem="7dL-tA-wOf" secondAttribute="trailing" constant="-24" id="uiM-GP-wom"/>
+                            <constraint firstItem="IGU-EM-RIO" firstAttribute="trailing" secondItem="7dL-tA-wOf" secondAttribute="trailing" constant="-30" id="uiM-GP-wom"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7dL-tA-wOf"/>
                     </view>
