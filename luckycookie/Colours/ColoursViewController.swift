@@ -23,7 +23,7 @@ class ColoursViewController: UIViewController {
     
     let colours  = ["rojo","rosa",  "naranja","amarillo","verde",
                     "azul","marron","morado", "negro",   "blanco"]
-    let defaults = UserDefaults.standard
+    var oldcolour = ""
     
     //MARK:- Lifecycle
     
@@ -32,16 +32,26 @@ class ColoursViewController: UIViewController {
         obtentucolorlabel.textColor = Colors.charcoal
         tocabotonlbl.textColor      = Colors.neutral
         textView.isHidden           = true
+        if oldcolour != "" {
+            setupOldC()
+        }
     }
     
     //MARK:- Functions
+    
+    func setupOldC() {
+        tocabotonlbl.isHidden      = true
+        colourButton.isHidden      = true
+        colourImage.isHidden       = true
+        setColour(colour: oldcolour)
+    }
     
     func saveDate() {
         let date             = Date()
         let formatter        = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         let todaysdate       = formatter.string(from: date)
-        defaults.set(todaysdate, forKey: "colordate")
+        Tools.saveColour(colour: oldcolour, date: todaysdate)
     }
     
     func chooseColour() {
@@ -55,7 +65,7 @@ class ColoursViewController: UIViewController {
         obtentucolorlabel.text = colour
         obtentucolorlabel.textColor = Colors.blanco
         let thehait   = textView.frame.height
-        
+        self.oldcolour = colour
         switch colour {
         case "rojo"     :
             UIView.animate(withDuration: 1.0, delay: 0.0, options:[.repeat, .autoreverse], animations: {

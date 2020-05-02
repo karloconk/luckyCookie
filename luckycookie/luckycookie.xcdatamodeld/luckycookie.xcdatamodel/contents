@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19A602" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Colour" representedClassName="Colour" syncable="YES" codeGenerationType="class">
+        <attribute name="colour" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Luck" representedClassName="Luck" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="horoscope" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Numbers" representedClassName="Numbers" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="n1" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="n2" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="n3" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="Colour" positionX="-54" positionY="27" width="128" height="73"/>
+        <element name="Luck" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Numbers" positionX="-63" positionY="18" width="128" height="103"/>
+    </elements>
+</model>

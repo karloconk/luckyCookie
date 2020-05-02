@@ -12,6 +12,42 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Horoscopes View Controller-->
+        <scene sceneID="4Sa-ou-x1C">
+            <objects>
+                <viewController storyboardIdentifier="horoscopos" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jLL-53-eAS" customClass="HoroscopesViewController" customModule="Fortunas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g9a-VN-2bM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="UB1-Fg-Ofz">
+                                <rect key="frame" x="0.0" y="345" width="414" height="216"/>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLN-Y5-P6O">
+                                <rect key="frame" x="184" y="604" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="UB1-Fg-Ofz" firstAttribute="leading" secondItem="mfJ-vC-rRb" secondAttribute="leading" id="8tk-ev-LXz"/>
+                            <constraint firstItem="eLN-Y5-P6O" firstAttribute="top" secondItem="UB1-Fg-Ofz" secondAttribute="bottom" constant="43" id="D6U-AA-JqB"/>
+                            <constraint firstItem="UB1-Fg-Ofz" firstAttribute="trailing" secondItem="mfJ-vC-rRb" secondAttribute="trailing" id="DC9-Eu-jMo"/>
+                            <constraint firstItem="UB1-Fg-Ofz" firstAttribute="centerY" secondItem="mfJ-vC-rRb" secondAttribute="centerY" id="eFw-XH-OI8"/>
+                            <constraint firstItem="UB1-Fg-Ofz" firstAttribute="centerX" secondItem="mfJ-vC-rRb" secondAttribute="centerX" id="kgb-uM-8ev"/>
+                            <constraint firstItem="eLN-Y5-P6O" firstAttribute="centerX" secondItem="UB1-Fg-Ofz" secondAttribute="centerX" id="zHc-gV-drv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mfJ-vC-rRb"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonselectDate" destination="eLN-Y5-P6O" id="lvX-Oz-eOj"/>
+                        <outlet property="datePicker" destination="UB1-Fg-Ofz" id="Mxg-uB-as5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kPF-lW-Qt4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="720" y="-1734"/>
+        </scene>
         <!--Basic-->
         <scene sceneID="hNz-n2-bh7">
             <objects>

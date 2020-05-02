@@ -19,8 +19,9 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     let theRows     = 200
     let defaults    = UserDefaults.standard
     var pickerData: [[Int]] = []
-    var shown = false
-    var clicked = false
+    var shown       = false
+    var clicked     = false
+    var oldnumbers: [Int]  = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +34,17 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     func setupPicker() {
         self.pickerView.delegate   = self
         self.pickerView.dataSource = self
-        pickerData = [makeArr(theRows),makeArr(theRows),makeArr(theRows)]
-        self.pickerView.isUserInteractionEnabled = false
-        for nu in 0..<3 {
-            pickerData[nu][3] = 0
-            self.pickerView.selectRow(3, inComponent: nu, animated: true)
+        if oldnumbers.count < 1 {
+            pickerData = [makeArr(theRows),makeArr(theRows),makeArr(theRows)]
+            for nu in 0..<3 {
+                pickerData[nu][3] = 0
+                self.pickerView.selectRow(3, inComponent: nu, animated: true)
+            }
+        } else {
+            pickerData = [[oldnumbers[0]], [oldnumbers[1]], [oldnumbers[2]]]
+            setupoldnumbers()
         }
+        self.pickerView.isUserInteractionEnabled = false
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -76,16 +82,29 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return pickerLabel!;
     }
     
+    func setupoldnumbers() {
+        clicked = true
+        self.bottomText.isHidden    = true
+        self.buttonNumbers.isHidden = true
+        self.toptext.isHidden       = false
+        self.toptext.text = "Tus números de hoy aún son:"
+        for la in 0...2 {
+            self.pickerView.selectRow(0, inComponent: la, animated: false)
+        }
+        self.kalogo.alpha = 1.0
+        self.shown = true
+    }
+        
     func makeArr(_ n: Int) -> [Int] {
         return (0..<n).map { _ in .random(in: 1...100) }
     }
     
-    func saveDate() {
+    func saveDateN() {
         let date             = Date()
         let formatter        = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         let todaysdate       = formatter.string(from: date)
-        defaults.set(todaysdate, forKey: "numbersdate")
+        Tools.saveNumbers(numbers: oldnumbers, date: todaysdate)
     }
     
     @IBAction func backbuttonTapped(_ sender: Any) {
@@ -94,6 +113,9 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     @IBAction func selectNumbers(_ sender: Any) {
         if !clicked {
+            self.oldnumbers.append(0)
+            self.oldnumbers.append(0)
+            self.oldnumbers.append(0)
             clicked = true
             self.bottomText.isHidden    = true
             self.buttonNumbers.isHidden = true
@@ -110,20 +132,24 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                     toRow += 20
                     if toRow < 80 {
                         self.pickerView.selectRow(toRow,  inComponent: 0, animated: true)
+                        self.oldnumbers[0] = Int(self.pickerData[0][toRow])
                     }
                     if toRow < 140 {
                         self.pickerView.selectRow(toRow,  inComponent: 1, animated: true)
+                        self.oldnumbers[1] = Int(self.pickerData[1][toRow])
                     } else if !self.shown {
                         UIView.animate(withDuration: 0.6, delay: 0.0, options: .curveLinear, animations: {
                             self.kalogo.alpha = 1.0
-                        }, completion: { (Bool) -> Void in self.toptext.isHidden = false } )
+                        }, completion: { (Bool) -> Void in self.toptext.isHidden = false;             self.saveDateN() } )
                         self.shown = true
                     }
-                    self.pickerView.selectRow(toRow,  inComponent: 2, animated: true)
+                    if toRow < 201{
+                        self.pickerView.selectRow(toRow,  inComponent: 2, animated: true)
+                        self.oldnumbers[2] = Int(self.pickerData[2][toRow])
+                    }
                 }
                 seconds += 0.2
             }
-            saveDate()
         }
     }
 }

@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+enum EntityNames {
+    public static let luck    = "Luck"
+    public static let numbers = "Numbers"
+    public static let colour  = "Colour"
+}
+
 struct GlobalVars {
     static var currentBolita: Int = 0
     static let colores = ["amarillo","ámbar","añil","azul","azul claro","azul eléctrico","azul marino","beige","bermellón","blanco","blanco marfil","café","caoba","caqui","carmesí","castaño","celeste","cereza","champán","cian","cobre","color terracota","coral","crema","fucsia","granate","gris","hueso","lavanda","lila","magenta","marrón","chocolate","morado","naranja","negro","ocre","dorado","pardo","plata","púrpura","rojo","rojo carmín","rojo óxido","rosa","salmón ","turquesa","verde","verde botella ","verde esmeralda","verde lima","verde manzana","verde musgo","verde oliva","verde pistache","verdeagua","violeta","vino"]
@@ -84,3 +90,17 @@ public enum ColoursColors {
     public static let blanco   = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
 }
 
+enum Zodiac {
+    public static let capricornio = "capricornio"
+    public static let acuario     = "acuario"
+    public static let piscis      = "piscis"
+    public static let aries       = "aries"
+    public static let tauro       = "tauro"
+    public static let geminis     = "geminis"
+    public static let cancer      = "cancer"
+    public static let leo         = "leo"
+    public static let virgo       = "virgo"
+    public static let libra       = "libra"
+    public static let scorpio     = "scorpio"
+    public static let sagitario   = "sagitario"
+}

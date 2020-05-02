@@ -10,19 +10,21 @@ import UIKit
 
 class DashboardTableViewController: UITableViewController {
     
-    var buttonBack: UIButton = UIButton(type: UIButton.ButtonType.custom)
-    var spinner              = UIActivityIndicatorView()
-    let numberOfRows         = 4
-    let defaults             = UserDefaults.standard
-    var colorsAvailable      = false
-    var numbersAvailable     = false
-    var todaysdate           = ""
+    var buttonBack: UIButton     = UIButton(type: UIButton.ButtonType.custom)
+    var spinner                  = UIActivityIndicatorView()
+    let numberOfRows             = 5
+    let defaults                 = UserDefaults.standard
+    var colorsAvailable          = false
+    var numbersAvailable         = false
+    var todaysdate               = ""
+    var numbersfornumbers: [Int] = []
+    var colourforcolour          = ""
+
     
     // MARK:- View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getTodaysDate()
         setUpView()
     }
     
@@ -45,8 +47,11 @@ class DashboardTableViewController: UITableViewController {
     
     func setupIcon() {
         let logo   = DashboardImages.kachamLogo?.resize(targetSize: CGSize(width: 24, height: 28))
-        let imageV = UIImageView(image: logo)
-        self.navigationItem.titleView = imageV
+        let button: UIButton = UIButton(type: .custom)
+        button.setImage(logo, for: .normal)
+        button.frame = CGRect(x: 0, y: 0, width: 24, height: 28)
+        let barButton = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
     }
     
     func getTodaysDate() {
@@ -54,13 +59,19 @@ class DashboardTableViewController: UITableViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         todaysdate = formatter.string(from: date)
-        if let oldDate = defaults.string(forKey: "colordate") {
-            colorsAvailable = todaysdate == oldDate ? false : true
+        
+        let mycolour = Tools.retieve(entityName: EntityNames.colour) as! [Colour]
+        if mycolour.count == 1 {
+            self.colourforcolour = mycolour[0].colour!
+            colorsAvailable = todaysdate == mycolour[0].date! ? false : true
         } else {
             colorsAvailable = true
         }
-        if let oldDate = defaults.string(forKey: "numbersdate") {
-            numbersAvailable = todaysdate == oldDate ? false : true
+        
+        let mynums = Tools.retieve(entityName: EntityNames.numbers) as! [Numbers]
+        if mynums.count == 1 {
+            self.numbersfornumbers = [Int(mynums[0].n1), Int(mynums[0].n2), Int(mynums[0].n3) ]
+            numbersAvailable = todaysdate == mynums[0].date! ? false : true
         } else {
             numbersAvailable = true
         }
@@ -80,6 +91,19 @@ class DashboardTableViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func getHeaderBig(tablewidth: CGFloat, titlee: String) -> UILabel{
+        let headerlabel = UILabel(frame: CGRect(x: 0,   y: 0,
+                                                width:  Int(tablewidth),
+                                                height: DashboardSections.headerheight))
+        headerlabel.font             = Typo.h3
+        headerlabel.textColor        = Colors.charcoal
+        headerlabel.textAlignment    = .center
+        headerlabel.backgroundColor  = Colors.blanco
+        headerlabel.contentMode      = .scaleAspectFit
+        headerlabel.text             = titlee
+        return headerlabel
+    }
+    
     // MARK:- Routing
     
     func routeToGalleta() {
@@ -88,9 +112,18 @@ class DashboardTableViewController: UITableViewController {
         self.navigationController?.present(goToGalleta, animated: true, completion: {})
     }
     
+    func routeToHoroscopes() {
+        let goToHoroscopes = UIStoryboard.goToHoroscopes()
+        goToHoroscopes.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(goToHoroscopes, animated: true, completion: {})
+    }
+    
     func routeToColours() {
         let goToColours = UIStoryboard.goToColours()
         goToColours.modalPresentationStyle = .fullScreen
+        if colourforcolour != "" {
+            goToColours.oldcolour = colourforcolour
+        }
         self.navigationController?.present(goToColours, animated: true, completion: {})
     }
     
@@ -109,6 +142,9 @@ class DashboardTableViewController: UITableViewController {
     func routeToNumbers() {
         let goToNumbers = UIStoryboard.goToNumbers()
         goToNumbers.modalPresentationStyle = .fullScreen
+        if numbersfornumbers.count > 1 {
+            goToNumbers.oldnumbers = numbersfornumbers
+        }
         self.navigationController?.present(goToNumbers, animated: true, completion: {})
     }
     
@@ -116,6 +152,10 @@ class DashboardTableViewController: UITableViewController {
     
     @objc func luckyClick() {
         routeToGalleta()
+    }
+    
+    @objc func horoscopeClick() {
+        routeToHoroscopes()
     }
     
     @objc func leftLV1() {
@@ -127,19 +167,11 @@ class DashboardTableViewController: UITableViewController {
     }
     
     @objc func leftLV2() {
-        if colorsAvailable {
-            routeToColours()
-        } else {
-            showAlertColor()
-        }
+        routeToColours()
     }
     
     @objc func rightLV2() {
-        if numbersAvailable {
-            routeToNumbers()
-        } else {
-            showAlertNumbers()
-        }
+        routeToNumbers()
     }
     
     // MARK: - Table view data source
@@ -170,6 +202,12 @@ class DashboardTableViewController: UITableViewController {
                                               vc:     self,
                                               action: #selector(luckyClick)))
             
+        } else if indexPath.section == DashboardSections.horoscopes {
+            cell.addSubview(DashboardCompound(frame:
+                CGRect(x: 0, y: 0, width: Int(tablewidth),
+                       height: Int(DashboardSections.horoscopesHeight)),
+                       image:  Imagenes.badClosed!, vc: self, action: #selector(horoscopeClick)))
+            
         } else if indexPath.section == DashboardSections.level1 {
             cell.addSubview(TwinCell(viewController: self,
                                      left:  DashboardImages.dashBoardBola!,
@@ -190,7 +228,8 @@ class DashboardTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == DashboardSections.dbheader {
             return DashboardSections.dbheaderheight
-        } else if indexPath.section == DashboardSections.luckycookie {
+        } else if indexPath.section == DashboardSections.luckycookie
+            || indexPath.section == DashboardSections.horoscopes {
             return DashboardSections.luckycookieheight
         } else if indexPath.section == DashboardSections.level1 {
             return DashboardSections.level1height
@@ -213,16 +252,11 @@ class DashboardTableViewController: UITableViewController {
             littlestview.backgroundColor = Colors.blanco
             return littlestview
         } else if section == DashboardSections.luckycookie {
-            let headerlabel = UILabel(frame: CGRect(x: 0,   y: 0,
-                                                    width:  Int(tablewidth),
-                                                    height: DashboardSections.headerheight))
-            headerlabel.font             = Typo.h3
-            headerlabel.textColor        = Colors.charcoal
-            headerlabel.textAlignment    = .center
-            headerlabel.backgroundColor  = Colors.blanco
-            headerlabel.contentMode      = .scaleAspectFit
-            headerlabel.text             = DashboardSections.luckycookietitle
-            smallview.addSubview(headerlabel)
+            smallview.addSubview(getHeaderBig(tablewidth: tablewidth,
+                                              titlee: DashboardSections.luckycookietitle))
+        } else if section == DashboardSections.horoscopes {
+            smallview.addSubview(getHeaderBig(tablewidth: tablewidth,
+                                              titlee: DashboardSections.horoscopestitle))
         } else if section == DashboardSections.level1 {
             smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Bola mágica", right: "Luna"))
         } else if section == DashboardSections.level2 {
@@ -244,18 +278,24 @@ class DashboardTableViewController: UITableViewController {
     
 }
 
+// MARK: - Table view data source
+
 enum DashboardSections {
     public static let dbheader       = 0
     public static let dbheaderheight = CGFloat(0)
     
+    public static let horoscopes       = 2
+    public static let horoscopesHeight = CGFloat(210)
+    public static let horoscopestitle  = "Horoscopo de hoy"
+    
     public static let luckycookie       = 1
-    public static let luckycookieheight = CGFloat(240)
+    public static let luckycookieheight = CGFloat(210)
     public static let luckycookietitle  = "Galleta de la suerte"
     
-    public static let level1       = 2
+    public static let level1       = 3
     public static let level1height = CGFloat(140)
     
-    public static let level2       = 3
+    public static let level2       = 4
     public static let level2height = CGFloat(140)
     
     public static let headerheight  = 30

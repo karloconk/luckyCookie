@@ -27,6 +27,10 @@ extension UIStoryboard {
         return load(identifier: "GalletaDeLaFortuna") as! FirstViewController
     }
     
+    class func goToHoroscopes() -> HoroscopesViewController {
+        return load(identifier: "horoscopos") as! HoroscopesViewController
+    }
+    
     class func goToColours() -> ColoursViewController {
         return load(identifier: "coloresmn") as! ColoursViewController
     }

@@ -15,6 +15,9 @@
 		B00818A323EA610C006A809F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00818A223EA610C006A809F /* Main.storyboard */; };
 		B00818A523EA61BC006A809F /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00818A423EA61BC006A809F /* DataViewController.swift */; };
 		B00818A723EA6301006A809F /* themesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00818A623EA6301006A809F /* themesViewController.swift */; };
+		B015FFAF245C7D9100CD2F37 /* HoroscopesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B015FFAE245C7D9100CD2F37 /* HoroscopesViewController.swift */; };
+		B015FFB1245C97F900CD2F37 /* HoroscopesModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B015FFB0245C97F900CD2F37 /* HoroscopesModels.swift */; };
+		B015FFD7245C9F0F00CD2F37 /* luckycookie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B015FFD5245C9F0F00CD2F37 /* luckycookie.xcdatamodeld */; };
 		B01605D12407647D0073C365 /* theboldfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B01605D02407647D0073C365 /* theboldfont.ttf */; };
 		B01756472452362900E4C4A3 /* Numbers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01756462452362900E4C4A3 /* Numbers.xcassets */; };
 		B01756492452367900E4C4A3 /* NumbersImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01756482452367900E4C4A3 /* NumbersImages.swift */; };
@@ -58,6 +61,9 @@
 		B00818A223EA610C006A809F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B00818A423EA61BC006A809F /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		B00818A623EA6301006A809F /* themesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = themesViewController.swift; sourceTree = "<group>"; };
+		B015FFAE245C7D9100CD2F37 /* HoroscopesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopesViewController.swift; sourceTree = "<group>"; };
+		B015FFB0245C97F900CD2F37 /* HoroscopesModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoroscopesModels.swift; sourceTree = "<group>"; };
+		B015FFD6245C9F0F00CD2F37 /* luckycookie.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = luckycookie.xcdatamodel; sourceTree = "<group>"; };
 		B01605D02407647D0073C365 /* theboldfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = theboldfont.ttf; sourceTree = "<group>"; };
 		B01756462452362900E4C4A3 /* Numbers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Numbers.xcassets; sourceTree = "<group>"; };
 		B01756482452367900E4C4A3 /* NumbersImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersImages.swift; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 		B008188B23EA5565006A809F /* luckycookie */ = {
 			isa = PBXGroup;
 			children = (
+				B015FFAD245C7D1300CD2F37 /* Horoscopes */,
 				B02F33B1244BE54D001349C5 /* Moons */,
 				B02F33AE244BE528001349C5 /* Numbers */,
 				B02F33A7244BB85F001349C5 /* bola8 */,
@@ -153,6 +160,7 @@
 				B078347824489B41006ECC43 /* Dashboard */,
 				B078347724489B39006ECC43 /* Main */,
 				B008188C23EA5565006A809F /* AppDelegate.swift */,
+				B015FFD5245C9F0F00CD2F37 /* luckycookie.xcdatamodeld */,
 				B008188E23EA5565006A809F /* SceneDelegate.swift */,
 				B00818A223EA610C006A809F /* Main.storyboard */,
 				B008189923EA5569006A809F /* LaunchScreen.storyboard */,
@@ -163,6 +171,15 @@
 				B078347E244913CE006ECC43 /* Tools.swift */,
 			);
 			path = luckycookie;
+			sourceTree = "<group>";
+		};
+		B015FFAD245C7D1300CD2F37 /* Horoscopes */ = {
+			isa = PBXGroup;
+			children = (
+				B015FFAE245C7D9100CD2F37 /* HoroscopesViewController.swift */,
+				B015FFB0245C97F900CD2F37 /* HoroscopesModels.swift */,
+			);
+			path = Horoscopes;
 			sourceTree = "<group>";
 		};
 		B02F339C244B7F6A001349C5 /* Storyboards */ = {
@@ -386,6 +403,7 @@
 				B00818A723EA6301006A809F /* themesViewController.swift in Sources */,
 				B0D58F1D243C17FD0004ADDC /* karloExtensions.swift in Sources */,
 				B041F3A023FCC3E400230D61 /* CookieImages.swift in Sources */,
+				B015FFD7245C9F0F00CD2F37 /* luckycookie.xcdatamodeld in Sources */,
 				B07834832449278A006ECC43 /* Typo.swift in Sources */,
 				B02F33AB244BBFDB001349C5 /* BolaOchoDefaults.swift in Sources */,
 				B01756492452367900E4C4A3 /* NumbersImages.swift in Sources */,
@@ -397,6 +415,7 @@
 				B008189123EA5565006A809F /* FirstViewController.swift in Sources */,
 				B078347F244913CE006ECC43 /* Tools.swift in Sources */,
 				B078348B24494460006ECC43 /* TwinCell.swift in Sources */,
+				B015FFAF245C7D9100CD2F37 /* HoroscopesViewController.swift in Sources */,
 				B0CBF4F3244F4B7B00ECD7D9 /* MoonsImages.swift in Sources */,
 				B02F33A4244B8FEB001349C5 /* ColoursViewController.swift in Sources */,
 				B02F33992449FEA2001349C5 /* TwinHeaders.swift in Sources */,
@@ -405,6 +424,7 @@
 				B02F339B244A08AD001349C5 /* DashboardImages.swift in Sources */,
 				B078348724492C9A006ECC43 /* DashboardCompound.swift in Sources */,
 				B02F33A6244B9979001349C5 /* GenericTextView.swift in Sources */,
+				B015FFB1245C97F900CD2F37 /* HoroscopesModels.swift in Sources */,
 				B05A7FD623FB7B66006B2235 /* GlobalVars.swift in Sources */,
 				B008188F23EA5565006A809F /* SceneDelegate.swift in Sources */,
 			);
@@ -604,6 +624,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B015FFD5245C9F0F00CD2F37 /* luckycookie.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B015FFD6245C9F0F00CD2F37 /* luckycookie.xcdatamodel */,
+			);
+			currentVersion = B015FFD6245C9F0F00CD2F37 /* luckycookie.xcdatamodel */;
+			path = luckycookie.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B008188123EA5565006A809F /* Project object */;
 }
