@@ -12,7 +12,7 @@ class DashboardTableViewController: UITableViewController {
     
     var buttonBack: UIButton     = UIButton(type: UIButton.ButtonType.custom)
     var spinner                  = UIActivityIndicatorView()
-    let numberOfRows             = 5
+    let numberOfRows             = 4
     let defaults                 = UserDefaults.standard
     var colorsAvailable          = false
     var numbersAvailable         = false
@@ -62,33 +62,23 @@ class DashboardTableViewController: UITableViewController {
         
         let mycolour = Tools.retieve(entityName: EntityNames.colour) as! [Colour]
         if mycolour.count == 1 {
-            self.colourforcolour = mycolour[0].colour!
             colorsAvailable = todaysdate == mycolour[0].date! ? false : true
+            if !colorsAvailable {
+                self.colourforcolour = mycolour[0].colour!
+            }
         } else {
             colorsAvailable = true
         }
         
         let mynums = Tools.retieve(entityName: EntityNames.numbers) as! [Numbers]
         if mynums.count == 1 {
-            self.numbersfornumbers = [Int(mynums[0].n1), Int(mynums[0].n2), Int(mynums[0].n3) ]
             numbersAvailable = todaysdate == mynums[0].date! ? false : true
+            if !numbersAvailable {
+                self.numbersfornumbers = [Int(mynums[0].n1), Int(mynums[0].n2), Int(mynums[0].n3) ]
+            }
         } else {
             numbersAvailable = true
         }
-    }
-    
-    func showAlertColor() {
-        let alertController = UIAlertController(title: "Color de hoy visto", message:
-            "Ya viste el color hoy, espera hasta mañana para ver otro.", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Bueno 😔", style: .default))
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func showAlertNumbers() {
-        let alertController = UIAlertController(title: "Numeros de hoy vistos", message:
-            "Ya viste números hoy, espera hasta mañana para ver otros.", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Bueno 😔", style: .default))
-        self.present(alertController, animated: true, completion: nil)
     }
     
     func getHeaderBig(tablewidth: CGFloat, titlee: String) -> UILabel{
@@ -284,7 +274,7 @@ enum DashboardSections {
     public static let dbheader       = 0
     public static let dbheaderheight = CGFloat(0)
     
-    public static let horoscopes       = 2
+    public static let horoscopes       = 6
     public static let horoscopesHeight = CGFloat(210)
     public static let horoscopestitle  = "Horoscopo de hoy"
     
@@ -292,10 +282,10 @@ enum DashboardSections {
     public static let luckycookieheight = CGFloat(210)
     public static let luckycookietitle  = "Galleta de la suerte"
     
-    public static let level1       = 3
+    public static let level1       = 2
     public static let level1height = CGFloat(140)
     
-    public static let level2       = 4
+    public static let level2       = 3
     public static let level2height = CGFloat(140)
     
     public static let headerheight  = 30

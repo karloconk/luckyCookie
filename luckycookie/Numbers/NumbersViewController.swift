@@ -17,7 +17,6 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var kalogo: UIImageView!
     
     let theRows     = 200
-    let defaults    = UserDefaults.standard
     var pickerData: [[Int]] = []
     var shown       = false
     var clicked     = false

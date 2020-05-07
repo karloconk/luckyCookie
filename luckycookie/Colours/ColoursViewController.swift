@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class ColoursViewController: UIViewController {
     
@@ -19,6 +20,8 @@ class ColoursViewController: UIViewController {
     @IBOutlet weak var textView: UIView!
     
     @IBOutlet weak var bottomKacham: UIImageView!
+    
+    @IBOutlet weak var shareButton: UIButton!
     //MARK:- Variables
     
     let colours  = ["rojo","rosa",  "naranja","amarillo","verde",
@@ -68,7 +71,7 @@ class ColoursViewController: UIViewController {
         self.oldcolour = colour
         switch colour {
         case "rojo"     :
-            UIView.animate(withDuration: 1.0, delay: 0.0, options:[.repeat, .autoreverse], animations: {
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[ .autoreverse], animations: {
                 self.view.backgroundColor = ColoursColors.rojo
             }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
@@ -159,4 +162,20 @@ class ColoursViewController: UIViewController {
         saveDate()
     }
     
+    @IBAction func shareFunction(_ sender: Any) {
+        let shareText = "Mis colores de hoy"
+        let photos = PHPhotoLibrary.authorizationStatus()
+         if photos == .notDetermined {
+            PHPhotoLibrary.requestAuthorization({ _ in })
+         }
+        let bounds = UIScreen.main.bounds
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
+        self.view.drawHierarchy(in: bounds, afterScreenUpdates: false)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        if let image = img {
+            let vc = UIActivityViewController(activityItems: [shareText, image], applicationActivities: nil)
+            self.present(vc, animated: true)
+        }
+    }
 }

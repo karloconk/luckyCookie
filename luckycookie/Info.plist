@@ -24,6 +24,8 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Para mostrarte más y mejores datos lunares</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Para que guardes tu suerte</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>theboldfont.ttf</string>

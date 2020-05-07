@@ -69,6 +69,8 @@ class Tools {
     }
     
     class func saveColour(colour: String, date: String) {
+        self.eliminateAllEntries(entity: EntityNames.colour)
+
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: EntityNames.colour,
@@ -84,6 +86,7 @@ class Tools {
     }
     
     class func saveNumbers(numbers: [Int], date: String) {
+        self.eliminateAllEntries(entity: EntityNames.numbers)
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: EntityNames.numbers,
@@ -113,6 +116,17 @@ class Tools {
         } catch let error as NSError {
             print("Could not save. \(error)")
         }
+    }
+    
+    class func eliminateAllEntries(entity: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+        do {
+            try managedContext.execute(deleteRequest)
+        } catch _ as NSError { }
     }
     
     class func retieve(entityName: String) -> [NSManagedObject]? {

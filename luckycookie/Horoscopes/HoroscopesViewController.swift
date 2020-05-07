@@ -14,14 +14,14 @@ class HoroscopesViewController: UIViewController {
     
     @IBOutlet weak var buttonselectDate: UIButton!
     var horoscopes: Datum? = nil
+    let defaults    = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //requestHoroscopes()
     }
     
     func requestHoroscopes() {
-        let horoscopesUrl = URL(string: "https://api.adderou.cl/tyaas/")!
+        let horoscopesUrl = URL(string: "")!
         let task = URLSession.shared.dataTask(with: horoscopesUrl) { (data, response, error) in
             if error == nil {
                 if let _ = data {
@@ -46,13 +46,13 @@ class HoroscopesViewController: UIViewController {
         Tools.saveHoroscope(horoscope: "", date: todaysdate)
     }
     
-    func datePickerChanged(_ sender: Any) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        dateFormatter.timeStyle = DateFormatter.Style.short
-
-        let strDate = dateFormatter.string(from: datePicker.date)
-        //dateLabel.text = strDate
+    @IBAction func selectedDateButton(_ sender: Any) {
+        let formatter        = DateFormatter()
+        formatter.dateFormat = "dd.MM"
+        let todaysdate       = formatter.string(from: datePicker.date)
+        let dateArr          = todaysdate.split(separator: ".")
+        let zodiac = Tools.getZodiac(day:   Int(dateArr[0].description)!,
+                                     month: Int(dateArr[1].description)!)
+        defaults.set(zodiac, forKey: "zodiac")
     }
-
 }

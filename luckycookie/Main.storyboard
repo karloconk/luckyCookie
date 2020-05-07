@@ -26,6 +26,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLN-Y5-P6O">
                                 <rect key="frame" x="184" y="604" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="selectedDateButton:" destination="jLL-53-eAS" eventType="touchUpInside" id="5aK-Ou-x1j"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -178,6 +181,14 @@
                                     <constraint firstAttribute="height" constant="64" id="Iox-ia-xbs"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skd-5o-Fle">
+                                <rect key="frame" x="323" y="799" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="shareFunction:" destination="Ywp-I8-ewo" eventType="touchUpInside" id="9gV-r5-EUD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -204,6 +215,7 @@
                         <outlet property="colourButton" destination="y99-E4-EFe" id="klY-R4-vEt"/>
                         <outlet property="colourImage" destination="UIs-VP-xi0" id="3wV-no-SGH"/>
                         <outlet property="obtentucolorlabel" destination="9s9-Qh-vbu" id="gcJ-pe-mT6"/>
+                        <outlet property="shareButton" destination="skd-5o-Fle" id="uhG-aa-CeI"/>
                         <outlet property="textView" destination="Dzy-xs-Pgb" id="8pP-ZC-voP"/>
                         <outlet property="tocabotonlbl" destination="3LR-Ae-Ugq" id="G3N-eW-Kt1"/>
                     </connections>
