@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import Photos
 import CoreData
 import Foundation
 
 class Tools {
     
-    private static var centeredSpinner: UIActivityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
+    private static var centeredSpinner: UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     
     private static var  spinner : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 75, height: 20))
     
     class func addSpinner(viewController vc: UIViewController) -> UIActivityIndicatorView {
-        let centeredSpinner: UIActivityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
+        let centeredSpinner: UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
         centeredSpinner.color  = Colors.charcoal
         centeredSpinner.center = vc.view.center
         centeredSpinner.startAnimating()
@@ -141,6 +142,47 @@ class Tools {
         print("Could not fetch. \(error)")
       }
         return []
+    }
+    
+    class func addGestureDown(viewController: UIViewController, action: Selector) {
+        let swipeDown       = UISwipeGestureRecognizer(target: viewController, action: action)
+        swipeDown.direction = UISwipeGestureRecognizer.Direction.down
+        viewController.view.addGestureRecognizer(swipeDown)
+    }
+    
+    class func shareStuff(viewController: UIViewController, backbtn: UIButton?, shareButton: UIButton? ) {
+        if let _ = backbtn {
+            backbtn!.isHidden = true
+        }
+        if let _ = shareButton {
+            shareButton!.isHidden = true
+        }
+
+        let photos = PHPhotoLibrary.authorizationStatus()
+        if photos == .notDetermined {
+            PHPhotoLibrary.requestAuthorization({ _ in })
+        }
+        let bounds = UIScreen.main.bounds
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
+        viewController.view.drawHierarchy(in: bounds, afterScreenUpdates: true)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        if let image = img {
+            let vc = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            vc.excludedActivityTypes = [
+                UIActivity.ActivityType.assignToContact,
+                UIActivity.ActivityType.print,
+                UIActivity.ActivityType.addToReadingList,
+                UIActivity.ActivityType.openInIBooks,
+                UIActivity.ActivityType(rawValue: "com.apple.reminders.RemindersEditorExtension")]
+            viewController.present(vc, animated: true)
+            if let _ = backbtn {
+                backbtn!.isHidden = false
+            }
+            if let _ = shareButton {
+                shareButton!.isHidden = false
+            }
+        }
     }
     
     class func getZodiac(day: Int, month: Int) -> String {

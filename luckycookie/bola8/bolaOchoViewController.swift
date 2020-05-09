@@ -17,6 +17,8 @@ class bolaOchoViewController: UIViewController {
     @IBOutlet weak var responseBG: UIImageView!
     @IBOutlet weak var bottomText: UILabel!
     @IBOutlet weak var bottomKacham: UIImageView!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
     
     // MARK:- Variables
     
@@ -38,15 +40,25 @@ class bolaOchoViewController: UIViewController {
             UIView.animate(withDuration: 1.0, delay: 0.3, options: .curveLinear, animations: {
                 self.responseText.alpha = 1.0
                 self.responseBG.alpha = 1.0
+                self.bottomKacham.alpha = 1.0
+                self.shareButton.alpha   = 1.0
+                self.shareButton.isUserInteractionEnabled = true
             }, completion: nil )
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.tintColor = Colors.blanco
+        shareButton.tintColor = Colors.blanco
+
         self.responseText.alpha = 0.0
         self.responseBG.alpha   = 0.0
         self.bottomKacham.alpha = 0.0
+        self.shareButton.alpha  = 0.0
+        self.shareButton.isUserInteractionEnabled = false
+        Tools.addGestureDown(viewController: self, action: #selector(dismissme))
+
     }
 
     // MARK:- Functions
@@ -56,6 +68,11 @@ class bolaOchoViewController: UIViewController {
         let answer = answers[randomNum]
         self.responseText.text = answer
     }
+    
+    @objc func dismissme() {
+        self.dismiss(animated: true, completion: {})
+
+    }
 
     // MARK:- Actions
     
@@ -64,6 +81,8 @@ class bolaOchoViewController: UIViewController {
             self.responseText.alpha = 0.0
             self.responseBG.alpha   = 0.0
             self.bottomKacham.alpha = 0.0
+            self.shareButton.alpha   = 0.0
+            self.shareButton.isUserInteractionEnabled = false
             topText.text    = BolaOchoTexts.titleOff
             bottomText.text = BolaOchoTexts.bottomOff
             isResponse = false
@@ -71,7 +90,17 @@ class bolaOchoViewController: UIViewController {
     }
     
     @IBAction func tapBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: {})
+        dismissme()
     }
     
+    @IBAction func sharetap(_ sender: Any) {
+        let oldtop = topText.text!
+        bottomText.isHidden = true
+        topText.text = "La bola magica me respondió:"
+        Tools.shareStuff(viewController: self,
+                         backbtn:     backButton,
+                         shareButton: shareButton)
+        bottomText.isHidden = false
+        topText.text        = oldtop
+    }
 }

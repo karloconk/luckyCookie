@@ -15,6 +15,8 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var bottomText: UILabel!
     @IBOutlet weak var buttonNumbers: UIImageView!
     @IBOutlet weak var kalogo: UIImageView!
+    @IBOutlet weak var shareBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     
     let theRows     = 200
     var pickerData: [[Int]] = []
@@ -27,7 +29,12 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         toptext.textColor    = Colors.upperNum
         bottomText.textColor = Colors.lowerNum
         kalogo.alpha = 0.0
+        backBtn.tintColor = Colors.charcoal
+        shareBtn.tintColor = Colors.charcoal
+        shareBtn.isHidden = true
+        shareBtn.isUserInteractionEnabled = false
         setupPicker()
+        Tools.addGestureDown(viewController: self, action: #selector(dismissme))
     }
     
     func setupPicker() {
@@ -42,6 +49,8 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         } else {
             pickerData = [[oldnumbers[0]], [oldnumbers[1]], [oldnumbers[2]]]
             setupoldnumbers()
+            shareBtn.isUserInteractionEnabled = true
+            shareBtn.isHidden = false
         }
         self.pickerView.isUserInteractionEnabled = false
     }
@@ -106,8 +115,15 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         Tools.saveNumbers(numbers: oldnumbers, date: todaysdate)
     }
     
-    @IBAction func backbuttonTapped(_ sender: Any) {
+    @objc func dismissme() {
         self.dismiss(animated: true, completion: {})
+
+    }
+    
+    //MARK:- Actions
+    
+    @IBAction func backbuttonTapped(_ sender: Any) {
+        dismissme()
     }
     
     @IBAction func selectNumbers(_ sender: Any) {
@@ -139,6 +155,8 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                     } else if !self.shown {
                         UIView.animate(withDuration: 0.6, delay: 0.0, options: .curveLinear, animations: {
                             self.kalogo.alpha = 1.0
+                            self.shareBtn.isUserInteractionEnabled = true
+                            self.shareBtn.isHidden = false
                         }, completion: { (Bool) -> Void in self.toptext.isHidden = false;             self.saveDateN() } )
                         self.shown = true
                     }
@@ -150,5 +168,15 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                 seconds += 0.2
             }
         }
+    }
+    
+    
+    @IBAction func TouchShareBtn(_ sender: Any) {
+        let oldtext = self.toptext.text!
+        self.toptext.text = "Mis números de hoy son:"
+        Tools.shareStuff(viewController: self,
+                         backbtn: backBtn,
+                         shareButton: shareBtn)
+        self.toptext.text = oldtext
     }
 }

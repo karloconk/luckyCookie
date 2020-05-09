@@ -18,8 +18,11 @@ class MoonsViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var sunriseLbl:  UILabel!
     @IBOutlet weak var textView:    UIView!
     @IBOutlet weak var moonImage:   UIImageView!
-    
     @IBOutlet weak var actualMoon: UIImageView!
+    @IBOutlet weak var kachamLogo: UIImageView!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    
     // MARK:- Variables
     let moonPhaser      = SwiftySuncalc()
     var locationManager = CLLocationManager()
@@ -69,28 +72,31 @@ class MoonsViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        shareButton.tintColor = Colors.blanco
+        backButton.tintColor = Colors.blanco
         self.locationManager.delegate = self
         
         if  CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
             locationManager.requestWhenInUseAuthorization()
         }
-        let currentLoc: CLLocation!
-        if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse) {
-            locationManager.startUpdatingLocation()
-            currentLoc = locationManager.location
-            let aJson = moonPhaser.getTimes(date: Date(), lat: currentLoc.coordinate.latitude, lng:  currentLoc.coordinate.longitude)
-            if let sunriseDate = aJson["sunrise"] {
-                print(sunriseDate)
-                sunrise = castDate(date: sunriseDate)
+        DispatchQueue.main.async {
+            if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse) {
+                self.locationManager.startUpdatingLocation()
+                if let currentLoc: CLLocation = self.locationManager.location {
+                    let aJson = self.moonPhaser.getTimes(date: Date(), lat: currentLoc.coordinate.latitude, lng:  currentLoc.coordinate.longitude)
+                if let sunriseDate = aJson["sunrise"] {
+                    print(sunriseDate)
+                    self.sunrise = self.castDate(date: sunriseDate)
+                }
+                if let sunsetDate = aJson["sunset"] {
+                    print(sunsetDate)
+                    self.sunset  = self.castDate(date: sunsetDate)
+                }
+                    self.sunriseLbl.text  = self.sunrise
+                    self.moonriseLbl.text = self.sunset
+                }
+                self.locationManager.stopUpdatingLocation()
             }
-            if let sunsetDate = aJson["sunset"] {
-                print(sunsetDate)
-                sunset  = castDate(date: sunsetDate)
-            }
-            sunriseLbl.text  = sunrise
-            moonriseLbl.text = sunset
-            locationManager.stopUpdatingLocation()
         }
         let theMoonPhase = getMoonPhase()
         print(theMoonPhase)
@@ -105,6 +111,7 @@ class MoonsViewController: UIViewController, CLLocationManagerDelegate {
                                             text:   Tools.sumAttributedStrings(theHeader,
                                                                                theText),
                                             height: Double(thehait)))
+        Tools.addGestureDown(viewController: self, action: #selector(dismissme))
     }
     
     // MARK:-Functions
@@ -112,20 +119,21 @@ class MoonsViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch(CLLocationManager.authorizationStatus()) {
         case .authorizedAlways, .authorizedWhenInUse:
-            let currentLoc: CLLocation!
+            // let currentLoc: CLLocation!
             locationManager.startUpdatingLocation()
-            currentLoc = locationManager.location
-            let aJson = moonPhaser.getTimes(date: Date(), lat: currentLoc.coordinate.latitude, lng:  currentLoc.coordinate.longitude)
-            if let sunriseDate = aJson["sunrise"] {
-                print(sunriseDate)
-                sunrise = castDate(date: sunriseDate)
+            if let currentLoc: CLLocation = locationManager.location {
+                let aJson = moonPhaser.getTimes(date: Date(), lat: currentLoc.coordinate.latitude, lng:  currentLoc.coordinate.longitude)
+                if let sunriseDate = aJson["sunrise"] {
+                    print(sunriseDate)
+                    sunrise = castDate(date: sunriseDate)
+                }
+                if let sunsetDate = aJson["sunset"] {
+                    print(sunsetDate)
+                    sunset  = castDate(date: sunsetDate)
+                }
+                sunriseLbl.text  = sunrise
+                moonriseLbl.text = sunset
             }
-            if let sunsetDate = aJson["sunset"] {
-                print(sunsetDate)
-                sunset  = castDate(date: sunsetDate)
-            }
-            sunriseLbl.text  = sunrise
-            moonriseLbl.text = sunset
             locationManager.stopUpdatingLocation()
         case .denied, .notDetermined, .restricted:
             locationManager.stopUpdatingLocation()
@@ -167,9 +175,19 @@ class MoonsViewController: UIViewController, CLLocationManagerDelegate {
         return dateString
     }
     
+    @objc func dismissme() {
+        self.dismiss(animated: true, completion: {})
+    }
+    
     //MARK:-Actions
     
     @IBAction func tapBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: {})
+        dismissme()
+    }
+    
+    @IBAction func tapshare(_ sender: Any) {
+        Tools.shareStuff(viewController: self,
+                         backbtn:     backButton,
+                         shareButton: shareButton)
     }
 }

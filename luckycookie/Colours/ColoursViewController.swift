@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Photos
 
 class ColoursViewController: UIViewController {
     
@@ -32,12 +31,16 @@ class ColoursViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shareButton.tintColor       = Colors.blanco
+        shareButton.isUserInteractionEnabled = false
         obtentucolorlabel.textColor = Colors.charcoal
+        backbtn.tintColor           = Colors.charcoal
         tocabotonlbl.textColor      = Colors.neutral
         textView.isHidden           = true
         if oldcolour != "" {
             setupOldC()
         }
+        Tools.addGestureDown(viewController: self, action: #selector(dismissme))
     }
     
     //MARK:- Functions
@@ -46,6 +49,7 @@ class ColoursViewController: UIViewController {
         tocabotonlbl.isHidden      = true
         colourButton.isHidden      = true
         colourImage.isHidden       = true
+        shareButton.isUserInteractionEnabled = true
         setColour(colour: oldcolour)
     }
     
@@ -66,12 +70,14 @@ class ColoursViewController: UIViewController {
     func setColour(colour: String) {
         textView.isHidden = false
         obtentucolorlabel.text = colour
+        shareButton.tintColor       = Colors.blanco
         obtentucolorlabel.textColor = Colors.blanco
+        backbtn.tintColor           = Colors.blanco
         let thehait   = textView.frame.height
         self.oldcolour = colour
         switch colour {
         case "rojo"     :
-            UIView.animate(withDuration: 1.0, delay: 0.0, options:[ .autoreverse], animations: {
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:[], animations: {
                 self.view.backgroundColor = ColoursColors.rojo
             }, completion:nil)
             textView.addSubview(GenericTextView(view: textView,
@@ -142,16 +148,24 @@ class ColoursViewController: UIViewController {
                                                 text: ColoursStrings.blanco,
                                                 height: Double(thehait)))
             obtentucolorlabel.textColor = Colors.charcoal
+            shareButton.tintColor       = Colors.charcoal
+            backbtn.tintColor           = Colors.charcoal
+
             bottomKacham.image = UIImage(named: "KachamLogo_Black")
         default:
             break
         }
+        shareButton.isUserInteractionEnabled = true
+    }
+    
+    @objc func dismissme() {
+        self.dismiss(animated: true, completion: {})
     }
     
     //MARK:- Actions
     
     @IBAction func backbuttonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: {})
+        dismissme()
     }
     
     @IBAction func colourButtonTapped(_ sender: Any) {
@@ -163,19 +177,8 @@ class ColoursViewController: UIViewController {
     }
     
     @IBAction func shareFunction(_ sender: Any) {
-        let shareText = "Mis colores de hoy"
-        let photos = PHPhotoLibrary.authorizationStatus()
-         if photos == .notDetermined {
-            PHPhotoLibrary.requestAuthorization({ _ in })
-         }
-        let bounds = UIScreen.main.bounds
-        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
-        self.view.drawHierarchy(in: bounds, afterScreenUpdates: false)
-        let img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        if let image = img {
-            let vc = UIActivityViewController(activityItems: [shareText, image], applicationActivities: nil)
-            self.present(vc, animated: true)
-        }
+        Tools.shareStuff(viewController: self,
+                         backbtn:     backbtn,
+                         shareButton: shareButton)
     }
 }

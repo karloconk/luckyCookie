@@ -27,8 +27,9 @@ public enum Colors {
     public static let manatee   = UIColor(red:0.93,  green:0.94,  blue:0.96,  alpha:1.0)
     public static let violet    = UIColor(red: 0.73, green: 0.58, blue: 0.87, alpha: 1.00)
     public static let moonshine = UIColor(red: 0.00, green: 0.00, blue: 0.20, alpha: 1.00)
-    public static let upperNum = UIColor(red: 0.40, green: 0.18, blue: 0.57, alpha: 1.00)
-    public static let lowerNum = UIColor(red: 0.58, green: 0.15, blue: 0.56, alpha: 1.00)
+    public static let upperNum  = UIColor(red: 0.40, green: 0.18, blue: 0.57, alpha: 1.00)
+    public static let lowerNum  = UIColor(red: 0.58, green: 0.15, blue: 0.56, alpha: 1.00)
+    public static let lightblue  = UIColor(red: 0.77, green: 0.87, blue: 0.96, alpha: 1.00)
 }
 
 public enum SpaceUnits {

@@ -18,7 +18,7 @@ class FirstViewController: UIViewController {
     
     //MARK:- Vars
     
-    let titles = ["Estandar", "Mala Suerte", "Amor", "Dinero", "Proximamente"]
+    let titles = ["Estandar", "Mala Suerte", "Amor", "Dinero"]
     
     var currentViewControllerIndex = 0
     

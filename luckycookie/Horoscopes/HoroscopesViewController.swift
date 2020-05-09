@@ -27,7 +27,7 @@ class HoroscopesViewController: UIViewController {
                 if let _ = data {
                     let jsonData = String(decoding: data!, as: UTF8.self).data(using: .utf8)
                     self.horoscopes = try! JSONDecoder().decode(Datum.self, from: jsonData!)
-                    print(self.horoscopes)
+                    //print(self.horoscopes)
                     //print(response as Any)
                 }
             } else {
