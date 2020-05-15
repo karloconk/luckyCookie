@@ -18,6 +18,8 @@
 		669EFA9A246B80E0008D4549 /* CookieCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EFA99246B80E0008D4549 /* CookieCollectionViewController.swift */; };
 		669EFA9C246B8686008D4549 /* CookieSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EFA9B246B8686008D4549 /* CookieSimple.swift */; };
 		66A84DE0246C6CBD0044AD5F /* centerCookies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A84DDF246C6CBD0044AD5F /* centerCookies.swift */; };
+		66F5C4F7246F01B100C238B9 /* GameSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F5C4F6246F01B100C238B9 /* GameSettingsTableViewController.swift */; };
+		66F5C4F9246F34FE00C238B9 /* TwinCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F5C4F8246F34FE00C238B9 /* TwinCell3.swift */; };
 		B008188D23EA5565006A809F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008188C23EA5565006A809F /* AppDelegate.swift */; };
 		B008188F23EA5565006A809F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008188E23EA5565006A809F /* SceneDelegate.swift */; };
 		B008189123EA5565006A809F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008189023EA5565006A809F /* FirstViewController.swift */; };
@@ -72,6 +74,8 @@
 		669EFA99246B80E0008D4549 /* CookieCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieCollectionViewController.swift; sourceTree = "<group>"; };
 		669EFA9B246B8686008D4549 /* CookieSimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieSimple.swift; sourceTree = "<group>"; };
 		66A84DDF246C6CBD0044AD5F /* centerCookies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = centerCookies.swift; sourceTree = "<group>"; };
+		66F5C4F6246F01B100C238B9 /* GameSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsTableViewController.swift; sourceTree = "<group>"; };
+		66F5C4F8246F34FE00C238B9 /* TwinCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinCell3.swift; sourceTree = "<group>"; };
 		76A426A1129AB2BA53ED6E74 /* Pods-luckycookie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-luckycookie.debug.xcconfig"; path = "Target Support Files/Pods-luckycookie/Pods-luckycookie.debug.xcconfig"; sourceTree = "<group>"; };
 		B008188923EA5565006A809F /* Fortunas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fortunas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B008188C23EA5565006A809F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			children = (
 				666EADBB246B77FC0013FD7A /* cookies */,
 				6662E0B9246E26AB00484B49 /* GamesDashboardTableViewController.swift */,
+				66F5C4F6246F01B100C238B9 /* GameSettingsTableViewController.swift */,
 			);
 			path = games;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 				669EFA9B246B8686008D4549 /* CookieSimple.swift */,
 				6662E0AE246DF3A100484B49 /* WinView.swift */,
 				6662E0BB246E324C00484B49 /* TwinCell2.swift */,
+				66F5C4F8246F34FE00C238B9 /* TwinCell3.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				B00818A723EA6301006A809F /* themesViewController.swift in Sources */,
 				669EFA9A246B80E0008D4549 /* CookieCollectionViewController.swift in Sources */,
 				B0D58F1D243C17FD0004ADDC /* karloExtensions.swift in Sources */,
+				66F5C4F9246F34FE00C238B9 /* TwinCell3.swift in Sources */,
 				B041F3A023FCC3E400230D61 /* CookieImages.swift in Sources */,
 				B015FFD7245C9F0F00CD2F37 /* luckycookie.xcdatamodeld in Sources */,
 				B07834832449278A006ECC43 /* Typo.swift in Sources */,
@@ -506,6 +513,7 @@
 				B02F339B244A08AD001349C5 /* DashboardImages.swift in Sources */,
 				B078348724492C9A006ECC43 /* DashboardCompound.swift in Sources */,
 				B02F33A6244B9979001349C5 /* GenericTextView.swift in Sources */,
+				66F5C4F7246F01B100C238B9 /* GameSettingsTableViewController.swift in Sources */,
 				B015FFB1245C97F900CD2F37 /* HoroscopesModels.swift in Sources */,
 				B05A7FD623FB7B66006B2235 /* GlobalVars.swift in Sources */,
 				6662E0B6246E171D00484B49 /* LucksNavsViewController.swift in Sources */,

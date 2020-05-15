@@ -24,8 +24,9 @@ class GamesDashboardTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = false
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.tabBarController?.tabBar.isHidden = false
     }
@@ -61,16 +62,16 @@ class GamesDashboardTableViewController: UITableViewController {
     
     //MARK:- Routing
     
-    func routeToMemoria() {
-        let goToMemoria = UIStoryboard.gotoMemoria()
-        goToMemoria.modalPresentationStyle = .fullScreen
-        self.navigationController?.present(goToMemoria, animated: true, completion: {})
+    func routeToGameSettings() {
+        let gotoGameSettings = UIStoryboard.goToGameSettings()
+        gotoGameSettings.currentGame = GameSettingsDashboardSections.memorias
+        self.navigationController?.pushViewController(gotoGameSettings, animated: true)
     }
     
     //MARK:- @objc Functions
     
     @objc func luckyClick() {
-        routeToMemoria()
+        routeToGameSettings()
     }
     
     //MARK:- Actions
@@ -92,7 +93,6 @@ class GamesDashboardTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.selectionStyle = .none
-        let tablewidth      = tableView.frame.width
         if indexPath.section == GameDashboardSections.dbheader {
             let smallview = UIView(frame: CGRect(x:      0,   y: 0,
                 width:  tableView.frame.width, height: GameDashboardSections.dbheaderheight))

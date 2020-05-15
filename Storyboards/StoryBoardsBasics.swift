@@ -69,6 +69,10 @@ extension UIStoryboard {
         return load(from: Storyboards.games, identifier: "cookiesGame") as! CookieCollectionViewController
     }
     
+    class func goToGameSettings() -> GameSettingsTableViewController {
+        return load(from: Storyboards.games, identifier: "horacio") as! GameSettingsTableViewController
+    }
+    
     
 }
 

@@ -49,6 +49,34 @@
             </objects>
             <point key="canvasLocation" x="-578" y="-1"/>
         </scene>
+        <!--Game Settings Table View Controller-->
+        <scene sceneID="HL8-bh-zAB">
+            <objects>
+                <tableViewController storyboardIdentifier="horacio" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IyK-7S-5IN" customClass="GameSettingsTableViewController" customModule="Fortunas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="h9X-F2-KpT">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Nnd-aR-FuT">
+                                <rect key="frame" x="0.0" y="28" width="896" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nnd-aR-FuT" id="Zln-xc-1sR">
+                                    <rect key="frame" x="44" y="0.0" width="808" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IyK-7S-5IN" id="6ED-Bd-Z7W"/>
+                            <outlet property="delegate" destination="IyK-7S-5IN" id="pvC-dv-EJd"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M1R-lh-0zh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="-1"/>
+        </scene>
         <!--Games View Controller-->
         <scene sceneID="upJ-uj-0N4">
             <objects>
@@ -74,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H0I-jw-gak">
-                                <rect key="frame" x="172" y="16" width="600" height="377"/>
+                                <rect key="frame" x="172" y="1" width="600" height="392"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="wIP-xc-KAl"/>
@@ -105,7 +133,7 @@
                         <constraints>
                             <constraint firstItem="H0I-jw-gak" firstAttribute="bottom" secondItem="Hrh-lO-6Lu" secondAttribute="bottomMargin" id="18V-8p-Wh2"/>
                             <constraint firstItem="H0I-jw-gak" firstAttribute="centerX" secondItem="gmV-GC-xNm" secondAttribute="centerX" constant="24" id="TEr-dG-yqX"/>
-                            <constraint firstItem="H0I-jw-gak" firstAttribute="top" secondItem="gmV-GC-xNm" secondAttribute="top" constant="16" id="tbg-4x-Bsa"/>
+                            <constraint firstItem="H0I-jw-gak" firstAttribute="top" secondItem="gmV-GC-xNm" secondAttribute="top" constant="1" id="tbg-4x-Bsa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gmV-GC-xNm"/>
                     </view>
@@ -115,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uj2-OW-jBo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="-1"/>
+            <point key="canvasLocation" x="858.48214285714278" y="-1.4492753623188408"/>
         </scene>
     </scenes>
     <resources>

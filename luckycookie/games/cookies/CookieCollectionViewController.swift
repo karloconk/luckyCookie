@@ -11,15 +11,15 @@ import UIKit
 private let reuseIdentifierCC = "CookieGameCell"
 
 class CookieCollectionViewController:  UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CookieSimpleDelegate{
-
+    
     // MARK:- Outlets
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK:- Vars
-    let contents       = 12
-    var allowedTouches = 2
-    var touchedTimes   = 0 {
+    let contents              = 12
+    public var allowedTouches = 2
+    var touchedTimes          = 0 {
         willSet(newIndex) { }
         didSet {
             if touchedTimes >= allowedTouches {
@@ -59,35 +59,46 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
                 }
                 // win
                 winfunc()
+            } else {
+                winfunc()
             }
         }
     }
     
     private var selecteds: [UIImage] = [UIImage(named: "Dashboard_Bola8")!,UIImage(named: "Dashboard_Colores")!,UIImage(named: "Dashboard_Luna")!,UIImage(named: "Dashboard_Numeros")!,UIImage(named: "Luna_Llena")!,UIImage(named: "Luna_CuartoMenguante")!]
-
+    
     private var icons:    [[UIImage]] = [[],[],[]]
     private var selected: [[Int]] = [[],[],[]]
     private var cookies: [[CookieSimple]] = [[],[],[]]
     // 0-false, 1-true, 2-inGame
     
     // MARK:- Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifierCC)
-        self.generateArray(pairnumber: 2)
+        self.generateArray(pairnumber: allowedTouches)
     }
     
     override public var shouldAutorotate: Bool {
-      return false
+        return false
     }
     
     override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-      return .landscapeRight
+        return .landscapeRight
     }
     
     override public var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-      return .landscapeRight
+        return .landscapeRight
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     // MARK:- Functions
@@ -111,15 +122,15 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
     }
     
     @objc func ledft() {
-        print("left")
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func redo() {
-        print("redo")
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func rigtht() {
-        print("right")
+        self.dismiss(animated: true, completion: nil)
     }
     
     func generateArray(pairnumber: Int) {
@@ -139,13 +150,13 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
             switch eks {
             case 0:
                 icons[eks] = [selecteds[bigarr[0]],selecteds[bigarr[1]]
-                             ,selecteds[bigarr[2]],selecteds[bigarr[3]]]
+                    ,selecteds[bigarr[2]],selecteds[bigarr[3]]]
             case 1:
                 icons[eks] = [selecteds[bigarr[4]],selecteds[bigarr[5]]
-                             ,selecteds[bigarr[6]],selecteds[bigarr[7]]]
+                    ,selecteds[bigarr[6]],selecteds[bigarr[7]]]
             case 2:
                 icons[eks] = [selecteds[bigarr[8]],selecteds[bigarr[9]]
-                             ,selecteds[bigarr[10]],selecteds[bigarr[11]]]
+                    ,selecteds[bigarr[10]],selecteds[bigarr[11]]]
             default:
                 return
             }
@@ -176,22 +187,22 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
     }
     
     // MARK:- DelegateMethods
-
+    
     func valueChanged(row: Int, column: Int) {
         selected[row][column] = 2
         touchedTimes += 1
     }
-
+    
     // MARK:- UICollectionViewDataSource
-
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return icons.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return icons[0].count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierCC, for: indexPath)
         let afram = CGRect(x: 0, y: 0, width: 100, height: 100)
@@ -210,5 +221,5 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
         cell.addSubview(cookie)
         return cell
     }
-
+    
 }
