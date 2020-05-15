@@ -12,14 +12,14 @@ class DashboardTableViewController: UITableViewController {
     
     var buttonBack: UIButton     = UIButton(type: UIButton.ButtonType.custom)
     var spinner                  = UIActivityIndicatorView()
-    let numberOfRows             = 4
+    let numberOfRows             = 5
     let defaults                 = UserDefaults.standard
     var colorsAvailable          = false
     var numbersAvailable         = false
     var todaysdate               = ""
     var numbersfornumbers: [Int] = []
     var colourforcolour          = ""
-
+    
     
     // MARK:- View Lifecycle
     
@@ -51,7 +51,7 @@ class DashboardTableViewController: UITableViewController {
         button.setImage(logo, for: .normal)
         button.frame = CGRect(x: 0, y: 0, width: 24, height: 28)
         let barButton = UIBarButtonItem(customView: button)
-        self.navigationItem.leftBarButtonItem = barButton
+        self.navigationItem.rightBarButtonItem = barButton
     }
     
     func getTodaysDate() {
@@ -108,6 +108,12 @@ class DashboardTableViewController: UITableViewController {
         self.navigationController?.present(goToHoroscopes, animated: true, completion: {})
     }
     
+    func routeToGames() {
+        let goToGames = UIStoryboard.gotoGames()
+        goToGames.modalPresentationStyle = .fullScreen
+        self.navigationController?.present(goToGames, animated: true, completion: {})
+    }
+    
     func routeToColours() {
         let goToColours = UIStoryboard.goToColours()
         goToColours.modalPresentationStyle = .fullScreen
@@ -145,7 +151,7 @@ class DashboardTableViewController: UITableViewController {
     }
     
     @objc func horoscopeClick() {
-        routeToHoroscopes()
+        routeToGames()
     }
     
     @objc func leftLV1() {
@@ -162,6 +168,11 @@ class DashboardTableViewController: UITableViewController {
     
     @objc func rightLV2() {
         routeToNumbers()
+    }
+    
+    //MARK:- Actions
+    @IBAction func clickback(_ sender: Any, forEvent event: UIEvent) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Table view data source
@@ -196,7 +207,7 @@ class DashboardTableViewController: UITableViewController {
             cell.addSubview(DashboardCompound(frame:
                 CGRect(x: 0, y: 0, width: Int(tablewidth),
                        height: Int(DashboardSections.horoscopesHeight)),
-                       image:  Imagenes.badClosed!, vc: self, action: #selector(horoscopeClick)))
+                                              image:  Imagenes.badClosed!, vc: self, action: #selector(horoscopeClick)))
             
         } else if indexPath.section == DashboardSections.level1 {
             cell.addSubview(TwinCell(viewController: self,
@@ -262,21 +273,17 @@ class DashboardTableViewController: UITableViewController {
         return CGFloat(DashboardSections.headerheight)
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-    
 }
 
-// MARK: - Table view data source
+// MARK: - enum
 
 enum DashboardSections {
     public static let dbheader       = 0
     public static let dbheaderheight = CGFloat(0)
     
-    public static let horoscopes       = 6
+    public static let horoscopes       = 4
     public static let horoscopesHeight = CGFloat(210)
-    public static let horoscopestitle  = "Horoscopo de hoy"
+    public static let horoscopestitle  = "KKs"
     
     public static let luckycookie       = 1
     public static let luckycookieheight = CGFloat(210)

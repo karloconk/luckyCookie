@@ -11,7 +11,7 @@ import Foundation
 
 public class CenterCell: UIView {
     
-    var selfbackground = Colours.basicBackground
+    var selfbackground: UIColor? = Colours.basicBackground
     var imgwidthHeight = 180.0
     
     private lazy var rootStackView: UIStackView = {
@@ -24,13 +24,13 @@ public class CenterCell: UIView {
         return stackView
     }()
     
-    private lazy var avatarImageView: UIImageView = {
+    public lazy var avatarImageView: UIImageView = {
         let imageView             = UIImageView()
         imageView.contentMode     = .scaleAspectFit
         return imageView
     }()
 
-    public init(frame: CGRect, image: UIImage, imagesize: Double, bg backgroundColor: UIColor) {
+    public init(frame: CGRect, image: UIImage, imagesize: Double, bg backgroundColor: UIColor?) {
         super.init(frame: frame)
         selfbackground       = backgroundColor
         self.backgroundColor = selfbackground
