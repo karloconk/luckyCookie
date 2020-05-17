@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		661B220624718BA7006C3046 /* models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 661B220524718BA7006C3046 /* models.scnassets */; };
 		6662E0AF246DF3A100484B49 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662E0AE246DF3A100484B49 /* WinView.swift */; };
 		6662E0B1246DF42300484B49 /* games.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6662E0B0246DF42300484B49 /* games.xcassets */; };
 		6662E0B4246E029500484B49 /* MainHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662E0B3246E029500484B49 /* MainHubViewController.swift */; };
@@ -15,6 +16,7 @@
 		6662E0BA246E26AB00484B49 /* GamesDashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662E0B9246E26AB00484B49 /* GamesDashboardTableViewController.swift */; };
 		6662E0BC246E324C00484B49 /* TwinCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662E0BB246E324C00484B49 /* TwinCell2.swift */; };
 		666EADB9246B76AF0013FD7A /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666EADB8246B76AF0013FD7A /* Games.storyboard */; };
+		669415222470454600F87054 /* FirstARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669415212470454600F87054 /* FirstARViewController.swift */; };
 		669EFA9A246B80E0008D4549 /* CookieCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EFA99246B80E0008D4549 /* CookieCollectionViewController.swift */; };
 		669EFA9C246B8686008D4549 /* CookieSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EFA9B246B8686008D4549 /* CookieSimple.swift */; };
 		66A84DE0246C6CBD0044AD5F /* centerCookies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A84DDF246C6CBD0044AD5F /* centerCookies.swift */; };
@@ -63,6 +65,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		661B220524718BA7006C3046 /* models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = models.scnassets; sourceTree = "<group>"; };
 		6662E0AE246DF3A100484B49 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 		6662E0B0246DF42300484B49 /* games.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = games.xcassets; sourceTree = "<group>"; };
 		6662E0B3246E029500484B49 /* MainHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHubViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		6662E0B9246E26AB00484B49 /* GamesDashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesDashboardTableViewController.swift; sourceTree = "<group>"; };
 		6662E0BB246E324C00484B49 /* TwinCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinCell2.swift; sourceTree = "<group>"; };
 		666EADB8246B76AF0013FD7A /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
+		669415212470454600F87054 /* FirstARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstARViewController.swift; sourceTree = "<group>"; };
 		669EFA99246B80E0008D4549 /* CookieCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieCollectionViewController.swift; sourceTree = "<group>"; };
 		669EFA9B246B8686008D4549 /* CookieSimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieSimple.swift; sourceTree = "<group>"; };
 		66A84DDF246C6CBD0044AD5F /* centerCookies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = centerCookies.swift; sourceTree = "<group>"; };
@@ -151,6 +155,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		661B21FC24718A10006C3046 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				661B220524718BA7006C3046 /* models.scnassets */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		6662E0B2246E026A00484B49 /* hubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +186,8 @@
 		666EADBA246B77F60013FD7A /* games */ = {
 			isa = PBXGroup;
 			children = (
+				661B21FC24718A10006C3046 /* Models */,
+				669415202470452400F87054 /* AR */,
 				666EADBB246B77FC0013FD7A /* cookies */,
 				6662E0B9246E26AB00484B49 /* GamesDashboardTableViewController.swift */,
 				66F5C4F6246F01B100C238B9 /* GameSettingsTableViewController.swift */,
@@ -202,6 +216,14 @@
 				B02F33A2244B8FCA001349C5 /* Colours */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		669415202470452400F87054 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				669415212470454600F87054 /* FirstARViewController.swift */,
+			);
+			path = AR;
 			sourceTree = "<group>";
 		};
 		B008188023EA5565006A809F = {
@@ -433,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B01605D12407647D0073C365 /* theboldfont.ttf in Resources */,
+				661B220624718BA7006C3046 /* models.scnassets in Resources */,
 				6662E0B1246DF42300484B49 /* games.xcassets in Resources */,
 				B0229E80244E65FC00261874 /* Luna.xcassets in Resources */,
 				666EADB9246B76AF0013FD7A /* Games.storyboard in Resources */,
@@ -478,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				669415222470454600F87054 /* FirstARViewController.swift in Sources */,
 				6662E0BC246E324C00484B49 /* TwinCell2.swift in Sources */,
 				B078347C24489BAC006ECC43 /* DashboardTableViewController.swift in Sources */,
 				B02F33B3244BE55F001349C5 /* MoonsViewController.swift in Sources */,

@@ -59,8 +59,6 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
                 }
                 // win
                 winfunc()
-            } else {
-                winfunc()
             }
         }
     }
@@ -130,6 +128,7 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
     }
     
     @objc func rigtht() {
+        MyGVariables.istoLucks = true
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -184,6 +183,10 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
             }
         }
         self.touchedTimes = 0
+    }
+    
+    @IBAction func goback(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK:- DelegateMethods

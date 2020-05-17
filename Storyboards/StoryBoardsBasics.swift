@@ -65,14 +65,21 @@ extension UIStoryboard {
         return load(from: Storyboards.main, identifier: "mainhub") as! MainHubViewController
     }
     
-    class func gotoMemoria() -> CookieCollectionViewController {
-        return load(from: Storyboards.games, identifier: "cookiesGame") as! CookieCollectionViewController
-    }
-    
     class func goToGameSettings() -> GameSettingsTableViewController {
         return load(from: Storyboards.games, identifier: "horacio") as! GameSettingsTableViewController
     }
     
+    class func gotoMemoria() -> CookieCollectionViewController {
+        return load(from: Storyboards.games, identifier: "cookiesGame") as! CookieCollectionViewController
+    }
+    
+    class func gotofirstARscene() -> FirstARViewController {
+        return load(from: Storyboards.games, identifier: "firstARscene") as! FirstARViewController
+    }
     
 }
 
+struct MyGVariables {
+    static var istoGames = false
+    static var istoLucks = false
+}

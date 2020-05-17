@@ -17,7 +17,28 @@ class MainHubViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         headerOutlet.font = Font.getbigFont(size: 34)
-        
+        self.view.isUserInteractionEnabled = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if MyGVariables.istoLucks {
+            MyGVariables.istoLucks   = false
+            headerOutlet.isHidden    = true
+            gamesImageView.isHidden  = true
+            suerteImageView.isHidden = true
+            routeToLucks()
+        }else if MyGVariables.istoGames {
+            MyGVariables.istoGames   = false
+            headerOutlet.isHidden    = true
+            gamesImageView.isHidden  = true
+            suerteImageView.isHidden = true
+            routeToGames()
+        } else {
+            self.view.isUserInteractionEnabled = true
+            headerOutlet.isHidden    = false
+            gamesImageView.isHidden  = false
+            suerteImageView.isHidden = false
+        }
     }
     
     func routeToGames() {

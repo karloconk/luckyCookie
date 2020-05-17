@@ -60,18 +60,17 @@ class GamesDashboardTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = barButton
     }
     
-    //MARK:- Routing
+    //MARK:- @objc Functions
     
-    func routeToGameSettings() {
+    @objc func routeToGameSettings() {
         let gotoGameSettings = UIStoryboard.goToGameSettings()
         gotoGameSettings.currentGame = GameSettingsDashboardSections.memorias
         self.navigationController?.pushViewController(gotoGameSettings, animated: true)
     }
     
-    //MARK:- @objc Functions
-    
-    @objc func luckyClick() {
-        routeToGameSettings()
+    @objc func routeToAR1() {
+        let gotoAR1 = UIStoryboard.gotofirstARscene()
+        self.navigationController?.pushViewController(gotoAR1, animated: true)
     }
     
     //MARK:- Actions
@@ -102,8 +101,8 @@ class GamesDashboardTableViewController: UITableViewController {
             cell.addSubview(TwinCell2(viewController: self,
                                      left:  DashboardImages.dashBoardBola!,
                                      right: DashboardImages.dashBoardLuna!,
-                                     leftAction:  #selector(luckyClick),
-                                     rightAction: #selector(luckyClick)))
+                                     leftAction:  #selector(routeToGameSettings),
+                                     rightAction: #selector(routeToAR1)))
         }
         return cell
     }
@@ -128,9 +127,9 @@ class GamesDashboardTableViewController: UITableViewController {
             littlestview.backgroundColor = Colors.blanco
             return littlestview
         } else if section == GameDashboardSections.level1 {
-            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Memoria", right: "Luna"))
+            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Memoria", right: "AR"))
         } else if section == GameDashboardSections.level2 {
-            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Color de hoy", right: "Números de hoy"))
+            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: " ", right: " "))
         }
         return smallview
     }
