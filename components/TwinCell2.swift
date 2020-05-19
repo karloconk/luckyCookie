@@ -67,13 +67,13 @@ public class TwinCell2: UIView {
             
             self.lButton.backgroundColor = bgcolorL
             self.lButton.setImage(left, for: .normal)
-            self.lButton.layer.cornerRadius = 5;
-            self.lButton.layer.masksToBounds = true;
+            self.lButton.layer.cornerRadius = 5
+            self.lButton.layer.masksToBounds = true
             
             self.rButton.backgroundColor = bgcolorR
             self.rButton.setImage(right, for: .normal)
-            self.rButton.layer.cornerRadius = 5;
-            self.rButton.layer.masksToBounds = true;
+            self.rButton.layer.cornerRadius = 5
+            self.rButton.layer.masksToBounds = true
         }
     }
 

@@ -150,6 +150,12 @@ class Tools {
         viewController.view.addGestureRecognizer(swipeDown)
     }
     
+    class func addGestureLeft(viewController: UIViewController, action: Selector) {
+        let swipeLeft       = UISwipeGestureRecognizer(target: viewController, action: action)
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.right
+        viewController.view.addGestureRecognizer(swipeLeft)
+    }
+    
     class func shareStuff(viewController: UIViewController, backbtn: UIButton?, shareButton: UIButton? ) {
         if let _ = backbtn {
             backbtn!.isHidden = true

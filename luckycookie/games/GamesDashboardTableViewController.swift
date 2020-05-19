@@ -20,6 +20,7 @@ class GamesDashboardTableViewController: UITableViewController {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         setUpView()
+        Tools.addGestureLeft(viewController: self, action: #selector(dismissme))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +56,7 @@ class GamesDashboardTableViewController: UITableViewController {
         let logo   = DashboardImages.kachamLogo?.resize(targetSize: CGSize(width: 24, height: 28))
         let button: UIButton = UIButton(type: .custom)
         button.setImage(logo, for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 24, height: 28)
+        button.frame = CGRect(x: 0, y: 0, width: 34, height: 28)
         let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButton
     }
@@ -75,6 +76,10 @@ class GamesDashboardTableViewController: UITableViewController {
     
     //MARK:- Actions
 
+    @objc func dismissme() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func backTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

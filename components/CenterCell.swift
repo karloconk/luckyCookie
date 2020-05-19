@@ -41,8 +41,8 @@ public class CenterCell: UIView {
                                                                 height: imgwidthHeight))
         avatarImageView.backgroundColor = selfbackground
 
-        self.layer.cornerRadius = 5;
-        self.layer.masksToBounds = true;
+        self.layer.cornerRadius = 5
+        self.layer.masksToBounds = true
     }
     
     override public init(frame: CGRect) {super.init(frame: frame)}

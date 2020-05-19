@@ -20,6 +20,7 @@ class GameSettingsTableViewController: UITableViewController {
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         setUpView()
+        Tools.addGestureLeft(viewController: self, action: #selector(backTapped))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +55,7 @@ class GameSettingsTableViewController: UITableViewController {
             let button: UIButton = UIButton(type: .custom)
             button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
             button.tintColor = Colors.charcoal
-            button.frame     = CGRect(x: 0, y: 0, width: 24, height: 28)
+            button.frame     = CGRect(x: 0, y: 0, width: 34, height: 28)
             button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
             let barButton    = UIBarButtonItem(customView: button)
             self.navigationItem.leftBarButtonItem = barButton

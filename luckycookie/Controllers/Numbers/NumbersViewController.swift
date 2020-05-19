@@ -76,7 +76,7 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-        var pickerLabel = view as? UILabel;
+        var pickerLabel = view as? UILabel
         
         if (pickerLabel == nil)
         {
@@ -87,7 +87,7 @@ class NumbersViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             pickerLabel?.textAlignment = NSTextAlignment.center
             pickerLabel?.text          = String(pickerData[component][row])
         }
-        return pickerLabel!;
+        return pickerLabel!
     }
     
     func setupoldnumbers() {

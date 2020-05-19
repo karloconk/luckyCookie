@@ -69,8 +69,8 @@ public class CookieSimple: UIView {
                 self.rootView.bigCenter.alpha = 0.0
                 self.rootView.bigCenter.transform = CGAffineTransform(translationX: 0, y: 30)
             }, completion: {(Bool) in
-                self.isSelected = true;
-                self.delegate?.valueChanged(row: self.row, column: self.column);
+                self.isSelected = true
+                self.delegate?.valueChanged(row: self.row, column: self.column)
             })
         }
     }

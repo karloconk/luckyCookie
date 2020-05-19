@@ -12,7 +12,7 @@ class DashboardTableViewController: UITableViewController {
     
     var buttonBack: UIButton     = UIButton(type: UIButton.ButtonType.custom)
     var spinner                  = UIActivityIndicatorView()
-    let numberOfRows             = 5
+    let numberOfRows             = 4
     let defaults                 = UserDefaults.standard
     var colorsAvailable          = false
     var numbersAvailable         = false
@@ -26,6 +26,7 @@ class DashboardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        Tools.addGestureLeft(viewController: self, action: #selector(dismissme))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +50,7 @@ class DashboardTableViewController: UITableViewController {
         let logo   = DashboardImages.kachamLogo?.resize(targetSize: CGSize(width: 24, height: 28))
         let button: UIButton = UIButton(type: .custom)
         button.setImage(logo, for: .normal)
-        button.frame = CGRect(x: 0, y: 0, width: 24, height: 28)
+        button.frame = CGRect(x: 0, y: 0, width: 34, height: 28)
         let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButton
     }
@@ -168,6 +169,16 @@ class DashboardTableViewController: UITableViewController {
     
     @objc func rightLV2() {
         routeToNumbers()
+    }
+    
+    @objc func dismissme() {
+        let transition = CATransition()
+        transition.duration = 0.2
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
     //MARK:- Actions
