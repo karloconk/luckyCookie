@@ -12,7 +12,7 @@ class GamesDashboardTableViewController: UITableViewController {
     
     // MARK:- View Lifecycle
 
-    let numberOfRows = 2
+    let numberOfRows = 3
 
     // MARK:- View Lifecycle
     override func viewDidLoad() {
@@ -63,9 +63,15 @@ class GamesDashboardTableViewController: UITableViewController {
     
     //MARK:- @objc Functions
     
-    @objc func routeToGameSettings() {
+    @objc func routeToGameSettingsMemoria() {
         let gotoGameSettings = UIStoryboard.goToGameSettings()
         gotoGameSettings.currentGame = GameSettingsDashboardSections.memorias
+        self.navigationController?.pushViewController(gotoGameSettings, animated: true)
+    }
+    
+    @objc func routeToGameSettingsARBall() {
+        let gotoGameSettings = UIStoryboard.goToGameSettings()
+        gotoGameSettings.currentGame = GameSettingsDashboardSections.ochoball
         self.navigationController?.pushViewController(gotoGameSettings, animated: true)
     }
     
@@ -106,8 +112,14 @@ class GamesDashboardTableViewController: UITableViewController {
             cell.addSubview(TwinCell2(viewController: self,
                                      left:  DashboardImages.dashBoardBola!,
                                      right: DashboardImages.dashBoardLuna!,
-                                     leftAction:  #selector(routeToGameSettings),
+                                     leftAction:  #selector(routeToGameSettingsMemoria),
                                      rightAction: #selector(routeToAR1)))
+        }  else if indexPath.section == GameDashboardSections.level2 {
+                cell.addSubview(TwinCell2(viewController: self,
+                                         left:  DashboardImages.dashBoardNumeros!,
+                                         right: DashboardImages.dashBoardLuna!,
+                                         leftAction:  #selector(routeToGameSettingsARBall),
+                                         rightAction: #selector(routeToAR1)))
         }
         return cell
     }
@@ -132,9 +144,9 @@ class GamesDashboardTableViewController: UITableViewController {
             littlestview.backgroundColor = Colors.blanco
             return littlestview
         } else if section == GameDashboardSections.level1 {
-            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Memoria", right: "AR"))
+            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Memoria", right: "Adivina número"))
         } else if section == GameDashboardSections.level2 {
-            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: " ", right: " "))
+            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Dónde está mi bola mágica", right: " "))
         }
         return smallview
     }

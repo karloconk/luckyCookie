@@ -77,6 +77,10 @@ extension UIStoryboard {
         return load(from: Storyboards.games, identifier: "firstARscene") as! FirstARViewController
     }
     
+    class func gotoFindersScene() -> FindersGameViewController {
+        return load(from: Storyboards.games, identifier: "finders") as! FindersGameViewController
+    }
+    
 }
 
 struct MyGVariables {

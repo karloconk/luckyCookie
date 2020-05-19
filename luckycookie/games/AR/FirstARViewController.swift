@@ -69,6 +69,7 @@ class FirstARViewController: UIViewController, ARSCNViewDelegate{
     
     
     func rollTheDice() {
+        rollDiceButtonbottom.isHidden = true
         let dicenode: SCNNode? = SCNNode()
         dicenode?.geometry = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
         
@@ -80,7 +81,7 @@ class FirstARViewController: UIViewController, ARSCNViewDelegate{
         Materials[4].diffuse.contents = UIImage(named: "Dice1.png")
         Materials[5].diffuse.contents = UIImage(named: "Dice6.png")
         dicenode?.geometry?.materials = Materials
-        dicenode?.position = SCNVector3(0.0, 0.58, -0.8)
+        dicenode?.position = SCNVector3(0.0, 0.63, -0.8)
         let body = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: dicenode!, options: [SCNPhysicsShape.Option.keepAsCompound: true]))
         dicenode?.physicsBody = body
         dicenode?.physicsBody?.allowsResting = true
@@ -173,7 +174,6 @@ class FirstARViewController: UIViewController, ARSCNViewDelegate{
         self.instructionsView.isUserInteractionEnabled = false
         self.instructionsView.isHidden = true
         self.backtop.isHidden = false
-        self.rollDiceButtonbottom.isHidden = false
         self.choseNum.isHidden = false
         self.choseNum.text = "\(predictednum)"
         self.chosetext.isHidden = false
@@ -181,6 +181,8 @@ class FirstARViewController: UIViewController, ARSCNViewDelegate{
         self.resulttextlbl.isHidden = false
         self.backtop.isUserInteractionEnabled = true
         self.rollDiceButtonbottom.isUserInteractionEnabled = true
+        self.rollDiceButtonbottom.isHidden = false
+
     }
     
     // MARK:- Actions
@@ -246,6 +248,17 @@ class FirstARViewController: UIViewController, ARSCNViewDelegate{
     }
     
     func winfunc(lose: Bool) {
+        if !lose {
+            self.choseNum.textColor  = .green
+            self.chosetext.textColor = .green
+            self.resultnumlbl.textColor  = .green
+            self.resulttextlbl.textColor = .green
+        } else {
+            self.choseNum.textColor  = .systemRed
+            self.chosetext.textColor = .systemRed
+            self.resultnumlbl.textColor  = .systemRed
+            self.resulttextlbl.textColor = .systemRed
+        }
         let maWidth    = 400
         let maHeight   = 270
         let longWidth  = self.view.frame.width/2
@@ -254,6 +267,7 @@ class FirstARViewController: UIViewController, ARSCNViewDelegate{
         if let winwin = winV {
             winV?.isHidden = false
             winview = winwin
+            winview.setwin(win: !lose)
         } else {
             winview = WinView(frame: CGRect(x: Int(longWidth) - maWidth/2,
                                                 y: Int(longHeight) - maHeight/2 + 30,
@@ -261,7 +275,8 @@ class FirstARViewController: UIViewController, ARSCNViewDelegate{
                                   titler: "¿Qué quieres hacer ahora?", viewController: self,
                                   actionL:  #selector(ledft),
                                   actionM: #selector(restartSess),
-                                  actionR: #selector(rigtht))
+                                  actionR: #selector(rigtht),
+                                  win: !lose)
             winV = winview
         }
         winview.alpha = 0.0
@@ -301,6 +316,11 @@ class FirstARViewController: UIViewController, ARSCNViewDelegate{
         self.instructionsView.isUserInteractionEnabled = true
         self.instructionsView.isHidden = false
         self.printedRot = false
+        self.rollDiceButtonbottom.isHidden = false
+        self.choseNum.textColor  = Colors.charcoal
+        self.chosetext.textColor = Colors.charcoal
+        self.resultnumlbl.textColor  = Colors.charcoal
+        self.resulttextlbl.textColor = Colors.charcoal
     }
     
     func restartSession() {

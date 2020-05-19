@@ -110,7 +110,8 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
                                             y: Int(longHeight) - maHeight/2 + 30,
                                             width: maWidth, height: maHeight),
                               titler: "¿Qué quieres hacer ahora?", viewController: self,
-                              actionL:  #selector(ledft), actionM: #selector(redo), actionR: #selector(rigtht))
+                              actionL:  #selector(ledft), actionM: #selector(redo), actionR: #selector(rigtht),
+                              win: true)
         winview.alpha = 0.0
         view.addSubview(winview)
         UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveLinear, animations: {

@@ -9,7 +9,7 @@
 import UIKit
 
 class GameSettingsTableViewController: UITableViewController {
-        
+    
     let numberOfRows = 3
     public var currentGame  = ""
     var level1On = true
@@ -48,44 +48,54 @@ class GameSettingsTableViewController: UITableViewController {
     func setUpView() {
         self.tableView.separatorStyle = .none
         self.tableView.backgroundColor = Colors.blanco
-            setupIcon()
-        }
-        
-        func setupIcon() {
-            let button: UIButton = UIButton(type: .custom)
-            button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-            button.tintColor = Colors.charcoal
-            button.frame     = CGRect(x: 0, y: 0, width: 34, height: 28)
-            button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-            let barButton    = UIBarButtonItem(customView: button)
-            self.navigationItem.leftBarButtonItem = barButton
-            self.navigationItem.title =  "Tipo de Juego"
-        }
+        setupIcon()
+    }
+    
+    func setupIcon() {
+        let button: UIButton = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.tintColor = Colors.charcoal
+        button.frame     = CGRect(x: 0, y: 0, width: 34, height: 28)
+        button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        let barButton    = UIBarButtonItem(customView: button)
+        self.navigationItem.leftBarButtonItem = barButton
+        self.navigationItem.title =  "Tipo de Juego"
+    }
     
     func getCellForRow(row: Int) -> UIView {
         var imageleft  = UIImage()
         var imageright = UIImage()
-
+        var selLeft: Selector  = #selector(leftActionlvl1)
+        var selRight: Selector = #selector(rightActionlvl1)
+        
         switch row {
         case 1:
-            if currentGame == "memorias" {
+            if currentGame == GameSettingsDashboardSections.memorias {
+                imageleft  = UIImage(systemName: "sun.min")!
+                imageright = UIImage(systemName: "sun.dust")!
+            } else if currentGame == GameSettingsDashboardSections.ochoball {
                 imageleft  = UIImage(systemName: "sun.min")!
                 imageright = UIImage(systemName: "sun.dust")!
             }
         case 2:
-            if currentGame == "memorias" {
+            if currentGame == GameSettingsDashboardSections.memorias {
+                imageleft  = UIImage(systemName: "sun.haze")!
+                imageright = UIImage()
+            } else if currentGame == GameSettingsDashboardSections.ochoball {
                 imageleft  = UIImage(systemName: "sun.haze")!
                 imageright = UIImage()
             }
+            selLeft  = #selector(leftActionlvl2)
+            selRight = #selector(rightActionlvl2)
         default:
             imageleft  = UIImage(systemName: "sun.min")!
             imageright = UIImage(systemName: "sun.dust")!
         }
         let theview = TwinCell3(viewController: self,
-                                left:  imageleft,
-                                right: imageright,
-                                leftAction:  #selector(leftActionlvl1),
-                                rightAction: #selector(rightActionlvl1))
+                                left:        imageleft,
+                                right:       imageright,
+                                leftAction:  selLeft,
+                                rightAction: selRight)
         return theview
     }
     
@@ -93,27 +103,33 @@ class GameSettingsTableViewController: UITableViewController {
         
         var imageleft  = ""
         var imageright = ""
-
+        
         switch row {
         case 1:
-            if currentGame == "memorias" {
+            if currentGame == GameSettingsDashboardSections.memorias {
                 imageleft  = "Selecciona 2"
                 imageright = "Selecciona 3"
+            } else if currentGame == GameSettingsDashboardSections.ochoball {
+                imageleft  = "5 segundos"
+                imageright = "10 segundos"
             }
         case 2:
-            if currentGame == "memorias" {
+            if currentGame == GameSettingsDashboardSections.memorias {
                 imageleft  = "Selecciona 4"
+                imageright = ""
+            } else if currentGame == GameSettingsDashboardSections.ochoball {
+                imageleft  = "15 segundos"
                 imageright = ""
             }
         default:
             imageleft  = ""
             imageright = ""
         }
-         let theView = TwinHeaders(width: Double(tablewidth),
-                                   left: imageleft, right: imageright)
+        let theView = TwinHeaders(width: Double(tablewidth),
+                                  left: imageleft, right: imageright)
         return theView
     }
-
+    
     //MARK:- Routing
     
     func routeToMemoria(matches: Int) {
@@ -123,30 +139,42 @@ class GameSettingsTableViewController: UITableViewController {
         self.navigationController?.pushViewController(goToMemoria, animated: true)
     }
     
+    func routeTo8Ball(seconds: Int) {
+        let goTo8Ball = UIStoryboard.gotoFindersScene()
+        goTo8Ball.modalPresentationStyle = .fullScreen
+        goTo8Ball.countdown = seconds
+        self.navigationController?.pushViewController(goTo8Ball, animated: true)
+    }
+    
     //MARK:- @objc Functions
     
     @objc func leftActionlvl1() {
         if currentGame == GameSettingsDashboardSections.memorias {
             routeToMemoria(matches: 2)
+        } else if currentGame == GameSettingsDashboardSections.ochoball{
+            routeTo8Ball(seconds: 5)
         }
     }
     
     @objc func rightActionlvl1() {
         if currentGame == GameSettingsDashboardSections.memorias {
             routeToMemoria(matches: 3)
-        }
+        } else if currentGame == GameSettingsDashboardSections.ochoball{
+                   routeTo8Ball(seconds: 10)
+               }
     }
     
     @objc func leftActionlvl2() {
         if currentGame == GameSettingsDashboardSections.memorias {
             routeToMemoria(matches: 4)
-        }
+        } else if currentGame == GameSettingsDashboardSections.ochoball{
+                          routeTo8Ball(seconds: 15)
+                      }
     }
     
     @objc func rightActionlvl2() {
-        if currentGame == GameSettingsDashboardSections.memorias {
-    
-        }
+        if      currentGame == GameSettingsDashboardSections.memorias { }
+        else if currentGame == GameSettingsDashboardSections.ochoball { }
     }
     
     @objc func backTapped() {
@@ -226,5 +254,7 @@ enum GameSettingsDashboardSections {
     public static let headerheight  = 48
     
     public static let memorias = "memorias"
+    public static let ochoball = "8ball"
+    
 }
 

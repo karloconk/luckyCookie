@@ -109,10 +109,10 @@ public class WinView: UIView {
         return lbl
     }()
     
-    public init(frame: CGRect, titler: String,viewController: UIViewController, actionL: Selector, actionM: Selector, actionR: Selector) {
+    public init(frame: CGRect, titler: String,viewController: UIViewController, actionL: Selector, actionM: Selector, actionR: Selector, win: Bool) {
         super.init(frame: frame)
         backgroundColor    = Colors.manatee
-        winimage.image     = UIImage(named: "win")
+        winimage.image     = win ? UIImage(named: "win") : UIImage(named: "lose")
         whatToDoLabel.text = titler
         lLabel.setTitle("Ir a juegos",  for: .normal)
         lLabel.setTitleColor(ablack,    for: .normal)
@@ -139,6 +139,10 @@ public class WinView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+    
+    func setwin(win: Bool) {
+        winimage.image     = win ? UIImage(named: "win") : UIImage(named: "lose")
+    }
     
     func setupButtons() {
         DispatchQueue.main.async {
