@@ -12,8 +12,6 @@ class GameSettingsTableViewController: UITableViewController {
     
     let numberOfRows = 3
     public var currentGame  = ""
-    var level1On = true
-    var level2On = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +57,19 @@ class GameSettingsTableViewController: UITableViewController {
         button.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
         let barButton    = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItem = barButton
-        self.navigationItem.title =  "Tipo de Juego"
+        
+        var titulo = ""
+        switch currentGame {
+        case GameSettingsDashboardSections.memorias:
+            titulo = "Memorias"
+        case GameSettingsDashboardSections.ochoball:
+            titulo = "Bola mágica"
+        case GameSettingsDashboardSections.colours:
+            titulo = "Colores"
+        default:
+            titulo = "Memorias"
+        }
+        self.navigationItem.title = titulo
     }
     
     func getCellForRow(row: Int) -> UIView {
@@ -76,7 +86,10 @@ class GameSettingsTableViewController: UITableViewController {
             } else if currentGame == GameSettingsDashboardSections.ochoball {
                 imageleft  = UIImage(systemName: "sun.min")!
                 imageright = UIImage(systemName: "sun.dust")!
-            }
+            } else if currentGame == GameSettingsDashboardSections.colours {
+               imageleft  = UIImage(systemName: "sun.min")!
+               imageright = UIImage(systemName: "sun.dust")!
+           }
         case 2:
             if currentGame == GameSettingsDashboardSections.memorias {
                 imageleft  = UIImage(systemName: "sun.haze")!
@@ -84,12 +97,15 @@ class GameSettingsTableViewController: UITableViewController {
             } else if currentGame == GameSettingsDashboardSections.ochoball {
                 imageleft  = UIImage(systemName: "sun.haze")!
                 imageright = UIImage()
+            } else if currentGame == GameSettingsDashboardSections.colours {
+                    imageleft  = UIImage(systemName: "sun.haze")!
+                    imageright = UIImage(systemName: "sun.dust")!
             }
             selLeft  = #selector(leftActionlvl2)
             selRight = #selector(rightActionlvl2)
         default:
-            imageleft  = UIImage(systemName: "sun.min")!
-            imageright = UIImage(systemName: "sun.dust")!
+            imageleft  = UIImage()
+            imageright = UIImage()
         }
         let theview = TwinCell3(viewController: self,
                                 left:        imageleft,
@@ -112,6 +128,9 @@ class GameSettingsTableViewController: UITableViewController {
             } else if currentGame == GameSettingsDashboardSections.ochoball {
                 imageleft  = "5 segundos"
                 imageright = "10 segundos"
+            } else if currentGame == GameSettingsDashboardSections.colours {
+                imageleft  = "2 rounds"
+                imageright = "4 rounds"
             }
         case 2:
             if currentGame == GameSettingsDashboardSections.memorias {
@@ -119,7 +138,10 @@ class GameSettingsTableViewController: UITableViewController {
                 imageright = ""
             } else if currentGame == GameSettingsDashboardSections.ochoball {
                 imageleft  = "15 segundos"
-                imageright = ""
+                imageright = "20 segundos"
+            } else if currentGame == GameSettingsDashboardSections.colours {
+                imageleft  = "8 rounds"
+                imageright = "16 rounds"
             }
         default:
             imageleft  = ""
@@ -146,6 +168,13 @@ class GameSettingsTableViewController: UITableViewController {
         self.navigationController?.pushViewController(goTo8Ball, animated: true)
     }
     
+    func routeToColors(rounds: Int) {
+        let goTo8Ball = UIStoryboard.gotoColoursFade()
+        goTo8Ball.modalPresentationStyle = .fullScreen
+        goTo8Ball.rounds = rounds
+        self.navigationController?.pushViewController(goTo8Ball, animated: true)
+    }
+    
     //MARK:- @objc Functions
     
     @objc func leftActionlvl1() {
@@ -153,6 +182,8 @@ class GameSettingsTableViewController: UITableViewController {
             routeToMemoria(matches: 2)
         } else if currentGame == GameSettingsDashboardSections.ochoball{
             routeTo8Ball(seconds: 5)
+        } else if currentGame == GameSettingsDashboardSections.colours{
+            routeToColors(rounds: 2)
         }
     }
     
@@ -160,21 +191,29 @@ class GameSettingsTableViewController: UITableViewController {
         if currentGame == GameSettingsDashboardSections.memorias {
             routeToMemoria(matches: 3)
         } else if currentGame == GameSettingsDashboardSections.ochoball{
-                   routeTo8Ball(seconds: 10)
-               }
+            routeTo8Ball(seconds: 10)
+        } else if currentGame == GameSettingsDashboardSections.colours{
+                routeToColors(rounds: 4)
+        }
     }
     
     @objc func leftActionlvl2() {
         if currentGame == GameSettingsDashboardSections.memorias {
             routeToMemoria(matches: 4)
         } else if currentGame == GameSettingsDashboardSections.ochoball{
-                          routeTo8Ball(seconds: 15)
-                      }
+            routeTo8Ball(seconds: 15)
+        } else if currentGame == GameSettingsDashboardSections.colours{
+            routeToColors(rounds: 8)
+        }
     }
     
     @objc func rightActionlvl2() {
         if      currentGame == GameSettingsDashboardSections.memorias { }
-        else if currentGame == GameSettingsDashboardSections.ochoball { }
+        else if currentGame == GameSettingsDashboardSections.ochoball {
+            routeTo8Ball(seconds: 20)
+        } else if currentGame == GameSettingsDashboardSections.colours{
+            routeToColors(rounds: 16)
+        }
     }
     
     @objc func backTapped() {
@@ -251,10 +290,11 @@ enum GameSettingsDashboardSections {
     public static let level2       = 2
     public static let level2height = CGFloat(120)
     
-    public static let headerheight  = 48
+    public static let headerheight = 48
     
     public static let memorias = "memorias"
     public static let ochoball = "8ball"
-    
+    public static let colours  = "colours"
+
 }
 

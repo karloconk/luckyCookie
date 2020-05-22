@@ -81,6 +81,10 @@ extension UIStoryboard {
         return load(from: Storyboards.games, identifier: "finders") as! FindersGameViewController
     }
     
+    class func gotoColoursFade() -> ColourMatchViewController {
+        return load(from: Storyboards.games, identifier: "colourMatch") as! ColourMatchViewController
+    }
+    
 }
 
 struct MyGVariables {

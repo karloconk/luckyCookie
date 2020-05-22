@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		661B220624718BA7006C3046 /* models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 661B220524718BA7006C3046 /* models.scnassets */; };
+		661DCFEB24782D4000C20889 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661DCFEA24782D4000C20889 /* ColorsView.swift */; };
 		6662E0AF246DF3A100484B49 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662E0AE246DF3A100484B49 /* WinView.swift */; };
 		6662E0B1246DF42300484B49 /* games.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6662E0B0246DF42300484B49 /* games.xcassets */; };
 		6662E0B4246E029500484B49 /* MainHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662E0B3246E029500484B49 /* MainHubViewController.swift */; };
@@ -21,6 +22,7 @@
 		669EFA9C246B8686008D4549 /* CookieSimple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669EFA9B246B8686008D4549 /* CookieSimple.swift */; };
 		66A84DE0246C6CBD0044AD5F /* centerCookies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A84DDF246C6CBD0044AD5F /* centerCookies.swift */; };
 		66E28DAB24743E5100CF9BA7 /* FindersGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E28DAA24743E5100CF9BA7 /* FindersGameViewController.swift */; };
+		66E28DB424748C6D00CF9BA7 /* ColourMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E28DB324748C6D00CF9BA7 /* ColourMatchViewController.swift */; };
 		66F5C4F7246F01B100C238B9 /* GameSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F5C4F6246F01B100C238B9 /* GameSettingsTableViewController.swift */; };
 		66F5C4F9246F34FE00C238B9 /* TwinCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F5C4F8246F34FE00C238B9 /* TwinCell3.swift */; };
 		B008188D23EA5565006A809F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008188C23EA5565006A809F /* AppDelegate.swift */; };
@@ -67,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		661B220524718BA7006C3046 /* models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = models.scnassets; sourceTree = "<group>"; };
+		661DCFEA24782D4000C20889 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
 		6662E0AE246DF3A100484B49 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 		6662E0B0246DF42300484B49 /* games.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = games.xcassets; sourceTree = "<group>"; };
 		6662E0B3246E029500484B49 /* MainHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHubViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		669EFA9B246B8686008D4549 /* CookieSimple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieSimple.swift; sourceTree = "<group>"; };
 		66A84DDF246C6CBD0044AD5F /* centerCookies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = centerCookies.swift; sourceTree = "<group>"; };
 		66E28DAA24743E5100CF9BA7 /* FindersGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindersGameViewController.swift; sourceTree = "<group>"; };
+		66E28DB324748C6D00CF9BA7 /* ColourMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourMatchViewController.swift; sourceTree = "<group>"; };
 		66F5C4F6246F01B100C238B9 /* GameSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettingsTableViewController.swift; sourceTree = "<group>"; };
 		66F5C4F8246F34FE00C238B9 /* TwinCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwinCell3.swift; sourceTree = "<group>"; };
 		76A426A1129AB2BA53ED6E74 /* Pods-luckycookie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-luckycookie.debug.xcconfig"; path = "Target Support Files/Pods-luckycookie/Pods-luckycookie.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 		666EADBA246B77F60013FD7A /* games */ = {
 			isa = PBXGroup;
 			children = (
+				66E28DB224748C4F00CF9BA7 /* Colourmatcher */,
 				66E28DA924743E2E00CF9BA7 /* Finders */,
 				661B21FC24718A10006C3046 /* Models */,
 				669415202470452400F87054 /* AR */,
@@ -235,6 +240,14 @@
 				66E28DAA24743E5100CF9BA7 /* FindersGameViewController.swift */,
 			);
 			path = Finders;
+			sourceTree = "<group>";
+		};
+		66E28DB224748C4F00CF9BA7 /* Colourmatcher */ = {
+			isa = PBXGroup;
+			children = (
+				66E28DB324748C6D00CF9BA7 /* ColourMatchViewController.swift */,
+			);
+			path = Colourmatcher;
 			sourceTree = "<group>";
 		};
 		B008188023EA5565006A809F = {
@@ -402,6 +415,7 @@
 				6662E0AE246DF3A100484B49 /* WinView.swift */,
 				6662E0BB246E324C00484B49 /* TwinCell2.swift */,
 				66F5C4F8246F34FE00C238B9 /* TwinCell3.swift */,
+				661DCFEA24782D4000C20889 /* ColorsView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -539,6 +553,7 @@
 				B078347F244913CE006ECC43 /* Tools.swift in Sources */,
 				B078348B24494460006ECC43 /* TwinCell.swift in Sources */,
 				B015FFAF245C7D9100CD2F37 /* HoroscopesViewController.swift in Sources */,
+				661DCFEB24782D4000C20889 /* ColorsView.swift in Sources */,
 				B0CBF4F3244F4B7B00ECD7D9 /* MoonsImages.swift in Sources */,
 				6662E0B4246E029500484B49 /* MainHubViewController.swift in Sources */,
 				B02F33A4244B8FEB001349C5 /* ColoursViewController.swift in Sources */,
@@ -550,6 +565,7 @@
 				B02F33A6244B9979001349C5 /* GenericTextView.swift in Sources */,
 				66F5C4F7246F01B100C238B9 /* GameSettingsTableViewController.swift in Sources */,
 				B015FFB1245C97F900CD2F37 /* HoroscopesModels.swift in Sources */,
+				66E28DB424748C6D00CF9BA7 /* ColourMatchViewController.swift in Sources */,
 				B05A7FD623FB7B66006B2235 /* GlobalVars.swift in Sources */,
 				6662E0B6246E171D00484B49 /* LucksNavsViewController.swift in Sources */,
 				66A84DE0246C6CBD0044AD5F /* centerCookies.swift in Sources */,

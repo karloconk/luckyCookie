@@ -75,6 +75,12 @@ class GamesDashboardTableViewController: UITableViewController {
         self.navigationController?.pushViewController(gotoGameSettings, animated: true)
     }
     
+    @objc func routeToGameSettingsColours() {
+        let gotoGameSettings = UIStoryboard.goToGameSettings()
+        gotoGameSettings.currentGame = GameSettingsDashboardSections.colours
+        self.navigationController?.pushViewController(gotoGameSettings, animated: true)
+    }
+    
     @objc func routeToAR1() {
         let gotoAR1 = UIStoryboard.gotofirstARscene()
         self.navigationController?.pushViewController(gotoAR1, animated: true)
@@ -119,7 +125,7 @@ class GamesDashboardTableViewController: UITableViewController {
                                          left:  DashboardImages.dashBoardNumeros!,
                                          right: DashboardImages.dashBoardLuna!,
                                          leftAction:  #selector(routeToGameSettingsARBall),
-                                         rightAction: #selector(routeToAR1)))
+                                         rightAction: #selector(routeToGameSettingsColours)))
         }
         return cell
     }
@@ -146,7 +152,7 @@ class GamesDashboardTableViewController: UITableViewController {
         } else if section == GameDashboardSections.level1 {
             smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Memoria", right: "Adivina número"))
         } else if section == GameDashboardSections.level2 {
-            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Dónde está mi bola mágica", right: " "))
+            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Dónde está mi bola mágica", right: "Cuál color es el distinto"))
         }
         return smallview
     }
