@@ -66,6 +66,8 @@ class GameSettingsTableViewController: UITableViewController {
             titulo = "Bola mágica"
         case GameSettingsDashboardSections.colours:
             titulo = "Colores"
+        case GameSettingsDashboardSections.jigsaw:
+            titulo = "Rompecabezas"
         default:
             titulo = "Memorias"
         }
@@ -87,9 +89,12 @@ class GameSettingsTableViewController: UITableViewController {
                 imageleft  = UIImage(systemName: "sun.min")!
                 imageright = UIImage(systemName: "sun.dust")!
             } else if currentGame == GameSettingsDashboardSections.colours {
-               imageleft  = UIImage(systemName: "sun.min")!
-               imageright = UIImage(systemName: "sun.dust")!
-           }
+                imageleft  = UIImage(systemName: "sun.min")!
+                imageright = UIImage(systemName: "sun.dust")!
+            } else if currentGame == GameSettingsDashboardSections.jigsaw {
+                imageleft  = UIImage(systemName: "sun.min")!
+                imageright = UIImage(systemName: "sun.dust")!
+            }
         case 2:
             if currentGame == GameSettingsDashboardSections.memorias {
                 imageleft  = UIImage(systemName: "sun.haze")!
@@ -98,8 +103,11 @@ class GameSettingsTableViewController: UITableViewController {
                 imageleft  = UIImage(systemName: "sun.haze")!
                 imageright = UIImage()
             } else if currentGame == GameSettingsDashboardSections.colours {
-                    imageleft  = UIImage(systemName: "sun.haze")!
-                    imageright = UIImage(systemName: "sun.dust")!
+                imageleft  = UIImage(systemName: "sun.haze")!
+                imageright = UIImage(systemName: "sun.dust")!
+            } else if currentGame == GameSettingsDashboardSections.jigsaw {
+                imageleft  = UIImage(systemName: "sun.haze")!
+                imageright = UIImage(systemName: "sun.dust")!
             }
             selLeft  = #selector(leftActionlvl2)
             selRight = #selector(rightActionlvl2)
@@ -131,7 +139,11 @@ class GameSettingsTableViewController: UITableViewController {
             } else if currentGame == GameSettingsDashboardSections.colours {
                 imageleft  = "2 rounds"
                 imageright = "4 rounds"
+            } else if currentGame == GameSettingsDashboardSections.jigsaw {
+                imageleft  = "\(2 * 2) piezas"
+                imageright = "\(3 * 3) piezas"
             }
+            
         case 2:
             if currentGame == GameSettingsDashboardSections.memorias {
                 imageleft  = "Selecciona 4"
@@ -142,6 +154,9 @@ class GameSettingsTableViewController: UITableViewController {
             } else if currentGame == GameSettingsDashboardSections.colours {
                 imageleft  = "8 rounds"
                 imageright = "16 rounds"
+            } else if currentGame == GameSettingsDashboardSections.jigsaw {
+                imageleft  = "\(4 * 4) piezas"
+                imageright = "\(5 * 5) piezas"
             }
         default:
             imageleft  = ""
@@ -175,6 +190,13 @@ class GameSettingsTableViewController: UITableViewController {
         self.navigationController?.pushViewController(goTo8Ball, animated: true)
     }
     
+    func routeToJigsaw(pieces: Int) {
+        let goTo8Ball = UIStoryboard.gotoJigsaws()
+        goTo8Ball.modalPresentationStyle = .fullScreen
+        goTo8Ball.numrows = pieces
+        self.navigationController?.pushViewController(goTo8Ball, animated: true)
+    }
+    
     //MARK:- @objc Functions
     
     @objc func leftActionlvl1() {
@@ -184,6 +206,8 @@ class GameSettingsTableViewController: UITableViewController {
             routeTo8Ball(seconds: 5)
         } else if currentGame == GameSettingsDashboardSections.colours{
             routeToColors(rounds: 2)
+        } else if currentGame == GameSettingsDashboardSections.jigsaw{
+            routeToJigsaw(pieces: 2)
         }
     }
     
@@ -193,7 +217,9 @@ class GameSettingsTableViewController: UITableViewController {
         } else if currentGame == GameSettingsDashboardSections.ochoball{
             routeTo8Ball(seconds: 10)
         } else if currentGame == GameSettingsDashboardSections.colours{
-                routeToColors(rounds: 4)
+            routeToColors(rounds: 4)
+        } else if currentGame == GameSettingsDashboardSections.jigsaw{
+            routeToJigsaw(pieces: 3)
         }
     }
     
@@ -204,6 +230,8 @@ class GameSettingsTableViewController: UITableViewController {
             routeTo8Ball(seconds: 15)
         } else if currentGame == GameSettingsDashboardSections.colours{
             routeToColors(rounds: 8)
+        } else if currentGame == GameSettingsDashboardSections.jigsaw{
+            routeToJigsaw(pieces: 4)
         }
     }
     
@@ -213,6 +241,8 @@ class GameSettingsTableViewController: UITableViewController {
             routeTo8Ball(seconds: 20)
         } else if currentGame == GameSettingsDashboardSections.colours{
             routeToColors(rounds: 16)
+        } else if currentGame == GameSettingsDashboardSections.jigsaw{
+            routeToJigsaw(pieces: 5)
         }
     }
     
@@ -295,6 +325,7 @@ enum GameSettingsDashboardSections {
     public static let memorias = "memorias"
     public static let ochoball = "8ball"
     public static let colours  = "colours"
-
+    public static let jigsaw   = "jigsaw"
+    
 }
 

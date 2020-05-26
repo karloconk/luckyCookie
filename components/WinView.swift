@@ -130,8 +130,11 @@ public class WinView: UIView {
         setupButtonAction(viewController: viewController, action: actionM, button: self.mButton)
         addComponents()
         layoutComponents()
-        self.layer.cornerRadius  = 5
+        self.layer.cornerRadius  = 8
         self.layer.masksToBounds = true
+        layer.shadowOffset  = CGSize(width: 0, height: 3)
+        layer.shadowOpacity = 0.5
+        layer.shadowRadius  = 2
     }
     
     override public init(frame: CGRect) {

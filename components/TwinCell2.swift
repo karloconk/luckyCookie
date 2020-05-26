@@ -24,7 +24,7 @@ public class TwinCell2: UIView {
         return button
     }()
 
-    public init(viewController: UIViewController, left: UIImage, right: UIImage, leftAction: Selector, rightAction: Selector) {
+    public init(viewController: UIViewController, left: UIImage, right: UIImage, leftAction: Selector, rightAction: Selector?) {
         let theFrame = CGRect(x: viewController.view.frame.minX, y: 0, width: viewController.view.frame.width, height: frameHeight)
         super.init(frame: theFrame)
         backgroundColor = backgroundColour
@@ -36,8 +36,9 @@ public class TwinCell2: UIView {
         setupButtonConstraints(view: self, frame: lframe, left: true,  button: self.lButton)
         setupButtonConstraints(view: self, frame: rframe, left: false, button: self.rButton)
         setupButtonAction(viewController: viewController, action: leftAction, button: self.lButton)
-        setupButtonAction(viewController: viewController, action: rightAction, button: self.rButton)
-        
+        if let maaction = rightAction {
+            setupButtonAction(viewController: viewController, action: maaction, button: self.rButton)
+        }
     }
     
     func setupButtons(left: UIImage, right: UIImage) {

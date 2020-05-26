@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		661B220624718BA7006C3046 /* models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 661B220524718BA7006C3046 /* models.scnassets */; };
+		661B661F247D525800341D1D /* JigSawsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661B661E247D525800341D1D /* JigSawsViewController.swift */; };
+		661B6621247D527600341D1D /* PuzzleJigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661B6620247D527600341D1D /* PuzzleJigView.swift */; };
+		661B6623247D575000341D1D /* jigsaws.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 661B6622247D575000341D1D /* jigsaws.xcassets */; };
 		661DCFEB24782D4000C20889 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661DCFEA24782D4000C20889 /* ColorsView.swift */; };
 		6662E0AF246DF3A100484B49 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662E0AE246DF3A100484B49 /* WinView.swift */; };
 		6662E0B1246DF42300484B49 /* games.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6662E0B0246DF42300484B49 /* games.xcassets */; };
@@ -69,6 +72,9 @@
 
 /* Begin PBXFileReference section */
 		661B220524718BA7006C3046 /* models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = models.scnassets; sourceTree = "<group>"; };
+		661B661E247D525800341D1D /* JigSawsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JigSawsViewController.swift; sourceTree = "<group>"; };
+		661B6620247D527600341D1D /* PuzzleJigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleJigView.swift; sourceTree = "<group>"; };
+		661B6622247D575000341D1D /* jigsaws.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = jigsaws.xcassets; sourceTree = "<group>"; };
 		661DCFEA24782D4000C20889 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
 		6662E0AE246DF3A100484B49 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 		6662E0B0246DF42300484B49 /* games.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = games.xcassets; sourceTree = "<group>"; };
@@ -169,6 +175,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		661B661D247D523700341D1D /* Jigsaw */ = {
+			isa = PBXGroup;
+			children = (
+				661B661E247D525800341D1D /* JigSawsViewController.swift */,
+			);
+			path = Jigsaw;
+			sourceTree = "<group>";
+		};
 		6662E0B2246E026A00484B49 /* hubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +206,7 @@
 		666EADBA246B77F60013FD7A /* games */ = {
 			isa = PBXGroup;
 			children = (
+				661B661D247D523700341D1D /* Jigsaw */,
 				66E28DB224748C4F00CF9BA7 /* Colourmatcher */,
 				66E28DA924743E2E00CF9BA7 /* Finders */,
 				661B21FC24718A10006C3046 /* Models */,
@@ -319,6 +334,7 @@
 				B0229E7F244E65FC00261874 /* Luna.xcassets */,
 				B01756462452362900E4C4A3 /* Numbers.xcassets */,
 				6662E0B0246DF42300484B49 /* games.xcassets */,
+				661B6622247D575000341D1D /* jigsaws.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -416,6 +432,7 @@
 				6662E0BB246E324C00484B49 /* TwinCell2.swift */,
 				66F5C4F8246F34FE00C238B9 /* TwinCell3.swift */,
 				661DCFEA24782D4000C20889 /* ColorsView.swift */,
+				661B6620247D527600341D1D /* PuzzleJigView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -481,6 +498,7 @@
 			files = (
 				B01605D12407647D0073C365 /* theboldfont.ttf in Resources */,
 				661B220624718BA7006C3046 /* models.scnassets in Resources */,
+				661B6623247D575000341D1D /* jigsaws.xcassets in Resources */,
 				6662E0B1246DF42300484B49 /* games.xcassets in Resources */,
 				B0229E80244E65FC00261874 /* Luna.xcassets in Resources */,
 				666EADB9246B76AF0013FD7A /* Games.storyboard in Resources */,
@@ -531,6 +549,7 @@
 				B078347C24489BAC006ECC43 /* DashboardTableViewController.swift in Sources */,
 				B02F33B3244BE55F001349C5 /* MoonsViewController.swift in Sources */,
 				B078347A24489B75006ECC43 /* IntroViewController.swift in Sources */,
+				661B6621247D527600341D1D /* PuzzleJigView.swift in Sources */,
 				6662E0B8246E261100484B49 /* GamesViewController.swift in Sources */,
 				6662E0BA246E26AB00484B49 /* GamesDashboardTableViewController.swift in Sources */,
 				B00818A723EA6301006A809F /* themesViewController.swift in Sources */,
@@ -567,6 +586,7 @@
 				B015FFB1245C97F900CD2F37 /* HoroscopesModels.swift in Sources */,
 				66E28DB424748C6D00CF9BA7 /* ColourMatchViewController.swift in Sources */,
 				B05A7FD623FB7B66006B2235 /* GlobalVars.swift in Sources */,
+				661B661F247D525800341D1D /* JigSawsViewController.swift in Sources */,
 				6662E0B6246E171D00484B49 /* LucksNavsViewController.swift in Sources */,
 				66A84DE0246C6CBD0044AD5F /* centerCookies.swift in Sources */,
 				66E28DAB24743E5100CF9BA7 /* FindersGameViewController.swift in Sources */,

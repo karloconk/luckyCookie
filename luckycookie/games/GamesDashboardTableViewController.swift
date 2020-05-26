@@ -12,7 +12,7 @@ class GamesDashboardTableViewController: UITableViewController {
     
     // MARK:- View Lifecycle
 
-    let numberOfRows = 3
+    let numberOfRows = 4
 
     // MARK:- View Lifecycle
     override func viewDidLoad() {
@@ -81,6 +81,12 @@ class GamesDashboardTableViewController: UITableViewController {
         self.navigationController?.pushViewController(gotoGameSettings, animated: true)
     }
     
+    @objc func routeToGameSettingsJigsaw() {
+        let gotoGameSettings = UIStoryboard.goToGameSettings()
+        gotoGameSettings.currentGame = GameSettingsDashboardSections.jigsaw
+        self.navigationController?.pushViewController(gotoGameSettings, animated: true)
+    }
+    
     @objc func routeToAR1() {
         let gotoAR1 = UIStoryboard.gotofirstARscene()
         self.navigationController?.pushViewController(gotoAR1, animated: true)
@@ -126,6 +132,12 @@ class GamesDashboardTableViewController: UITableViewController {
                                          right: DashboardImages.dashBoardLuna!,
                                          leftAction:  #selector(routeToGameSettingsARBall),
                                          rightAction: #selector(routeToGameSettingsColours)))
+        }  else if indexPath.section == GameDashboardSections.level3 {
+                cell.addSubview(TwinCell2(viewController: self,
+                                         left:  DashboardImages.dashBoardNumeros!,
+                                         right: DashboardImages.dashBoardLuna!,
+                                         leftAction:  #selector(routeToGameSettingsJigsaw),
+                                         rightAction: nil))
         }
         return cell
     }
@@ -152,7 +164,9 @@ class GamesDashboardTableViewController: UITableViewController {
         } else if section == GameDashboardSections.level1 {
             smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Memoria", right: "Adivina número"))
         } else if section == GameDashboardSections.level2 {
-            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Dónde está mi bola mágica", right: "Cuál color es el distinto"))
+            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Dónde está mi bola mágica", right: "Cuál color es distinto"))
+        } else if section == GameDashboardSections.level3 {
+                   smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Rompecabezas", right: ""))
         }
         return smallview
     }
@@ -178,6 +192,9 @@ enum GameDashboardSections {
     
     public static let level2       = 2
     public static let level2height = CGFloat(140)
+    
+    public static let level3       = 3
+    public static let level3height = CGFloat(140)
     
     public static let headerheight  = 30
     
