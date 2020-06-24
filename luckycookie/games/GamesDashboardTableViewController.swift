@@ -61,6 +61,19 @@ class GamesDashboardTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = barButton
     }
     
+    func getHeaderBig(tablewidth: CGFloat, titlee: String) -> UILabel{
+        let headerlabel = UILabel(frame: CGRect(x: 0,   y: 0,
+                                                width:  Int(tablewidth),
+                                                height: DashboardSections.headerheight))
+        headerlabel.font             = Typo.h3
+        headerlabel.textColor        = Colors.charcoal
+        headerlabel.textAlignment    = .center
+        headerlabel.backgroundColor  = Colors.blanco
+        headerlabel.contentMode      = .scaleAspectFit
+        headerlabel.text             = titlee
+        return headerlabel
+    }
+    
     //MARK:- @objc Functions
     
     @objc func routeToGameSettingsMemoria() {
@@ -122,20 +135,20 @@ class GamesDashboardTableViewController: UITableViewController {
             cell.addSubview(smallview)
         }  else if indexPath.section == GameDashboardSections.level1 {
             cell.addSubview(TwinCell2(viewController: self,
-                                     left:  DashboardImages.dashBoardBola!,
-                                     right: DashboardImages.dashBoardLuna!,
+                                     left:  DashboardImages.GdashBoardCookie!,
+                                     right: DashboardImages.GdashBoardNumeros!,
                                      leftAction:  #selector(routeToGameSettingsMemoria),
                                      rightAction: #selector(routeToAR1)))
         }  else if indexPath.section == GameDashboardSections.level2 {
                 cell.addSubview(TwinCell2(viewController: self,
-                                         left:  DashboardImages.dashBoardNumeros!,
-                                         right: DashboardImages.dashBoardLuna!,
+                                         left:  DashboardImages.GdashBoardBola!,
+                                         right: DashboardImages.GdashBoardColores!,
                                          leftAction:  #selector(routeToGameSettingsARBall),
                                          rightAction: #selector(routeToGameSettingsColours)))
         }  else if indexPath.section == GameDashboardSections.level3 {
                 cell.addSubview(TwinCell2(viewController: self,
-                                         left:  DashboardImages.dashBoardNumeros!,
-                                         right: DashboardImages.dashBoardLuna!,
+                                         left:  DashboardImages.GdashBoardLuna!,
+                                         right: nil,
                                          leftAction:  #selector(routeToGameSettingsJigsaw),
                                          rightAction: nil))
         }
@@ -146,7 +159,7 @@ class GamesDashboardTableViewController: UITableViewController {
         if indexPath.section == GameDashboardSections.dbheader {
             return GameDashboardSections.dbheaderheight
         } else {
-            return GameDashboardSections.level1height
+            return GameDashboardSections.level1height - 10
         }
     }
     
@@ -164,9 +177,10 @@ class GamesDashboardTableViewController: UITableViewController {
         } else if section == GameDashboardSections.level1 {
             smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Memoria", right: "Adivina número"))
         } else if section == GameDashboardSections.level2 {
-            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Dónde está mi bola mágica", right: "Cuál color es distinto"))
+            smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "¿Dónde está mi bola mágica?", right: "¿Cuál color es distinto?"))
         } else if section == GameDashboardSections.level3 {
-                   smallview.addSubview(TwinHeaders(width: Double(tablewidth), left: "Rompecabezas", right: ""))
+            smallview.addSubview(getHeaderBig(tablewidth: tablewidth,
+                                              titlee:  "Rompecabezas"))
         }
         return smallview
     }
@@ -186,16 +200,11 @@ class GamesDashboardTableViewController: UITableViewController {
 enum GameDashboardSections {
     public static let dbheader       = 0
     public static let dbheaderheight = CGFloat(0)
-    
+    public static let level1height = CGFloat(120)
+
     public static let level1       = 1
-    public static let level1height = CGFloat(140)
-    
     public static let level2       = 2
-    public static let level2height = CGFloat(140)
-    
     public static let level3       = 3
-    public static let level3height = CGFloat(140)
     
     public static let headerheight  = 30
-    
 }

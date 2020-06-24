@@ -20,12 +20,14 @@ class JigSawsViewController: UIViewController, JigPieceDelegate {
     var modifiedPos: [[CGPoint]] = []
     var originalViews: [[UIImageView]]   = []
     var modifiedViews: [[PuzzleJigView]] = []
+    let jigsaws = [UIImage(named: "lp1")!,UIImage(named: "lp2")!,UIImage(named: "lp3")!,UIImage(named: "lp4")!]
     var theimage = UIImage(named: "image")!
     
     // MARK:- LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.theimage = jigsaws.randomElement()!
         let maimage = self.theimage.resize(targetSize: CGSize(width: 650, height: 320))
         self.setupPuzzle(imagen: maimage )
     }

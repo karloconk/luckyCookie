@@ -313,54 +313,58 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzS-1a-RpQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzS-1a-RpQ">
                                         <rect key="frame" x="85" y="104" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="YmY-06-ttb"/>
                                             <constraint firstAttribute="height" constant="64" id="jjk-LG-5Rw"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="1"/>
+                                        <state key="normal" image="1.square" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="54"/>
+                                        </state>
                                         <connections>
                                             <action selector="unou:" destination="wRl-CY-CJ3" eventType="touchUpInside" id="As0-xE-k5k"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAO-R2-hKp">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XAO-R2-hKp">
                                         <rect key="frame" x="351" y="201" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="QYE-gV-7U5"/>
                                             <constraint firstAttribute="height" constant="64" id="nnH-aE-Q5k"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="6"/>
+                                        <state key="normal" image="6.square" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="54"/>
+                                        </state>
                                         <connections>
                                             <action selector="sixu:" destination="wRl-CY-CJ3" eventType="touchUpInside" id="BgJ-82-veJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqm-JM-fH0">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqm-JM-fH0">
                                         <rect key="frame" x="351" y="104" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="7le-qg-N1O"/>
                                             <constraint firstAttribute="width" constant="64" id="IVw-dh-BLC"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="3"/>
+                                        <state key="normal" image="3.square" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="54"/>
+                                        </state>
                                         <connections>
                                             <action selector="threeu:" destination="wRl-CY-CJ3" eventType="touchUpInside" id="uh3-2j-k91"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMg-e2-ylT">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMg-e2-ylT">
                                         <rect key="frame" x="218" y="104" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="1kK-2E-Ro3"/>
                                             <constraint firstAttribute="width" constant="64" id="vtP-NB-176"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="2"/>
+                                        <state key="normal" image="2.square" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="54"/>
+                                        </state>
                                         <connections>
                                             <action selector="dous:" destination="wRl-CY-CJ3" eventType="touchUpInside" id="hPz-bK-j91"/>
                                         </connections>
@@ -377,28 +381,30 @@
                                             <action selector="noquiero:" destination="wRl-CY-CJ3" eventType="touchUpInside" id="OqF-82-3zM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozc-cC-8t6">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozc-cC-8t6">
                                         <rect key="frame" x="218" y="201" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="62V-uW-YfC"/>
                                             <constraint firstAttribute="width" constant="64" id="cyy-NU-Uif"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="5"/>
+                                        <state key="normal" image="5.square" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="54"/>
+                                        </state>
                                         <connections>
                                             <action selector="fivu:" destination="wRl-CY-CJ3" eventType="touchUpInside" id="coq-HQ-cZj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMK-b2-ZHi">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMK-b2-ZHi">
                                         <rect key="frame" x="85" y="201" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="OFC-08-qN5"/>
                                             <constraint firstAttribute="width" constant="64" id="eHB-JE-SGV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="4"/>
+                                        <state key="normal" image="4.square" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="54"/>
+                                        </state>
                                         <connections>
                                             <action selector="fouru:" destination="wRl-CY-CJ3" eventType="touchUpInside" id="Nz8-Au-eZj"/>
                                         </connections>
@@ -565,6 +571,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1.square" catalog="system" width="128" height="114"/>
+        <image name="2.square" catalog="system" width="128" height="114"/>
+        <image name="3.square" catalog="system" width="128" height="114"/>
+        <image name="4.square" catalog="system" width="128" height="114"/>
+        <image name="5.square" catalog="system" width="128" height="114"/>
+        <image name="6.square" catalog="system" width="128" height="114"/>
         <image name="Bola8_Bola" width="651.5" height="651.5"/>
         <image name="Bola8_Circulo" width="330" height="329.5"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>

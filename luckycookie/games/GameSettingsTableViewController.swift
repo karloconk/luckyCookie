@@ -49,6 +49,19 @@ class GameSettingsTableViewController: UITableViewController {
         setupIcon()
     }
     
+    func getHeaderBig(tablewidth: CGFloat, titlee: String) -> UILabel{
+        let headerlabel = UILabel(frame: CGRect(x: 0,   y: 0,
+                                                width:  Int(tablewidth),
+                                                height: DashboardSections.headerheight))
+        headerlabel.font             = Typo.h3
+        headerlabel.textColor        = Colors.charcoal
+        headerlabel.textAlignment    = .center
+        headerlabel.backgroundColor  = Colors.blanco
+        headerlabel.contentMode      = .scaleAspectFit
+        headerlabel.text             = titlee
+        return headerlabel
+    }
+    
     func setupIcon() {
         let button: UIButton = UIButton(type: .custom)
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
@@ -75,48 +88,62 @@ class GameSettingsTableViewController: UITableViewController {
     }
     
     func getCellForRow(row: Int) -> UIView {
-        var imageleft  = UIImage()
-        var imageright = UIImage()
+        var imageleft: UIImage?  = UIImage()
+        var imageright: UIImage? = UIImage()
         var selLeft: Selector  = #selector(leftActionlvl1)
         var selRight: Selector = #selector(rightActionlvl1)
+        var nameleft  = ""
+        var nameright = ""
+        let conficg   = UIImage.SymbolConfiguration(pointSize: 64, weight: .regular)
+        var iconColour = Colours.basicBackground
         
         switch row {
         case 1:
             if currentGame == GameSettingsDashboardSections.memorias {
-                imageleft  = UIImage(systemName: "sun.min")!
-                imageright = UIImage(systemName: "sun.dust")!
+                nameleft  =  "2.circle.fill"
+                nameright =  "3.circle.fill"
+                iconColour = Colours.basicBackground
             } else if currentGame == GameSettingsDashboardSections.ochoball {
-                imageleft  = UIImage(systemName: "sun.min")!
-                imageright = UIImage(systemName: "sun.dust")!
+                nameleft  =  "05.circle.fill"
+                nameright =  "10.circle.fill"
+                iconColour = Colors.charcoal
             } else if currentGame == GameSettingsDashboardSections.colours {
-                imageleft  = UIImage(systemName: "sun.min")!
-                imageright = UIImage(systemName: "sun.dust")!
+                nameleft  =  "square.split.2x1"
+                nameright =  "square.split.2x2"
+                iconColour = Colors.tweety
             } else if currentGame == GameSettingsDashboardSections.jigsaw {
-                imageleft  = UIImage(systemName: "sun.min")!
-                imageright = UIImage(systemName: "sun.dust")!
+                nameleft  =  "rectangle.fill"
+                nameright =  "rectangle.grid.2x2.fill"
+                iconColour = Colors.moonshine
             }
         case 2:
             if currentGame == GameSettingsDashboardSections.memorias {
-                imageleft  = UIImage(systemName: "sun.haze")!
-                imageright = UIImage()
+                nameleft  =  "4.circle.fill"
+                iconColour = Colours.basicBackground
             } else if currentGame == GameSettingsDashboardSections.ochoball {
-                imageleft  = UIImage(systemName: "sun.haze")!
-                imageright = UIImage()
+                nameleft  =  "15.circle.fill"
+                nameright =  "20.circle.fill"
+                iconColour = Colors.charcoal
             } else if currentGame == GameSettingsDashboardSections.colours {
-                imageleft  = UIImage(systemName: "sun.haze")!
-                imageright = UIImage(systemName: "sun.dust")!
+                nameleft  =  "table"
+                nameright =  "rectangle.split.3x3"
+                iconColour = Colors.tweety
             } else if currentGame == GameSettingsDashboardSections.jigsaw {
-                imageleft  = UIImage(systemName: "sun.haze")!
-                imageright = UIImage(systemName: "sun.dust")!
+                nameleft  =  "rectangle.grid.3x2.fill"
+                nameright =  "square.grid.4x3.fill"
+                iconColour = Colors.moonshine
             }
             selLeft  = #selector(leftActionlvl2)
             selRight = #selector(rightActionlvl2)
         default:
             imageleft  = UIImage()
-            imageright = UIImage()
+            imageright = nil
         }
+        imageleft  = nameleft != "" ? UIImage(systemName: nameleft, withConfiguration: conficg)!.withTintColor(iconColour, renderingMode: .alwaysOriginal) : UIImage()
+        imageright = nameright != "" ?  UIImage(systemName: nameright, withConfiguration: conficg)!.withTintColor(iconColour, renderingMode: .alwaysOriginal) : nil
+
         let theview = TwinCell3(viewController: self,
-                                left:        imageleft,
+                                left:        imageleft!,
                                 right:       imageright,
                                 leftAction:  selLeft,
                                 rightAction: selRight)
@@ -161,6 +188,10 @@ class GameSettingsTableViewController: UITableViewController {
         default:
             imageleft  = ""
             imageright = ""
+        }
+        if imageright == "" {
+            let theView = getHeaderBig(tablewidth: tablewidth, titlee:  imageleft)
+            return theView
         }
         let theView = TwinHeaders(width: Double(tablewidth),
                                   left: imageleft, right: imageright)

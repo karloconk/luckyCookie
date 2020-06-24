@@ -308,4 +308,5 @@ enum DashboardSections {
     
     public static let headerheight  = 30
     
+    public static let Gheaderheight  = 20
 }
