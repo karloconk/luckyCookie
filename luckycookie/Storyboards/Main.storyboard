@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yVL-2G-vjS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yVL-2G-vjS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -302,12 +302,12 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obten tus números de hoy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHr-PA-0L8">
-                                <rect key="frame" x="50.5" y="217" width="313.5" height="24"/>
+                                <rect key="frame" x="64.5" y="213" width="285.5" height="28"/>
                                 <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toca el botón" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWf-3N-hnS">
-                                <rect key="frame" x="136" y="644" width="142.5" height="20"/>
+                                <rect key="frame" x="146.5" y="644" width="121" height="23.5"/>
                                 <fontDescription key="fontDescription" name="TheBoldFont" family="The Bold Font" pointSize="20"/>
                                 <color key="textColor" red="0.015887582670000001" green="0.0081239221620000007" blue="0.011760405260000001" alpha="0.4894916373" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -678,16 +678,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamecontroller.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YOK-4g-fgI">
-                                <rect key="frame" x="82" y="171" width="250" height="247.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icono_juegos" translatesAutoresizingMaskIntoConstraints="NO" id="YOK-4g-fgI">
+                                <rect key="frame" x="82" y="170" width="250" height="250"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="MBO-jv-1YA"/>
                                     <constraint firstAttribute="height" constant="250" id="mBG-DX-SjL"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wand.and.stars" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="S1S-z7-84g">
-                                <rect key="frame" x="82" y="486.5" width="250" height="249"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icono_Suertes" translatesAutoresizingMaskIntoConstraints="NO" id="S1S-z7-84g">
+                                <rect key="frame" x="82" y="486" width="250" height="250"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="C6W-Q9-bn5"/>
@@ -696,7 +696,6 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9U-wm-qt6">
                                 <rect key="frame" x="87" y="428" width="240" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="7N4-hN-2VA"/>
                                     <constraint firstAttribute="height" constant="50" id="pYJ-FN-fgv"/>
@@ -750,6 +749,8 @@
                     <connections>
                         <outlet property="gamesImageView" destination="YOK-4g-fgI" id="nnf-jx-PVf"/>
                         <outlet property="headerOutlet" destination="flB-cn-Qtp" id="b2E-9P-S0L"/>
+                        <outlet property="juegoButton" destination="Pol-Fz-D9O" id="RDp-zr-8CG"/>
+                        <outlet property="lucksButton" destination="OLN-pw-DHS" id="91V-yj-Eiy"/>
                         <outlet property="suerteImageView" destination="S1S-z7-84g" id="yWH-G4-rUJ"/>
                     </connections>
                 </viewController>
@@ -978,6 +979,8 @@
         <image name="Estrellas" width="1356" height="1347"/>
         <image name="Icono_Baja" width="307" height="245"/>
         <image name="Icono_Sube" width="307" height="245"/>
+        <image name="Icono_Suertes" width="451" height="315"/>
+        <image name="Icono_juegos" width="365.5" height="320"/>
         <image name="KachamLogo_Black" width="896" height="1129"/>
         <image name="KachamLogo_Blanco" width="896" height="1129"/>
         <image name="Luna_Llena" width="938" height="939"/>
@@ -989,9 +992,7 @@
         <image name="basic_top" width="509" height="61"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="first" width="30" height="30"/>
-        <image name="gamecontroller.fill" catalog="system" width="128" height="82"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <image name="wand.and.stars" catalog="system" width="128" height="113"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>

@@ -13,11 +13,17 @@ class MainHubViewController: UIViewController {
     @IBOutlet weak var headerOutlet: UILabel!
     @IBOutlet weak var gamesImageView: UIImageView!
     @IBOutlet weak var suerteImageView: UIImageView!
+    @IBOutlet weak var lucksButton: UIButton!
+    @IBOutlet weak var juegoButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         headerOutlet.font = Font.getbigFont(size: 34)
         self.view.isUserInteractionEnabled = false
+        self.setButton(button: lucksButton)
+        self.setButton(button: juegoButton)
+        self.view.backgroundColor = UIColor(red: 0.91, green: 0.47, blue: 0.56, alpha: 1.00)
+        self.getRandomColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +45,18 @@ class MainHubViewController: UIViewController {
             gamesImageView.isHidden  = false
             suerteImageView.isHidden = false
         }
+    }
+    
+    func setButton(button: UIButton) {
+//        button.layer.borderWidth  = 1
+//        button.layer.borderColor  = Colors.neutral.cgColor
+//        button.layer.cornerRadius = 5
+    }
+    
+    func getRandomColor() {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options:[.curveEaseInOut], animations: {
+            self.view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.00)
+        }, completion:nil)
     }
     
     func routeToGames() {

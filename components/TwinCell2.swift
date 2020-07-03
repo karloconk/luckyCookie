@@ -13,7 +13,8 @@ public class TwinCell2: UIView {
     public var buttonSelected       = 0
     public let frameHeight: CGFloat = GameDashboardSections.level1height
     private let backgroundColour    = Colors.blanco
-    
+    private var thaWidth: CGFloat   = 0
+     
     public lazy var lButton: UIButton = {
         let button = UIButton()
         return button
@@ -31,6 +32,7 @@ public class TwinCell2: UIView {
         
         let lframe = CGRect(x: theFrame.maxX - theFrame.width/2, y: theFrame.minY, width: theFrame.width/2 - 0.5, height: theFrame.height)
         let rframe = CGRect(x: theFrame.width/2, y: theFrame.minY, width: theFrame.width/2  - 0.5, height: theFrame.height)
+        self.thaWidth = (theFrame.width/2  - 0.5)
         setupButtons(left: left, right: right ?? UIImage())
         if let _ = right {
             setupButtonConstraints(view: self, frame: lframe, left: true,  button: self.lButton)
@@ -67,7 +69,8 @@ public class TwinCell2: UIView {
                 self.rButton.layer.borderColor = Colors.upperNum.cgColor
             }
             
-            let insets = UIEdgeInsets(top: 10, left: 110, bottom: 10, right: 110)
+            let aWidth = self.thaWidth/2 - 16
+            let insets = UIEdgeInsets(top: 10, left: aWidth, bottom: 10, right: aWidth)
             
             self.lButton.backgroundColor = bgcolorL
             self.lButton.setImage(left, for: .normal)

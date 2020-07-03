@@ -15,6 +15,7 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
     // MARK:- Outlets
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var labelView: UILabel!
     
     // MARK:- Vars
     let contents              = 12
@@ -63,7 +64,7 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
         }
     }
     
-    private var selecteds: [UIImage] = [UIImage(named: "Dashboard_Bola8")!,UIImage(named: "Dashboard_Colores")!,UIImage(named: "Dashboard_Luna")!,UIImage(named: "Dashboard_Numeros")!,UIImage(named: "Luna_Llena")!,UIImage(named: "Luna_CuartoMenguante")!]
+    private var selecteds: [UIImage] = [UIImage(named: "memorama_1")!,UIImage(named: "memorama_2")!,UIImage(named: "memorama_3")!,UIImage(named: "memorama_4")!,UIImage(named: "memorama_5")!,UIImage(named: "memorama_6")!]
     
     private var icons:    [[UIImage]] = [[],[],[]]
     private var selected: [[Int]] = [[],[],[]]
@@ -75,6 +76,7 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifierCC)
+        self.generateName(num: allowedTouches)
         self.generateArray(pairnumber: allowedTouches)
     }
     
@@ -100,6 +102,19 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
     }
     
     // MARK:- Functions
+    
+    func generateName(num: Int) {
+        switch num {
+        case 2:
+            self.labelView.text = "Pares"
+        case 3:
+            self.labelView.text = "Triadas"
+        case 4:
+            self.labelView.text = "Cuartetos"
+        default:
+            return
+        }
+    }
     
     func winfunc() {
         let maWidth    = 400
