@@ -10,7 +10,6 @@
 		661B220624718BA7006C3046 /* models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 661B220524718BA7006C3046 /* models.scnassets */; };
 		661B661F247D525800341D1D /* JigSawsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661B661E247D525800341D1D /* JigSawsViewController.swift */; };
 		661B6621247D527600341D1D /* PuzzleJigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661B6620247D527600341D1D /* PuzzleJigView.swift */; };
-		661B6623247D575000341D1D /* jigsaws.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 661B6622247D575000341D1D /* jigsaws.xcassets */; };
 		661DCFEB24782D4000C20889 /* ColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661DCFEA24782D4000C20889 /* ColorsView.swift */; };
 		6662E0AF246DF3A100484B49 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662E0AE246DF3A100484B49 /* WinView.swift */; };
 		6662E0B1246DF42300484B49 /* games.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6662E0B0246DF42300484B49 /* games.xcassets */; };
@@ -74,7 +73,6 @@
 		661B220524718BA7006C3046 /* models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = models.scnassets; sourceTree = "<group>"; };
 		661B661E247D525800341D1D /* JigSawsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JigSawsViewController.swift; sourceTree = "<group>"; };
 		661B6620247D527600341D1D /* PuzzleJigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleJigView.swift; sourceTree = "<group>"; };
-		661B6622247D575000341D1D /* jigsaws.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = jigsaws.xcassets; sourceTree = "<group>"; };
 		661DCFEA24782D4000C20889 /* ColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsView.swift; sourceTree = "<group>"; };
 		6662E0AE246DF3A100484B49 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 		6662E0B0246DF42300484B49 /* games.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = games.xcassets; sourceTree = "<group>"; };
@@ -334,7 +332,6 @@
 				B0229E7F244E65FC00261874 /* Luna.xcassets */,
 				B01756462452362900E4C4A3 /* Numbers.xcassets */,
 				6662E0B0246DF42300484B49 /* games.xcassets */,
-				661B6622247D575000341D1D /* jigsaws.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -498,7 +495,6 @@
 			files = (
 				B01605D12407647D0073C365 /* theboldfont.ttf in Resources */,
 				661B220624718BA7006C3046 /* models.scnassets in Resources */,
-				661B6623247D575000341D1D /* jigsaws.xcassets in Resources */,
 				6662E0B1246DF42300484B49 /* games.xcassets in Resources */,
 				B0229E80244E65FC00261874 /* Luna.xcassets in Resources */,
 				666EADB9246B76AF0013FD7A /* Games.storyboard in Resources */,

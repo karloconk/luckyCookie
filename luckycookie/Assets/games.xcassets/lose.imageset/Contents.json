@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "lose-1.jpeg",
+      "filename" : "perdiste.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "perdiste-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "perdiste-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
