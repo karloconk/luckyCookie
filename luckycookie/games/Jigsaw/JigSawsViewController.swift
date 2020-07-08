@@ -21,7 +21,7 @@ class JigSawsViewController: UIViewController, JigPieceDelegate {
     var originalViews: [[UIImageView]]   = []
     var modifiedViews: [[PuzzleJigView]] = []
     let jigsaws = [UIImage(named: "lp1")!,UIImage(named: "lp2")!,UIImage(named: "lp3")!,UIImage(named: "lp4")!]
-    var theimage = UIImage(named: "image")!
+    var theimage = UIImage()
     
     // MARK:- LifeCycle
 
