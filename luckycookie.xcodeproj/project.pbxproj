@@ -724,7 +724,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = HXV532C2KY;
 				INFOPLIST_FILE = luckycookie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -732,7 +732,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = mx.kacham.luckycookie;
 				PRODUCT_NAME = Fortunas;
 				SWIFT_VERSION = 5.0;
@@ -746,7 +746,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = HXV532C2KY;
 				INFOPLIST_FILE = luckycookie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -754,7 +754,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = mx.kacham.luckycookie;
 				PRODUCT_NAME = Fortunas;
 				SWIFT_VERSION = 5.0;

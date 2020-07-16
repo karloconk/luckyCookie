@@ -10,15 +10,15 @@ import UIKit
 
 class DashboardTableViewController: UITableViewController {
     
-    var buttonBack: UIButton     = UIButton(type: UIButton.ButtonType.custom)
-    var spinner                  = UIActivityIndicatorView()
-    let numberOfRows             = 4
-    let defaults                 = UserDefaults.standard
-    var colorsAvailable          = false
-    var numbersAvailable         = false
-    var todaysdate               = ""
-    var numbersfornumbers: [Int] = []
-    var colourforcolour          = ""
+    var buttonBack: UIButton      = UIButton(type: UIButton.ButtonType.custom)
+    var spinner                   = UIActivityIndicatorView()
+    let numberOfRows              = 4
+    let defaults                  = UserDefaults.standard
+    var colorsAvailable           = false
+    var numbersAvailable          = false
+    var todaysdate                = ""
+    var numbersfornumbers: [Int]? = []
+    var colourforcolour           = ""
     
     
     // MARK:- View Lifecycle
@@ -139,8 +139,10 @@ class DashboardTableViewController: UITableViewController {
     func routeToNumbers() {
         let goToNumbers = UIStoryboard.goToNumbers()
         goToNumbers.modalPresentationStyle = .fullScreen
-        if numbersfornumbers.count > 1 {
-            goToNumbers.oldnumbers = numbersfornumbers
+        if let numlistt = numbersfornumbers {
+            if numlistt.count > 1 {
+                goToNumbers.oldnumbers = numlistt
+            }
         }
         self.navigationController?.present(goToNumbers, animated: true, completion: {})
     }
