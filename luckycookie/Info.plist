@@ -26,8 +26,14 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>Para interactuar con el mundo real</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Para mostrarte más y mejores datos lunares con respecto a tu ubicación</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Para mostrarte más y mejores datos lunares con respecto a tu ubicación</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Para mostrarte más y mejores datos lunares con respecto a tu ubicación</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Para mostrarte más y mejores datos lunares</string>
+	<string>Para mostrarte más y mejores datos lunares con respecto a tu ubicación</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Para que guardes tu suerte</string>
 	<key>UIAppFonts</key>
