@@ -101,6 +101,11 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.goInstructions(title:  InstructionsStrings.memoriaTitle, instructions: InstructionsStrings.memoria)
+    }
+    
     // MARK:- Functions
     
     func generateName(num: Int) {

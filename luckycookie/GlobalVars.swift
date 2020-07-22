@@ -64,6 +64,10 @@ enum TextusAttributes {
                                                      fontColour:   Colors.blanco,
                                                      typo:         Font.getbigFont(size: 22),
                                                      isUnderlined: false)
+    public static let normell = Font.getAttributes(lineSpacing:  12.0,
+                                                   fontColour:   Colors.neutral,
+                                                   typo:         Font.getbigFont(size: 24),
+                                                   isUnderlined: false)
 }
 
 enum ColoursStrings {
@@ -105,4 +109,10 @@ enum Zodiac {
     public static let libra       = "libra"
     public static let scorpio     = "scorpio"
     public static let sagitario   = "sagitario"
+}
+
+
+enum InstructionsStrings {
+    public static let memoriaTitle = "Memoria"
+    public static let memoria = NSAttributedString(string: "Toca las galletas para encontrar\n pares o triadas o cuartetos.\nGanarás si encuentras todos." , attributes: TextusAttributes.normell)
 }

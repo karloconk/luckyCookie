@@ -9,6 +9,15 @@
 import SystemConfiguration
 import UIKit
 
+extension UIViewController {
+    func goInstructions(title: String, instructions:  NSAttributedString) {
+        let goToInstructions     = UIStoryboard.gotoInstructionsGame()
+        goToInstructions.titleS  = title
+        goToInstructions.message = instructions
+        self.present(goToInstructions, animated: true)
+    }
+}
+
 extension UIImage {
     func circularImage() -> UIImage? {
         let theImage = Tools.cropToBounds(image: self,

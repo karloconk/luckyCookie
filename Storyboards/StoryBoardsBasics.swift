@@ -89,6 +89,10 @@ extension UIStoryboard {
         return load(from: Storyboards.games, identifier: "jigsaws") as! JigSawsViewController
     }
     
+    class func gotoInstructionsGame() -> GameInstructionsViewController {
+        return load(from: Storyboards.games, identifier: "GameInstructionsViewController") as! GameInstructionsViewController
+    }
+    
 }
 
 struct MyGVariables {
