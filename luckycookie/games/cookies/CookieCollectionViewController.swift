@@ -20,6 +20,8 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
     // MARK:- Vars
     let contents              = 12
     public var allowedTouches = 2
+    let defaults = UserDefaults.standard
+
     var touchedTimes          = 0 {
         willSet(newIndex) { }
         didSet {
@@ -103,7 +105,11 @@ class CookieCollectionViewController:  UIViewController, UICollectionViewDataSou
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.goInstructions(title:  InstructionsStrings.memoriaTitle, instructions: InstructionsStrings.memoria)
+        if let _ = defaults.string(forKey: "memoriaGame") {
+            print("Has Defaults")
+        } else {
+                  self.goInstructions(title:  InstructionsStrings.memoriaTitle, instructions: InstructionsStrings.memoria)
+        }
     }
     
     // MARK:- Functions

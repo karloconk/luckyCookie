@@ -25,13 +25,15 @@ class FindersGameViewController: UIViewController {
     public var countdown      = 10
     fileprivate var iswon     = false
     private let configuration = ARWorldTrackingConfiguration()
-    
+    let defaults = UserDefaults.standard
+
     //MARK:- Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.timerLabel.text = "\(countdown)"
 //        self.arscene.debugOptions = [.showWorldOrigin, .showFeaturePoints]
+        playBtn.titleLabel?.font = Font.getbigFont(size: 28)
         self.arscene.session.run(configuration)
         let tapGestureRecognizer = UITapGestureRecognizer(target: self,
                                                           action: #selector(handleTap))
@@ -45,6 +47,15 @@ class FindersGameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let _ = defaults.string(forKey: "8ballGame") {
+            print("Has Defaults")
+        } else {
+            self.goInstructions(title:  InstructionsStrings.a8ballTitle, instructions: InstructionsStrings.a8ball)
+        }
     }
     
     //MARK:- Functions

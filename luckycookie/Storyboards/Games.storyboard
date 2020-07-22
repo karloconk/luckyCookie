@@ -91,19 +91,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWb-N8-kHE">
-                                <rect key="frame" x="427" y="30" width="42" height="20"/>
+                                <rect key="frame" x="427" y="64" width="42" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xru-2r-6OS">
-                                <rect key="frame" x="60" y="66" width="0.0" height="0.0"/>
+                                <rect key="frame" x="60" y="100" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VED-v3-QuJ">
-                                <rect key="frame" x="0.0" y="85.5" width="896" height="186"/>
+                                <rect key="frame" x="0.0" y="119.5" width="896" height="186"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="186" id="yya-zY-NIY"/>
@@ -148,7 +148,7 @@
                             <constraint firstItem="Xru-2r-6OS" firstAttribute="leading" secondItem="jET-YO-TgO" secondAttribute="leading" constant="16" id="kl7-je-rqo"/>
                             <constraint firstAttribute="trailing" secondItem="VED-v3-QuJ" secondAttribute="trailing" id="rbn-Cw-u7z"/>
                             <constraint firstItem="Xru-2r-6OS" firstAttribute="top" secondItem="NWb-N8-kHE" secondAttribute="bottom" constant="16" id="z4t-1a-QhO"/>
-                            <constraint firstItem="NWb-N8-kHE" firstAttribute="top" secondItem="jET-YO-TgO" secondAttribute="top" constant="30" id="zDx-XT-aRo"/>
+                            <constraint firstItem="NWb-N8-kHE" firstAttribute="top" secondItem="jET-YO-TgO" secondAttribute="top" constant="64" id="zDx-XT-aRo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jET-YO-TgO"/>
                     </view>
@@ -297,7 +297,7 @@
                                     <constraint firstAttribute="height" constant="200" id="FKD-3s-VG9"/>
                                     <constraint firstAttribute="width" constant="200" id="xw0-hl-g9P"/>
                                 </constraints>
-                                <state key="normal" image="Bola8_Circulo"/>
+                                <state key="normal" title="¡Empezar!" backgroundImage="Bola8_Circulo"/>
                                 <connections>
                                     <action selector="playGameBtn:" destination="hQv-Pg-Nl9" eventType="touchUpInside" id="1Zv-VK-yKh"/>
                                 </connections>
@@ -386,13 +386,13 @@
                                     <action selector="goback:" destination="wRl-CY-CJ3" eventType="touchUpInside" id="eb0-q7-fyj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vE-Ki-iRT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vE-Ki-iRT">
                                 <rect key="frame" x="373" y="299" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="kwN-hd-iQm"/>
                                     <constraint firstAttribute="height" constant="150" id="sk2-Ir-qVh"/>
                                 </constraints>
-                                <state key="normal" title="roll Dice" image="Bola8_Bola"/>
+                                <state key="normal" title="Tirar Dado" backgroundImage="Bola8_Circulo"/>
                                 <connections>
                                     <action selector="rollDice:" destination="wRl-CY-CJ3" eventType="touchUpInside" id="FnG-8Q-eYj"/>
                                 </connections>
@@ -670,7 +670,6 @@
         <image name="4.square" catalog="system" width="128" height="114"/>
         <image name="5.square" catalog="system" width="128" height="114"/>
         <image name="6.square" catalog="system" width="128" height="114"/>
-        <image name="Bola8_Bola" width="651.5" height="651.5"/>
         <image name="Bola8_Circulo" width="330" height="329.5"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="multiply" catalog="system" width="128" height="111"/>

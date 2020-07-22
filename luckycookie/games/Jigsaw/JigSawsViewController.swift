@@ -22,6 +22,7 @@ class JigSawsViewController: UIViewController, JigPieceDelegate {
     var modifiedViews: [[PuzzleJigView]] = []
     let jigsaws = [UIImage(named: "lp1")!,UIImage(named: "lp2")!,UIImage(named: "lp3")!,UIImage(named: "lp4")!]
     var theimage = UIImage()
+    let defaults = UserDefaults.standard
     
     // MARK:- LifeCycle
 
@@ -39,6 +40,15 @@ class JigSawsViewController: UIViewController, JigPieceDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let _ = defaults.string(forKey: "jigsawTitle") {
+            print("Has Defaults")
+        } else {
+            self.goInstructions(title:  InstructionsStrings.jigSawTitle, instructions: InstructionsStrings.jigSaw)
+        }
     }
     
     // MARK:- Functions

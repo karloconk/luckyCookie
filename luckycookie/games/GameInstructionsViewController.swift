@@ -16,7 +16,8 @@ class GameInstructionsViewController: UIViewController {
     
     var titleS = ""
     var message: NSAttributedString = NSAttributedString()
-    
+    let defaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleLbl.text = "Instrucciones de " + titleS
@@ -25,6 +26,24 @@ class GameInstructionsViewController: UIViewController {
 
         let gview = GenericTextView(view: self.view, text: message, height: 186)
         self.textviewContainer.addSubview(gview)
+        self.saveDefault(which: titleS)
+    }
+    
+    func saveDefault(which: String) {
+        switch which {
+        case InstructionsStrings.a8ballTitle:
+            defaults.set("OK", forKey: "8ballGame")
+        case InstructionsStrings.aNumeroTitle:
+            defaults.set("OK", forKey: "numberGame")
+        case InstructionsStrings.colourTitle:
+            defaults.set("OK", forKey: "colourGame")
+        case InstructionsStrings.jigSawTitle:
+            defaults.set("OK", forKey: "jigsawTitle")
+        case InstructionsStrings.memoriaTitle:
+            defaults.set("OK", forKey: "memoriaGame")
+        default:
+            return
+        }
     }
     
     @IBAction func backButton(_ sender: Any) {

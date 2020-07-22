@@ -20,7 +20,8 @@ class ColourMatchViewController: UIViewController, ColorsViewDelegate {
     public var currentRound = 1
     var steptimes = 1
     var coloursVVV = ColorsView()
-    
+    let defaults = UserDefaults.standard
+
     // MARK:- Lifecycle
 
     override func viewDidLoad() {
@@ -41,6 +42,15 @@ class ColourMatchViewController: UIViewController, ColorsViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let _ = defaults.string(forKey: "colourGame") {
+            print("Has Defaults")
+        } else {
+            self.goInstructions(title:  InstructionsStrings.colourTitle, instructions: InstructionsStrings.colour)
+        }
     }
  
     // MARK:- Functions

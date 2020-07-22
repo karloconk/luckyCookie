@@ -114,5 +114,17 @@ enum Zodiac {
 
 enum InstructionsStrings {
     public static let memoriaTitle = "Memoria"
-    public static let memoria = NSAttributedString(string: "Toca las galletas para encontrar\n pares o triadas o cuartetos.\nGanarás si encuentras todos." , attributes: TextusAttributes.normell)
+    public static let memoria = NSAttributedString(string: "Toca las galletas para encontrar\n pares, triadas o cuartetos.\nGanarás si encuentras todos." , attributes: TextusAttributes.normell)
+    
+    public static let aNumeroTitle = "Adivina Número"
+    public static let aNumero = NSAttributedString(string: "Adivina que número saldrá cuando\ntires el dado. Presiona y el botón y\n si sale el mismo número, ganarás." , attributes: TextusAttributes.normell)
+    
+    public static let a8ballTitle = "Donde está"
+    public static let a8ball = NSAttributedString(string: "Encuentra la bola mágica alrededor\n de ti, tócala y ganarás." , attributes: TextusAttributes.normell)
+    
+    public static let colourTitle = "Color distinto"
+    public static let colour = NSAttributedString(string: "Toca la barra de color\n distinto todos los rounds\ny ganarás." , attributes: TextusAttributes.normell)
+    
+    public static let jigSawTitle = "Rompecabezas"
+    public static let jigSaw = NSAttributedString(string: "Arma el rompecabezas\ny ganarás." , attributes: TextusAttributes.normell)
 }

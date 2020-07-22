@@ -36,7 +36,8 @@ class FirstARViewController: UIViewController, ARSCNViewDelegate{
     var predictednum  = 0
     var printedRot    = false
     var winV: WinView? = nil
-    
+    let defaults = UserDefaults.standard
+
     // MARK:- Lifecycle
     
     override func viewDidLoad() {
@@ -54,6 +55,7 @@ class FirstARViewController: UIViewController, ARSCNViewDelegate{
         self.startup()
         self.instructionsView.layer.cornerRadius = 5
         self.instructionsView.layer.masksToBounds = true
+        rollDiceButtonbottom.titleLabel?.font = Font.getbigFont(size: 22)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -63,6 +65,15 @@ class FirstARViewController: UIViewController, ARSCNViewDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let _ = defaults.string(forKey: "numberGame") {
+            print("Has Defaults")
+        } else {
+            self.goInstructions(title:  InstructionsStrings.aNumeroTitle, instructions: InstructionsStrings.aNumero)
+        }
     }
     
     // MARK:- Functions
