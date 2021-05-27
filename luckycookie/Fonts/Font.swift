@@ -1,6 +1,5 @@
 //
 //  Fonts.swift
-//  albo
 //
 //  Created by Karlo Hurtado  on 23/01/20.
 //  Copyright © 2020 Karlo Hurtado . All rights reserved.

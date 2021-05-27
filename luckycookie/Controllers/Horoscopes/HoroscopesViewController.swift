@@ -6,6 +6,9 @@
 //  Copyright © 2020 Karlo Hurtado. All rights reserved.
 //
 
+
+// This particular feature was cut because we asked the owner of horoscope free api if we could use it and they said no so: We didnt
+
 import UIKit
 
 class HoroscopesViewController: UIViewController {
