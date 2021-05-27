@@ -1,2 +1,2 @@
 # LuckyCookie
-Repo the iOS app luckyCookie, developed and released in 2020
+Repo for the iOS app Fortunas, developed and released in 2020
