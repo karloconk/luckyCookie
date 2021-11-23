@@ -1,2 +1,15 @@
-# LuckyCookie
-Repo for the iOS app Fortunas, developed and released in 2020
+# 🥠 LuckyCookie
+
+## 🔮 High Concept
+
+* Fortunas(LuckyCookie) is an interactive fortune-telling, party games app, developed and released in 2020 on the AppStore.
+
+## 💔 Known Issues
+
+* None
+
+## 🧐 Special Notices:
+
+* None.
+
+
