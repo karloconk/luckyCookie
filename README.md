@@ -10,6 +10,4 @@
 
 ## 🧐 Special Notices:
 
-* None.
-
-
+* This app is no longer on the AppStore.
